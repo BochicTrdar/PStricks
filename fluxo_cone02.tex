@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+% Figura auxiliar para o problema do fluxo através do cone
+% Mexilhoeira Grande, Sex Nov 30 20:47:38 WET 2018
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+\pagestyle{empty} 
+
+\begin{document}
+
+\begin{pspicture}
+\psset{unit=1cm}
+\psline[linewidth=1pt,linestyle=dashed,dash=3mm 1mm](0,2)(2,2)(2,0)
+\psline[linewidth=3pt,linecolor=black]{<->}(5,0)(0,0)(0,5)
+\psline[linewidth=3pt,linecolor=green]{-}(0,4)(4,0)
+\psline[linewidth=4pt,linecolor=blue]{->}(2,2)(3,3)
+\psline[linewidth=2pt,linecolor=black]{<->}(0,-0.5)(2,-0.5)
+\psline[linewidth=2pt,linecolor=black]{<->}(0,-1.5)(4,-1.5)
+\psline[linewidth=2pt,linecolor=black]{<->}(-0.5,0)(-0.5,2)
+\psline[linewidth=2pt,linecolor=black]{<->}(-0.5,2)(-0.5,4)
+\psline[linewidth=2pt,linecolor=black]{<->}(-2.5,0)(-2.5,4)
+\psarc[linewidth=3pt,linecolor=blue]{->}(0,4){1.5}{-90}{-45}
+\rput{0}(5.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,5.5){\scalebox{1.5}{$Y$}}
+\rput{0}(3.2,3.2){\scalebox{1.5}{$\mathbf{E}_n$}}
+\rput{0}(1,-1){\scalebox{1.5}{$r$}}
+\rput{0}(2,-2){\scalebox{1.5}{$R$}}
+\rput{0}(-1,1){\scalebox{1.5}{$z$}}
+\rput{0}(-1.5,2.5){\scalebox{1.5}{$h-z$}}
+\rput{0}(-3,2){\scalebox{1.5}{$h$}}
+\rput{0}(0.75,2.4){\scalebox{1.5}{$\alpha$}}
+\end{pspicture}
+
+\end{document}

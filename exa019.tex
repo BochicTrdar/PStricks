@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{pst-3dplot}
+
+\makeatletter
+\def\setzePara#1{%
+  \def\nPfeil{#1}%
+  \pst@dima=6pt%
+  \divide\pst@dima by \nPfeil% 
+  \edef\XPfeil{\strip@pt\pst@dima}%
+}
+\makeatother
+
+\pagestyle{empty}
+
+\begin{document}
+
+\setzePara{3}
+\psset{unit=.5cm, Alpha=20}
+
+\begin{pspicture}(-8,-5)(3,6)
+\pstThreeDLine(0,5,5)(2,5,5)
+\pstThreeDSquare[fillstyle=solid,fillcolor=blue!60](2,2,2)(0,6,0)(0,0,6)
+\multido{\rA=2+\XPfeil}{\nPfeil}{%
+  \multido{\rB=2+\XPfeil}{\nPfeil}{\pstThreeDLine{<-}(2, \rA, \rB)(8, \rA, \rB)}}
+\pstThreeDSquare[fillstyle=solid,fillcolor=red!60](8,2,2)(0,6,0)(0,0,6)
+\pstThreeDLine(10,5,5)(8,5,5)
+\end{pspicture}
+%
+\setzePara{10}
+\begin{pspicture}(-8,-5)(3,6)
+\pstThreeDLine(0,5,5)(2,5,5)
+\pstThreeDSquare[fillstyle=solid,fillcolor=blue!60](2,2,2)(0,6,0)(0,0,6)
+\multido{\rA=2+\XPfeil}{\nPfeil}{%
+  \multido{\rB=2+\XPfeil}{\nPfeil}{\pstThreeDLine{<-}(2, \rA, \rB)(8, \rA, \rB)}}
+\pstThreeDSquare[fillstyle=solid,fillcolor=red!60](8,2,2)(0,6,0)(0,0,6)
+\pstThreeDLine(10,5,5)(8,5,5)
+\end{pspicture}
+
+\end{document}

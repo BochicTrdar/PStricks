@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+
+%Isolante entre duas placas
+%Faro, Mon Mar 17 19:03:45 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-7,-7)(7,7)
+\psset{xunit=1cm,yunit=1cm}
+%Fios:
+\psline[linewidth=1mm,linecolor=black,linestyle=solid](0,4)(0,2.5)
+\psline[linewidth=1mm,linecolor=black,linestyle=solid](0,-0.3)(0,0.3)
+\psline[linewidth=1mm,linecolor=black,linestyle=solid](0,-2.5)(0,-4)
+%Placas superiores:
+\psframe[linewidth=1mm,linecolor=black,linestyle=solid](-5, 2.3)(5,2.5)
+\psframe[linewidth=1mm,linecolor=black,linestyle=solid](-5, 0.3)(5,0.5)
+%Isolante:
+\psframe[linewidth=0.1mm,linecolor=black,fillstyle=vlines](-5,-2.3)(5,-0.5) 
+%Placas inferiores:
+\psframe[linewidth=1mm,linecolor=black,linestyle=solid](-5,-0.5)(5,-0.3)
+\psframe[linewidth=1mm,linecolor=black,linestyle=solid](-5,-2.5)(5,-2.3)
+%Setas duplas:
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid,arrows=<->](5.5,0.5)(5.5,2.3)
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid,arrows=<->](5.5,-2.3)(5.5,-0.5)
+\rput{0}(0.5, 3){\scalebox{1.5}{$S$}}
+\rput{0}(0.5,-3){\scalebox{1.5}{$S$}}
+\rput{0}(6.2,-1.5){\scalebox{1.5}{$d/2$}}
+\rput{0}(6.2,1.5){\scalebox{1.5}{$d/2$}}
+\end{pspicture}
+
+\end{document}
