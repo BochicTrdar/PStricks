@@ -1,0 +1,44 @@
+% Cálculo Vetorial: 2 forças
+% Faro, sáb 17 jan 2026 22:34:33 
+% Written by Tordar 
+% pstricks2pdf.sh 2forcas
+\documentclass{article}
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pstricks-add}
+\usepackage{pst-slpe}
+
+\input{apnum}
+
+\begin{document}
+
+%\evaldef\xs{6*\COS{30*\PI/180}}
+%\evaldef\ys{6*\SIN{30*\PI/180}+5}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Grelha: 
+    \psgrid[xunit=1, yunit=1, 
+            subgriddiv=1, 
+            gridlabels=10pt, % font size for numbers
+            gridwidth=0.5pt,
+            griddots=10,
+            subgridwidth=0.2pt,
+            subgridcolor=lightgray,
+            gridcolor=gray](-3,-1)(6,9)
+% Vectores: 
+%\psline[linewidth=3pt,linecolor=red]{->}(\xs,\ys)       
+\SpecialCoor
+\psline[linewidth=3pt,linecolor=blue]{->}(6;30)
+\psline[linewidth=3pt,linecolor=blue]{->}(5;90)
+\psline[linewidth=3pt,linecolor=red]{->}(9.54;60)   
+% Texto: 
+\rput{0}(6.5;30){\scalebox{1.5}{$\mathbf{F}_1$}}
+\rput{0}(5.5;90){\scalebox{1.5}{$\mathbf{F}_2$}}
+\rput{0}(9.8;60){\scalebox{1.5}{$\mathbf{F}_1 + \mathbf{F}_2$}}
+\end{pspicture}
+
+\end{document}

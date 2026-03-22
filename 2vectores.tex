@@ -1,0 +1,43 @@
+% Cálculo Vetorial: 2 vectores 
+% Faro, sáb 17 jan 2026 20:49:39 WET
+% Written by Tordar 
+% pstricks2pdf.sh 2vectores
+\documentclass{article}
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pstricks-add}
+\usepackage{pst-slpe}
+
+\input{apnum}
+
+\begin{document}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Grelha: 
+    \psgrid[xunit=1, yunit=1, 
+            subgriddiv=1, 
+            gridlabels=10pt, % font size for numbers
+            gridwidth=0.5pt,
+            griddots=10,
+            subgridwidth=0.2pt,
+            subgridcolor=lightgray,
+            gridcolor=gray](-3,-1)(3,4)
+\SpecialCoor
+% Vectores: 
+\psline[linewidth=3pt,linecolor=blue]{->}(2.5;30)
+\psline[linewidth=3pt,linecolor=blue]{->}(3.8;120)
+\psline[linewidth=3pt,linecolor=red ]{<->}(2.5;30)(3.8;120)
+\pcline[offset=-12pt,linewidth=2pt]{<->}(2.3;30)(3.8;120)\ncput*{\scalebox{1.2}{$r$}}
+% Ângulos:
+\psarc[linewidth=0.8mm,linecolor=black,linestyle=dashed,dash=4mm 1mm]{->}(0,0){1.5}{0}{30}
+\psarc[linewidth=0.8mm,linecolor=black,linestyle=dashed,dash=4mm 1mm]{->}(0,0){1}{0}{120}
+% Texto: 
+\rput{0}(2;15){\scalebox{1}{$30^{\circ}$}}
+\rput{0}(1.5;60){\scalebox{1}{$120^{\circ}$}}
+\end{pspicture}
+
+\end{document}
