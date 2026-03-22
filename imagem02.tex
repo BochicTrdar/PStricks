@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+
+%Imagem de uma carga numa parede
+%Faro, Wed Mar  5 22:43:11 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-2,-2)(8,8)
+\pspolygon[linewidth=0mm,fillstyle=solid,fillcolor=lightgray](-1,7.5)(0,7.5)(0,0)(7.5,0)(7.5,-1)(-1,-1)
+\psline[linewidth=1mm,linecolor=black](0,8)(0,0)(8,0)
+\rput{0}(6,6){\scalebox{5}{$\cdot$}}
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](0,0)(6,6)
+\psarc[linewidth=1mm,linecolor=blue,arrows=->](0,0){4}{1}{44}
+\SpecialCoor
+\rput{0}(9;45){\scalebox{1.7}{$Q$}}
+\rput{0}(4.5;22.5){\scalebox{1.5}{$\theta$}}
+\rput{0}(4;55){\scalebox{1.5}{$a$}}
+\end{pspicture}
+
+\end{document}

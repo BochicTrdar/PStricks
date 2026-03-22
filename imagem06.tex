@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+
+%Imagem de duas cargas num plano
+%Faro, Wed Mar  5 22:39:50 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-2)(6,6)
+%\SpecialCoor
+\pspolygon[linewidth=0mm,fillstyle=solid,fillcolor=lightgray](-5.5,0)(5.5,0)(5.5,-2)(-5.5,-2)
+\psline[linewidth=1mm,linecolor=black](-6,0)(6,0)
+\rput{0}(-5,5){\scalebox{5}{$\cdot$}}
+\rput{0}( 5,5){\scalebox{5}{$\cdot$}}
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](-5,0)(-5,5)
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](-5,5)( 5,5)
+\rput{0}(-5,5.7){\scalebox{1.7}{$Q$}}
+\rput{0}( 5,5.7){\scalebox{1.7}{$-Q$}}
+\rput{0}(0,5.5){\scalebox{1.5}{$a$}}
+\rput{0}(-5.5,2.5){\scalebox{1.5}{$b$}}
+\end{pspicture}
+
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+
+%Helicoide em torno do eixo Z
+%Faro, 30/06/2008, 19:30
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+
+\usepackage{pifont}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-3.25,-2.25)(3.25,5.25)
+%\pstThreeDCoor[zMax=5]
+\psset{linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm,arrows=->}
+\pstThreeDLine(6,0,0)(-6,0,0)
+\pstThreeDLine(0,-6,0)(0,6,0)
+\pstThreeDLine(0,0,0)(0,0,6)
+\pstPlanePut[plane=yz](0,6.1,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](-6.1,0,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,6.5){\scalebox{1.5}{$Z$}}
+\psset{linewidth=0.5mm,linecolor=black,linestyle=solid,arrows=->}
+\parametricplotThreeD[xPlotpoints=200,linecolor=blue,
+linewidth=1.5pt,plotstyle=curve](0,2160){2.5 t cos mul 2.5 t sin mul t 600 div}
+\end{pspicture}
+
+\end{document}
