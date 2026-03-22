@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+%Tres condensadores em serie
+%Faro, 09/12/2010, 14:00
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-circ}
+
+\begin{document}
+
+\pagestyle{empty} 
+
+\begin{pspicture}(12,5)
+
+\pnode(0,0){A}
+\pnode(3,0){B}
+\pnode(4,0){C}
+\pnode(7,0){D}\pnode(9,0){D2}
+\pnode(10,0){E}
+
+\capacitor[labeloffset=1.25](A)(B){\scalebox{1.5}{$C_1$}}
+\capacitor[labeloffset=1.25](B)(C){\scalebox{1.5}{$C_2$}}
+\capacitor[labeloffset=1.25](C)(D){\scalebox{1.5}{$C_3$}}
+
+\rput{0}(8,0){\psscalebox{1.5}{$\ldots$}}
+
+\wire(D2)(E)
+\pscircle[fillstyle=solid,fillcolor=white](0,0){0.15}
+\pscircle[fillstyle=solid,fillcolor=white](10,0){0.15}
+
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](0,-1)(10,-1)
+
+\rput{0}(5,-1.5){\psscalebox{1.5}{$\Delta\varphi$}}
+
+\end{pspicture}
+
+\end{document}

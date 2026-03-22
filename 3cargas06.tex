@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+%Três cargas
+%Faro, Sat Mar  8 15:15:14 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-7)(6,7)
+\SpecialCoor
+\psline[linewidth=1mm,linecolor=blue,linestyle=dashed,dash=4mm 1mm,arrows=->](-5,0)(5,0)
+\psline[linewidth=1mm,linecolor=blue,linestyle=dashed,dash=4mm 1mm,arrows=->](0,-5)(0,6)
+\pscircle[linewidth=0.1mm,linecolor=black,
+fillstyle=ccslope,slopebegin=white,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](4;-30){0.5}
+\pscircle[linewidth=0.1mm,linecolor=black,
+fillstyle=ccslope,slopebegin=white,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](4; 90){0.5}
+\pscircle[linewidth=0.1mm,linecolor=black,
+fillstyle=ccslope,slopebegin=white,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](4;210){0.5}
+\psline[linewidth=1.2mm,linecolor=black,arrows=<->](-3.46,-2)(3.46,-2)
+\psline[linewidth=1.2mm,linecolor=black,arrows=<->](0,4)(-3.46,-2)
+\psline[linewidth=1.2mm,linecolor=black,arrows=<->](3.46,-2)(0,4)
+\rput{0}(5;-30){\scalebox{1.5}{$q_3$}}
+\rput{0}(5;100){\scalebox{1.5}{$q_1$}}
+\rput{0}(5;210){\scalebox{1.5}{$q_2$}}
+\rput{0}(5.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,6.5){\scalebox{1.5}{$Y$}}
+\rput{0}(2.5; 45){\scalebox{1.5}{$l$}}
+\rput{0}(2.5;135){\scalebox{1.5}{$l$}}
+\rput{0}(2.5;285){\scalebox{1.5}{$l$}}
+\end{pspicture}
+
+\end{document}

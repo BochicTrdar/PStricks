@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+%Tres cargas
+%Faro, 04/06/2011, 15:30
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+
+\usepackage{pifont}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-7,-2)(7,7)
+%\psset{xunit=5cm,yunit=5cm}
+%Eixos XY:
+\psline[linewidth=3pt,linecolor=black]{->}(-6,0)(6,0)
+\psline[linewidth=3pt,linecolor=black]{->}(0,0)(0,8.5)
+\rput{0}(6.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,9){\scalebox{1.5}{$Y$}}
+%Cargas:
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-5,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](5,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](0,7.51){0.3}
+\rput{0}(-5,-1){\scalebox{1.5}{$-q$}}
+\rput{0}(5,-1){\scalebox{1.5}{$-q$}}
+\rput{0}(-1,7.51){\scalebox{1.5}{$+q$}}
+%Distancias:
+\psline[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash = 4mm 1mm]{<->}(-5,-2)(0,-2)
+\rput{0}(-2.5,-2.5){\scalebox{1.5}{$a/2$}}
+\psline[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash = 4mm 1mm]{<->}(0,-2)(5,-2)
+\rput{0}(2.5,-2.5){\scalebox{1.5}{$a/2$}}
+\psline[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash = 4mm 1mm]{<->}(-5,0)(0,7.51)
+\rput{0}(-3,3.75){\scalebox{1.5}{$b$}}
+\psline[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash = 4mm 1mm]{<->}(5,0)(0,7.51)
+\rput{0}(3,3.75){\scalebox{1.5}{$b$}}
+\psline[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash = 4mm 1mm]{<->}(-5.5,0)(-5.5,7.51)
+\rput{0}(-6,3.75){\scalebox{1.5}{$d$}}
+\end{pspicture}
+
+\end{document}
