@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+
+%6 espiras circulares, rodadas progressivamente em 30 degs
+%Faro, Sun May  4 17:02:39 WEST 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-6)(6,6)
+\psset{xunit=12mm,yunit=12mm}
+\SpecialCoor
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;90)
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;120)
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;150)
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;180)
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;210)
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;240)
+\rput{0}(5.5;90){\scalebox{1.5}{$\mathbf{B}_1$}}
+\rput{0}(5.5;120){\scalebox{1.5}{$\mathbf{B}_2$}}
+\rput{0}(5.5;150){\scalebox{1.5}{$\mathbf{B}_3$}}
+\rput{0}(5.5;180){\scalebox{1.5}{$\mathbf{B}_4$}}
+\rput{0}(5.5;210){\scalebox{1.5}{$\mathbf{B}_5$}}
+\rput{0}(5.5;240){\scalebox{1.5}{$\mathbf{B}_6$}}
+\end{pspicture}
+
+\end{document}
