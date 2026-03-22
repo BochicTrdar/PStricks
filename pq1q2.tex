@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+%Duas cargas
+%Gambelas, Fri May  3 18:37:13 WEST 2013
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pst-slpe}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-7)(6,7)
+\psline[linewidth=3pt,linecolor=black]{->}(-8,0)(8,0)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash = 4mm 1mm]{<->}(-4,-2)(5,-2)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash = 4mm 1mm]{<->}(-7,-2)(-4,-2)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-4,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](5,0){0.3}
+\rput{0}(8.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(-4,-1){\scalebox{1.5}{$q_1$}}
+\rput{0}(5,-1){\scalebox{1.5}{$q_2$}}
+\rput{0}(0,-2.5){\scalebox{1.5}{$x$}}
+\rput{0}(-5.5,-2.5){\scalebox{1.5}{$a$}}
+\rput{0}(-7,0){\scalebox{1.5}{$\bullet$}}
+\rput{0}(-7,-0.5){\scalebox{1.5}{$P$}}
+\end{pspicture}
+
+\end{document}
