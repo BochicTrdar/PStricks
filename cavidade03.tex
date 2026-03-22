@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+
+%Lei de Gauss para uma cavidade cilindrica
+%Faro, Mon Mar  3 01:59:44 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,-5)(5,5)
+\psframe[linewidth=1.5mm,linecolor=white,fillstyle=vlines](-5,-4)(5,4)
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](1,0){3}
+\rput{0}(0,2){\scalebox{5}{$\cdot$}}
+\psline[linewidth=1mm,linecolor=blue,arrows=->](-4,0)(1,0)
+\psline[linewidth=1mm,linecolor=blue,arrows=->]( 1,0)(0,2)
+\psline[linewidth=1mm,linecolor=blue,arrows=->](-4,0)(0,2)
+\rput{0}(-2.5,-0.5){\scalebox{1.5}{\psframebox*{$\vd$}}}
+\rput{0}(-2.5, 1.5){\scalebox{1.5}{\psframebox*{$\mathbf{r}$}}}
+\rput{0}(1.2,1){\scalebox{1.5}{\psframebox*{$\mathbf{r}'$}}}
+\rput{0}(0.5,2){\scalebox{1.2}{$P$}}
+\end{pspicture}
+
+\end{document}

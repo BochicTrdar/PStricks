@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+
+%Cabo coaxial e lei de Ampere
+%Faro, Wed Mar 12 18:12:58 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,-5)(5,5)
+
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){3}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){2}
+\pscircle[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 2mm](0,0){3.5}
+\psline[linewidth=3pt,linecolor=blue]{<->}(0,0)(2,0)
+\psline[linewidth=3pt,linecolor=blue]{<->}(0,0)(0,-3.5)
+\psline[linewidth=3pt,linecolor=blue]{<-}(2.5,2.5)(3.5,3.5)
+\rput{0}(1,0.5){\scalebox{1.5}{\psframebox*{$a$}}}
+\rput{0}(-0.5,-2.4){\scalebox{1.5}{$r$}}
+\rput{0}(3.8,3.8){\scalebox{1.5}{$L$}}
+	
+\end{pspicture}
+
+\end{document}

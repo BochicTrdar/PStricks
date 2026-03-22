@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+
+%Barra metalica
+%Faro, Sun Mar  2 22:21:32 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-4,-4)(4,4)
+\pscircle[linewidth=1mm,fillstyle=solid,fillcolor=lightgray](-4,0){0.5}
+\pscircle[linewidth=1mm,fillstyle=solid,fillcolor=lightgray]( 4,0){0.5}
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](-4,0)(0,0)
+\psline[linewidth=1mm,linecolor=blue,arrows=<->]( 4,0)(0,0)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed](0,-4)(0,4)
+\rput{0}(-4, 1){\scalebox{1.5}{$+e$}}
+\rput{0}( 4, 1){\scalebox{1.5}{$+e$}}
+\rput{0}(-4,-1){\scalebox{1.5}{$P_1$}}
+\rput{0}( 4,-1){\scalebox{1.5}{$P_2$}}
+\rput{0}( 0, 3){\scalebox{5}{$\cdot$}}
+\rput{0}( 0,-3){\scalebox{5}{$\cdot$}}
+\rput{0}(0.5, 3){\scalebox{1.5}{$P_3$}}
+\rput{0}(0.5,-3){\scalebox{1.5}{$P_4$}}
+\rput{0}( 2,-0.7){\scalebox{2}{$a$}}
+\rput{0}(-2,-0.7){\scalebox{2}{$a$}}
+\end{pspicture}
+
+\end{document}

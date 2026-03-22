@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+
+%Lei de Gauss para uma cavidade cilindrica
+%Faro, Mon Mar  3 01:59:00 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,-5)(5,5)
+\rput{0}(-5,0){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](2,0){1.2}
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](0,0)(2,0)
+\SpecialCoor
+\rput{0}(3;215){\scalebox{1.7}{\psframebox*{$\rho$}}}
+               }
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](5.8,2)(5.8,-4)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](8.2,2)(8.2,-4)	       
+\rput{0}(0, 0){\scalebox{2}{$=$}}
+\rput{0}(0,-4){\scalebox{2}{$+$}}	       
+\rput{0}( 5, 2){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](2,0){1.2}
+\rput{0}(0,0){\scalebox{1.7}{\psframebox*{$\rho$}}}
+               }
+\rput{0}( 5,-4){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](2,0){1.2}
+\rput{0}(2,0){\scalebox{1.7}{\psframebox*{$-\rho$}}}
+               }
+\end{pspicture}
+
+\end{document}
