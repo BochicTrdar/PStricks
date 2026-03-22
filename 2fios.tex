@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+%Dois fios
+%Faro, Fri Apr 11 20:23:11 WEST 2014
+%Written by Tordar
+
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{pst-slpe}
+
+\usepackage{pifont}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-6)(6,6)
+\psset{xunit=1cm,yunit=1cm}
+%\SpecialCoor
+\psline[linewidth=0.75mm,linecolor=black,linestyle=dashed,dash= 5mm 1mm](-6,0)(0,6)
+\psline[linewidth=0.75mm,linecolor=black,linestyle=dashed,dash= 5mm 1mm](6,0)(0,6)
+\psline[linewidth=0.75mm,linecolor=black,linestyle=dashed,dash= 5mm 1mm](2,8)(4,6)
+\psline[linewidth=0.75mm,linecolor=black,linestyle=dashed,dash= 5mm 1mm](2,4)(4,6)
+\psarc[linewidth=1mm,linecolor=blue,arrows=->](-6,0){2.7}{0}{45}
+\psarc[linewidth=1mm,linecolor=blue,arrows=->](0,6){1.5}{0}{45}
+\psline[linewidth=1mm,linecolor=black,arrows=->](-8,0)(8,0)
+\psline[linewidth=1mm,linecolor=black,arrows=->](0,0)(0,8)
+\psline[linewidth=1mm,linecolor=black,arrows=<->](-6,-1)(6,-1)
+\psline[linewidth=1.5mm,linecolor=blue,arrows=->](0,6)(2,8)
+\psline[linewidth=1.5mm,linecolor=blue,arrows=->](0,6)(2,4)
+\psline[linewidth=1.5mm,linecolor=blue,arrows=->](0,6)(4,6)
+\pscircle[linecolor=gray,fillstyle=solid,fillcolor=gray](-6,0){0.3}
+\pscircle[linecolor=gray,fillstyle=solid,fillcolor=gray](6,0){0.3}
+\rput{0}(8.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,8.5){\scalebox{1.5}{$Y$}}
+\rput{0}(0,6){\scalebox{1.5}{$\bullet$}}
+\rput{0}(-6,1){\scalebox{1.5}{$\lambda$}}
+\rput{0}(6,1){\scalebox{1.5}{$-\lambda$}}
+\rput{0}(-1,6){\scalebox{1.5}{$P$}}
+\rput{0}(0,-1.5){\scalebox{1.5}{$L$}}
+\rput{0}(-0.5,3){\scalebox{1.5}{$H$}}
+\rput{0}(-3.5,3){\scalebox{1.5}{$r$}}
+\rput{0}(1.75,3.5){\scalebox{1.5}{$\mathbf{E}_{-\lambda}$}}
+\rput{0}(2,8.5){\scalebox{1.5}{$\mathbf{E}_{\lambda}$}}
+\rput{0}(4.5,6){\scalebox{1.5}{$\mathbf{E}_P$}}
+\rput{0}(-3,1){\scalebox{1.5}{$\alpha$}}
+\rput{0}(1.75,6.5){\scalebox{1.5}{$\alpha$}}
+\end{pspicture}
+
+\end{document}

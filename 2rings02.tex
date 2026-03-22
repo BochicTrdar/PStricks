@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+
+%Indutancia mutua de dois aneis
+%Faro, Sat Mar 15 19:50:50 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-6)(6,6)
+\psset{xunit=12mm,yunit=12mm}
+\psline[linewidth=3pt,linecolor=blue]{->}(-5,0)(5,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,-5)(0,5)
+\SpecialCoor
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(3;30)
+\psline[linewidth=3pt,linecolor=blue]{->}(0;0)(5;60)
+\psarc[linewidth=1mm,linecolor=red,arrows=->](0,0){2}{1}{29}
+\psarc[linewidth=1mm,linecolor=red,arrows=->](0,0){4}{1}{59}
+\pscircle[linewidth=1mm,linecolor=black](0,0){3}
+\pscircle[linewidth=1mm,linecolor=black](0,0){5}
+\rput{0}(5.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,5.5){\scalebox{1.5}{$Y$}}
+\rput{0}(1.4,1.2){\scalebox{1.5}{$\mathbf{r}_1$}}
+\rput{0}(1.2,3.0){\scalebox{1.5}{$\mathbf{r}_2$}}
+\rput{0}(2,0.5){\scalebox{1.5}{$\phi_1$}}
+\rput{0}(3.2,2){\scalebox{1.5}{$\phi_2$}}
+\rput{0}(-2,-2){\scalebox{1.5}{$L_1$}}
+\rput{0}(3.3,-3.3){\scalebox{1.5}{$L_2$}}
+\end{pspicture}
+
+\end{document}

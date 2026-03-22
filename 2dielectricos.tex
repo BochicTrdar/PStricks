@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+
+%Dois dielectricos
+%Faro, Sun Mar 16 14:11:06 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-6)(6,6)
+\psset{xunit=12mm,yunit=12mm}
+%Dielectrico superior:
+\psframe[linewidth=1pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](-4.5,0)(4.5,2)
+%Dielectrico inferior:
+\psframe[linewidth=1pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=-45](-4.5,0)(4.5,-2)
+%Fronteira entre dielectricos: 
+\psline[linewidth=3pt,linecolor=black]{-}(-5,0)(5,0)
+%Normal:
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(0,3)
+%Vertical inferior:
+\psline[linewidth=2pt,linecolor=black,linestyle=dashed,dash=4mm 1mm](0,0)(0,-4)
+%Campo superior:
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(4,3)
+%Campo inferior:
+\psline[linewidth=3pt,linecolor=blue]{->}(-2,-4)(0,0)
+%Arcos dos angulos:
+\psarc[linewidth=1mm,linecolor=red,arrows=->](0,0){2.7}{38}{90}
+\psarc[linewidth=1mm,linecolor=red,arrows=->](0,0){3}{244}{270}
+%Textos:
+\rput{0}(-5,3){\scalebox{1.2}{Diel\'ectrico 2}}
+\rput{0}(-5,-3){\scalebox{1.2}{Diel\'ectrico 1}}
+\rput{0}(6,0){\scalebox{1.2}{Fronteira}}
+\rput{0}(0,3.5){\scalebox{1.5}{$\mathbf{n}$}}
+\rput{0}(4,3.5){\scalebox{1.5}{$\mathbf{E}_2$}}
+\rput{0}(-2,-4.5){\scalebox{1.5}{$\mathbf{E}_1$}}
+\rput{0}(1,2.5){\scalebox{1.5}{$\theta_2$}}
+\rput{0}(-0.5,-2.9){\scalebox{1.5}{$\theta_1$}}
+\end{pspicture}
+
+\end{document}
