@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+
+%?
+%Faro, Wed Mar  5 23:15:52 WET 2014
+%Written by Tordar
+
+
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+\pagestyle{empty} 
+
+\begin{document}
+
+\begin{pspicture}(-5,-5)(5,5)
+\psset{unit=1cm}
+\scalebox{1.5}{
+\psccurve[linewidth=2pt,linecolor=blue,linestyle=dashed,dash=4mm 1mm](-3,0)(-2,1)(0,2)(2.5,0.5)(3,0)(2.75,-1)(0,-2)(-2,-1.75)
+}
+\scalebox{2}{
+\psccurve[linewidth=1pt,linecolor=blue,linestyle=dashed,dash=3mm 1mm](-3,0)(-2,1)(0,2)(2.5,0.5)(3,0)(2.75,-1)(0,-2)(-2,-1.75)
+}
+\scalebox{2.5}{
+\psccurve[linewidth=0.7pt,linecolor=blue,linestyle=dashed,dash=2mm 1mm](-3,0)(-2,1)(0,2)(2.5,0.5)(3,0)(2.75,-1)(0,-2)(-2,-1.75)
+}
+\rput{0}(-0.25,0){
+\psccurve[linewidth=2pt,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=50](-3,0)(-2,1)(0,2)(2.5,0.5)(3,0)(2.75,-1)(0,-2)(-2,-1.75)
+}
+\SpecialCoor
+\rput{0}(3.25;-5){\scalebox{2}{$Q$}}
+\rput{0}(4.00;-45){\scalebox{2}{$\varphi_{1}$}}
+\rput{0}(5.25;-45){\scalebox{2}{$\varphi_{2}$}}
+\rput{0}(6.50;-45){\scalebox{2}{$\varphi_{3}$}}
+\end{pspicture}
+
+\end{document}
