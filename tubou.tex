@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+
+% Tubo em U
+% Gambelas, Fri Feb 19 16:59:48 WET 2016
+% Written by Tordar
+% DO NOT USE psset!!!!
+% Thanks Manfred!!!!
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-6)(6,6)
+\pscustom[linestyle=none, fillstyle=hlines]{%
+  \psline(-2,0)(-2,2)(-2.5,2)(-2.5,0)
+  \psarc(0,0){2.5}{180}{0}
+  \psline(2.5,0)(2.5,4)(2,4)(2,0)
+  \psarcn(0,0){2}{0}{180}
+}
+\psset{linewidth=1mm}
+\psline(-2,0)(-2,5)
+\psline(-2.5,5)(-2.5,0)
+\psarc(0,0){2.5}{180}{0}
+\psline(2.5,0)(2.5,5)
+\psline(2,5)(2,0)
+\psarcn(0,0){2}{0}{180}
+\psset{linewidth=0.5mm}
+\psline[linestyle=dashed, dash=5mm 2mm](-3.5,3)(3.5,3)
+\psline(-3.5,2)(-2,2) \psline(2,4)(3.5,4)
+\psset{arrowsize=2pt 2, arrowlength=2, arrowinset=0.1}
+\psline{<->}(-3.25,2)(-3.25,3) \psline{<->}(3.25,3)(3.25,4)
+\Large
+\rput[r](-3.5,2.5){$-\Delta z$} \rput[l](3.5,3.5){$\Delta z$}
+\end{pspicture}
+
+\end{document}
