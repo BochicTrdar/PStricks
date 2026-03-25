@@ -1,0 +1,33 @@
+% DeepSeek 
+% Faro, sáb 06 dez 2025 21:45:55 
+% pstricks2pdf.sh myblock
+\documentclass{article}
+\usepackage{pstricks}
+
+% Command: \stackedframes[options]{centerX}{centerY}{totalWidth}{height}
+\newcommand{\stackedframes}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[#1]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)
+  
+  % Right frame (half of total width, full height)
+  \psframe[#1]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+}
+
+\begin{document}
+
+\begin{pspicture}(0,0)(8,6)
+  % Example 1: Two frames side by side
+  \stackedframes[fillcolor=blue!20,fillstyle=solid,linecolor=blue]{2}{2}{4}{2}
+  
+  % Example 2: With different styling
+  \stackedframes[fillcolor=red!30,fillstyle=solid,linecolor=red,linestyle=dashed]{6}{4}{3}{1.5}
+  
+  % Example 3: Thin frames
+  \stackedframes[linecolor=green,linewidth=0.5pt]{4}{1}{5}{1}
+\end{pspicture}
+
+\end{document}

@@ -1,0 +1,135 @@
+% Dinâmica: 2 blocos num plano inclinado, com ângulos alfa e beta, aceleração e tensão. 
+% Faro, seg 15 dez 2025 11:03:29 
+% Written by Tordar 
+% pstricks2pdf.sh plano_alpha_beta02
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pstricks-add}
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+
+\begin{document}
+
+% Altura e largura de cada bloco: 
+\evaldef\wb{2}
+\evaldef\hb{1}
+% Ângulos:
+\evaldef\myalpha{60}
+\evaldef\mybeta{30}
+\evaldef\betai{180-\mybeta}
+% Coordenadas do plano inclinado: 
+\evaldef\xi{1}
+\evaldef\xii{3}
+\evaldef\yii{(\xii-\xi)*\TAN{\myalpha*\PI/180}}
+\evaldef\xiii{\xii+\yii/(\TAN{\mybeta*\PI/180})}
+% Coordenadas para o bloco 1:
+\evaldef\rix{(\xii-\xi)/2+\xi}
+\evaldef\riy{\yii/2}
+\evaldef\dix{-\hb/2*\SIN{\myalpha*\PI/180}}
+\evaldef\diy{\hb/2*\COS{\myalpha*\PI/180}}
+\evaldef\xbi{\rix+\dix}
+\evaldef\ybi{\riy+\diy}
+\evaldef\ymi{\hb+0.1}
+% Coordenadas para o bloco 2:
+\evaldef\diix{\hb/2*\COS{\mybeta*\PI/180}}
+\evaldef\diiy{\hb/2*\SIN{\mybeta*\PI/180}}
+\evaldef\xbii{\xii+(\xiii-\xii)/2+\diix}
+\evaldef\ybii{\yii/2+\diiy}
+\evaldef\ymii{\hb+0.1}
+% Coordenadas para o fio: 
+\evaldef\xint{\xii+\dix+\diy}
+\evaldef\yint{\yii+\diiy+\diiy}
+% Coordenadas para alpha:
+\evaldef\xalpha{\xi+2*\COS{\myalpha*\PI/360}}
+\evaldef\yalpha{2*\SIN{\myalpha*\PI/360}}
+% Coordenadas para beta:
+\evaldef\xbeta{\xiii+2.5*\COS{(180-\mybeta/2)*\PI/180}}
+\evaldef\ybeta{2.5*\SIN{\mybeta*\PI/360}}
+% Coordenadas para a aceleração: 
+\evaldef\ya{\hb+1.5}
+\evaldef\yva{\ya-0.5}
+\evaldef\xvas{-0.5}
+\evaldef\xvae{0.5}
+% Coordenadas para a tensão:
+\evaldef\xvtmi{0.9*\wb} % bloco 1
+\evaldef\xtmi{0.7*\wb}  % bloco 1
+\evaldef\ytmi{0.3}      % bloco 1
+\evaldef\xvtmii{-0.9*\wb} % bloco 2
+\evaldef\xtmii{-0.7*\wb}  % bloco 2
+% Coordenadas para os pesos: 
+\evaldef\xpi{\xi+(\xii-\xi)/2}
+\evaldef\ypi{2+\yii/2}
+\evaldef\xpii{\xii+(\xiii-\xii)/2}
+% Coordenadas para os ângulos das perpendiculares: 
+\evaldef\xalphap{\xpi+0.4}
+\evaldef\yalphap{\ypi-0.6}
+\evaldef\xbetap{\xpii-0.3}
+\evaldef\ybetap{\ypi-1}
+%======================================================================
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Chão: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](0,0)(10,2) 
+% Plano inclinado com blocos:
+\rput{0}(0,2){ 
+%======================================================================
+\pspolygon[fillstyle=solid,fillcolor=gray](\xi,0)(\xii,\yii)(\xiii,0) % Plano inclinado 
+%\psarc[linewidth=0.8mm,linecolor=black,linestyle=dashed,dash=4mm 1mm]{->}(\xi,0){1.5}{0}{\myalpha} % arc alpha
+%\psarc[linewidth=0.8mm,linecolor=black,linestyle=dashed,dash=4mm 1mm]{->}(\xiii,0){2}{\betai}{180} % arc beta
+%\rput{0}(\xalpha,\yalpha){\scalebox{1.5}{$\alpha$}}
+%\rput{0}(\xbeta,\ybeta){\scalebox{1.5}{$\beta$}}
+% Segmentos: 
+\psline[linewidth=2pt,linecolor=black](\xii,\yii)(\xint,\yint)
+\psline[linewidth=2pt,linecolor=black](\xbi,\ybi)(\xint,\yint)(\xbii,\ybii)
+\qdisk(\xint,\yint){2mm}
+% Bloco 1:
+\rput{\myalpha}(\xbi,\ybi){
+\psline[linewidth=3pt,linecolor=blue]{->}(0,-0.05)(\xvtmi,-0.05) % Tensão
+\bloco[linewidth=2pt,linecolor=black]{0}{0}{\wb}{\hb}
+\rput{0}(0,\ymi){\scalebox{1.5}{$m_1$}}
+\rput{0}(0,\ya){\scalebox{1.5}{$\mathbf{a}$}}
+\rput{0}(\xtmi,\ytmi){\scalebox{1.5}{$\mathbf{T}$}}
+\psline[linewidth=3pt,linecolor=blue]{->}(\xvas,\yva)(\xvae,\yva)
+}
+% Bloco 2:
+\rput{-\mybeta}(\xbii,\ybii){
+\psline[linewidth=3pt,linecolor=blue]{->}(0,-0.05)(\xvtmii,-0.05) % Tensão
+\bloco[linewidth=2pt,linecolor=black]{0}{0}{\wb}{\hb}
+\rput{0}(0,\ymii){\scalebox{1.5}{$m_2$}}
+\rput{0}(0,\ya){\scalebox{1.5}{$\mathbf{a}$}}
+\rput{0}(\xtmii,\ytmi){\scalebox{1.5}{$\mathbf{T}$}}
+\psline[linewidth=3pt,linecolor=blue]{->}(\xvas,\yva)(\xvae,\yva)
+}
+%======================================================================
+}
+% Peso 1:
+\psline[linewidth=3pt,linecolor=blue]{->}(\xpi,\ypi)(\xpi,2.5)
+\rput{\myalpha}(\xpi,\ypi){
+\psline[linewidth=0.6mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](0,0)(0,-2) % Perpendicular
+} % \rput...
+\rput{0}(\xalphap,\yalphap){\scalebox{1}{$\alpha$}}
+% Peso 2:
+\psline[linewidth=3pt,linecolor=blue]{->}(\xpii,\ypi)(\xpii,2.5)
+\rput{-\mybeta}(\xpii,\ypi){
+\psline[linewidth=0.6mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](0,0)(0,-1.5) % Perpendicular
+} % \rput ... 
+\rput{0}(\xbetap,\ybetap){\scalebox{1}{$\beta$}}
+\end{pspicture}
+
+\end{document}

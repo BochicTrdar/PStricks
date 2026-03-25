@@ -1,0 +1,32 @@
+% 08/11/2002 at 16:00 
+% Estática: Momento de uma forca
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx} 
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{center} 
+\begin{pspicture}(0,0)(1.2,1.2)
+\psset{unit=8cm}
+\psline[linewidth=5pt,linecolor=black]{->}(0,0)(0.6,0.5)
+\psline[linewidth=5pt,linecolor=red]{->}(0.6,0.5)(0.4,0.9)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(1.1,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(0,1.1)
+\qdisk(0,0){2mm}
+\pscircle[linewidth=2pt](0,0){5mm}
+\rput{0}(1.15,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,1.15){\scalebox{1.5}{$Y$}}
+\rput{0}(0.4,0.25){\scalebox{1.5}{$\mathbf{r}$}}
+\rput{0}(0.56,0.72){\scalebox{1.5}{$\mathbf{F}$}}
+\rput{0}(-0.1,-0.1){\scalebox{1.5}{$\vM$}}
+\end{pspicture}
+\end{center}
+\end{document} 

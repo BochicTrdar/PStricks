@@ -1,0 +1,59 @@
+%13/06/2003 at 20:30  
+%
+%Momento linear: 
+%pêndulo de Newton
+% 
+%Written by TORDAR 
+
+%%BoundingBox: 125 265 455 540
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+ 
+
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{center} 
+\begin{pspicture}(-0.1,-0.1)(1.1,1.1)
+\psset{unit=8cm}
+\psframe[linewidth=1pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](-0.5,0)(0.5,0.1)
+\SpecialCoor
+\rput{0}(-0.15,0){\psline[linewidth=1mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](1;-120)}
+\rput{0}( 0.15,0){\psline[linewidth=1mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](1; -90)}
+\rput{0}( 0.15,0){\psline[linewidth=1mm,linecolor=black](1; -60)}
+\rput{0}( 0.05,0){\psline[linewidth=1mm,linecolor=black](1; -90)}
+\rput{0}(-0.05,0){\psline[linewidth=1mm,linecolor=black](1; -90)}
+\rput{0}(-0.15,0){\psline[linewidth=1mm,linecolor=black](1; -90)}
+\rput{0}( 0.15,0){
+\pscircle[linewidth=0.1mm,linecolor=gray,fillstyle=ccslope,
+slopebegin=lightgray,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](1;-90){0.05}}
+\rput{0}( 0.15,0){
+\pscircle[linewidth=0.1mm,linecolor=gray,fillstyle=ccslope,
+slopebegin=lightgray,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](1;-60){0.05}}
+\rput{0}( 0.05,0){
+\pscircle[linewidth=0.1mm,linecolor=gray,fillstyle=ccslope,
+slopebegin=lightgray,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](1;-90){0.05}}
+\rput{0}(-0.05,0){
+\pscircle[linewidth=0.1mm,linecolor=gray,fillstyle=ccslope,
+slopebegin=lightgray,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](1;-90){0.05}}
+\rput{0}(-0.15,0){
+\pscircle[linewidth=0.1mm,linecolor=gray,fillstyle=ccslope,
+slopebegin=lightgray,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](1;-90){0.05}}
+\rput{0}(-0.15,0){
+\pscircle[linewidth=0.1mm,linecolor=gray,fillstyle=ccslope,
+slopebegin=lightgray,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](1;-120){0.05}}
+\psline[linewidth=1mm,linecolor=black](-0.65,0)(0.65,0)
+\rput{0}( 0.15,0){
+\psarc[linewidth=1mm,linecolor=blue,linestyle=dashed,dash=4mm 1mm,arcsepA=3pt,arcsepB=3pt]{<-}(0,0){1}{275}{300}}
+\rput{0}(-0.15,0){
+\psarc[linewidth=1mm,linecolor=blue,linestyle=dashed,dash=4mm 1mm,arcsepA=3pt,arcsepB=3pt]{<-}(0,0){1}{245}{270}}
+\end{pspicture}
+\end{center}
+\end{document} 

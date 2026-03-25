@@ -1,0 +1,25 @@
+% DeepSeek 
+% Faro, sáb 06 dez 2025 20:13:42 
+% pstricks2pdf.sh roldana
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pstricks}
+\usepackage{pst-grad}
+
+% 使用pst-grad包的径向渐变（如果可用）
+\newcommand{\TrueGradientPulley}[5]{% x, y, radius, hole-radius, color
+  \pscircle[fillstyle=gradient,gradbegin=#5!20,gradend=#5!80,
+            gradmidpoint=0,gradlines=100](#1,#2){#3}
+  \ifnum\pdfstrcmp{#4}{0}=0\relax\else
+    \pscircle[fillcolor=white,fillstyle=solid,linewidth=0.8pt](#1,#2){#4}
+  \fi
+  \pscircle[linewidth=1pt,linecolor=#5!50!black](#1,#2){#3}
+}
+
+\begin{document}
+\begin{pspicture}(-3,-2)(3,2)
+  \TrueGradientPulley{0}{0}{1}{0.15}{blue}
+  \TrueGradientPulley{-2}{0}{0.6}{0.1}{red}
+  \TrueGradientPulley{2}{0}{0.8}{0}{green}
+\end{pspicture}
+\end{document}

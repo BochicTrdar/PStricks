@@ -1,0 +1,117 @@
+% Segunda Lei de Kepler.
+% 25/05/2004 at 16:00h.
+% Gambelas, Faro
+% Written by Tordar
+
+\documentclass[12pt,a4paper]{article}
+
+\pagestyle{empty} 
+
+\usepackage{graphicx}
+\usepackage{marvosym}
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(-2,-2)(2,2)
+\psset{unit=10mm}
+\savedata{\orbita}[{ 
+{    10.0000,         0},
+{     9.8582,    1.0864},
+{     9.4488,    2.1431},
+{     8.7639,    3.1368},
+{     7.7911,    4.0263},
+{     6.5122,    4.7558},
+{     4.9046,    5.2409},
+{     2.9484,    5.3421},
+{     0.6617,    4.8005},
+{    -1.7058,    3.1148},
+{    -2.9006,   -0.1827},
+{    -1.5197,   -3.3539},
+{     0.8467,   -4.9180},
+{     3.0942,   -5.4062},
+{     5.0140,   -5.2839},
+{     6.5924,   -4.7916},
+{     7.8486,   -4.0611},
+{     8.8033,   -3.1729},
+{     9.4734,   -2.1810},
+{     9.8700,   -1.1258},
+{    10.0000,   -0.0399},}]
+\dataplot[plotstyle=curve,linewidth=2pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{\orbita}
+\pspolygon[linewidth=0mm,linecolor=lightgray,fillstyle=solid,fillcolor=lightgray](0,0)(9.9614,-0.6389)(10,0)(9.9614,0.6389)
+\pscurve[linewidth=1mm,linecolor=blue]{->}(9.9614,-0.6389)(10,0)(9.9614,0.6389)
+\pspolygon[linewidth=0mm,linecolor=lightgray,fillstyle=solid,fillcolor=lightgray](0,0)
+(-1.8574,2.9300)
+(-1.9959,2.7447)
+(-2.1281,2.5507)
+(-2.2530,    2.3480)
+(-2.3697,    2.1368)
+(-2.4773,    1.9173)
+(-2.5749,    1.6900)
+(-2.6614,    1.4556)
+(-2.7360,    1.2146)
+(-2.7979,    0.9679)
+(-2.8463,    0.7166)
+(-2.8806,    0.4617)
+(-2.9004,    0.2045)
+(-2.9054,   -0.0537)
+(-2.8957,   -0.3117)
+(-2.8713,   -0.5681)
+(-2.8326,   -0.8216)
+(-2.7801,   -1.0712)
+(-2.7144,   -1.3156)
+(-2.6364,   -1.5541)
+(-2.5469,   -1.7858)
+(-2.4468,   -2.0101)
+(-2.3371,   -2.2265)
+(-2.2187,   -2.4346)
+(-2.0925,   -2.6342)
+(-1.9595,   -2.8252)
+(-1.8204,   -3.0074)
+\pscurve[linewidth=1mm,linecolor=blue]{->}(-1.8574,2.9300)(-1.9959,2.7447)(-2.1281,2.5507)
+(-2.2530,    2.3480)
+(-2.3697,    2.1368)
+(-2.4773,    1.9173)
+(-2.5749,    1.6900)
+(-2.6614,    1.4556)
+(-2.7360,    1.2146)
+(-2.7979,    0.9679)
+(-2.8463,    0.7166)
+(-2.8806,    0.4617)
+(-2.9004,    0.2045)
+(-2.9054,   -0.0537)
+(-2.8957,   -0.3117)
+(-2.8713,   -0.5681)
+(-2.8326,   -0.8216)
+(-2.7801,   -1.0712)
+(-2.7144,   -1.3156)
+(-2.6364,   -1.5541)
+(-2.5469,   -1.7858)
+(-2.4468,   -2.0101)
+(-2.3371,   -2.2265)
+(-2.2187,   -2.4346)
+(-2.0925,   -2.6342)
+(-1.9595,   -2.8252)
+(-1.8204,   -3.0074)
+\pscircle[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white]( 9.8582, 1.0864){0.45}
+\pscircle[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white]( 9.8700,-1.1258){0.45}
+\pscircle[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white](-1.7058, 3.1148){0.45}
+\pscircle[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white](-1.5197,-3.3539){0.45}
+\pscircle[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white](0,0){0.45}
+\rput{0}( 9.8582, 1.0864){\scalebox{2.5}{\Mundus}}
+\rput{0}( 9.8700,-1.1258){\scalebox{2.5}{\Mundus}} 
+\rput{0}(-1.7058, 3.1148){\scalebox{2.5}{\Mundus}}
+\rput{0}(-1.5197,-3.3539){\scalebox{2.5}{\Mundus}}
+%\rput{0}(0,0){\scalebox{3.5}{$\odot$}}
+\pscircle[linewidth=0.1mm,
+linecolor=yellow,
+fillstyle=ccslope,
+slopebegin=red,
+slopeend=yellow,
+slopecenter=0.65 0.65,
+slopesteps=25](0,0){0.7}  
+\end{pspicture}
+\end{document} 

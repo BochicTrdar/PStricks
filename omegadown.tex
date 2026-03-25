@@ -1,0 +1,41 @@
+%Pndulo cnico: velocidade angular para baixo
+%09/07/2003 at 14:00h.
+%Penha, Faro
+%Written by Tordar
+
+%%BoundingBox: 250 240 550 650
+
+\documentclass[12pt,a4paper]{article}
+
+\pagestyle{empty} 
+
+ 
+
+\usepackage{pst-3dplot}
+\usepackage{pifont}
+
+\psset{subgriddiv=0,griddots=5}
+
+\begin{document}
+
+\begin{pspicture}(-10,-10)(10,10)
+%\psgrid
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=6,yMin=0,yMax=6,zMin=0,zMax=6,drawing=false]
+\pstThreeDLine[linewidth=2mm,linecolor=black,arrows=->](0,0,0)(0,0,-5)
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](-6,0,0)(6,0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,-6,0)(0,6,0)
+\psset{linewidth=0.5mm,linecolor=black,linestyle=dashed}
+\pstThreeDCircle(0,0,0)(4,0,0)(0,4,0)
+\psset{linewidth=1mm,beginAngle=10,endAngle=80,linestyle=solid,arrows=->}
+\pstThreeDCircle(0,0,0)(5,0,0)(0,5,0)
+\psset{beginAngle=190,endAngle=260,linestyle=solid,arrows=->}
+\pstThreeDCircle(0,0,0)(5,0,0)(0,5,0)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,arrows=->](0,0,0)(0,0,10)
+\pstPlanePut[plane=xz](6.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,6.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,10.5){\scalebox{1.5}{$Z$}}
+\rput(0.7,-4.5){\scalebox{2}{$\vomg$}}
+\end{pspicture}
+
+\end{document}

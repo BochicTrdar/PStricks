@@ -1,0 +1,37 @@
+% Faro, qua 21 jan 2026 20:51:17 
+% Cinemática do Ponto Material: Projécteis
+% Written by TORDAR 
+% pstricks2pdf.sh projectilJoaoJoana
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{graphicx} 
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pstricks-add}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\psset{xunit=5mm, yunit=5mm}
+\begin{pspicture}(0,0)(30,15)
+\fileplot[linewidth=0.5pt,linecolor=black,linestyle=dashed]{projectilJoaoJoana.dat}
+\psarc[linewidth=2pt,arcsepA=3pt,arcsepB=3pt]{->}(0,0){3}{0}{50}
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=3mm 1mm]{-}(0,11.14)(27.85,11.14)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=3mm 1mm]{-}(27.85,0)(27.85,11.14)
+\psline[linewidth=3pt,linecolor=blue]{<->}(0,15)(0,0)(30,0)
+\psline[linewidth=3pt,linecolor=black]{<->}(0,-2.5)(27.85,-2.5)
+\psline[linewidth=3pt,linecolor=black]{<->}(-2.5,0)(-2.5,11.14)
+\qdisk(27.85,11.14){1mm}
+\rput{0}(31,0){\scalebox{1.8}{$X$}}
+\rput{0}(-1,15){\scalebox{1.8}{$Y$}}
+\rput{0}(15,-5){\scalebox{1.6}{$x_1$}}
+\rput{0}(-5,7.5){\scalebox{1.6}{$y_1$}}
+\SpecialCoor
+\rput{0}(3.5;25){\scalebox{1.6}{$\theta$}}
+\rput{0}(4.5;50){\scalebox{1.6}{$\mathbf{v}_0$}}
+\psline[linewidth=3pt,linecolor=blue]{->}(4;50)
+\end{pspicture}
+
+\end{document}

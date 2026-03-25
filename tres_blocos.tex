@@ -1,0 +1,47 @@
+% Gambelas, 07/06/2004 at 12:30  
+% Dinâmica do Ponto Material: Três blocos ligados
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+
+\null\vskip4cm
+\begin{pspicture}(-0.2,-0.1)(1.4,0.5)
+\psset{unit=10cm}
+%Ligações entre os blocos:
+\psline[linewidth=3pt,linecolor=black](0.2,0.1)(0.4,0.1)
+\psline[linewidth=3pt,linecolor=black](0.6,0.1)(0.8,0.1)
+%Força sobre m1:
+\psline[linewidth=5pt,linecolor=blue]{->}(1.0,0.1)(1.2,0.1)
+%Bloco de massa m3:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0,0)(0.1,0.2)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.1,0)(0.2,0.2)
+\psframe[linewidth=0.5mm,dimen=middle](0,0)(0.2,0.2)
+%Bloco de massa m2:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.4,0)(0.5,0.2)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.5,0)(0.6,0.2)
+\psframe[linewidth=0.5mm,dimen=middle](0.4,0)(0.6,0.2)
+%Bloco de massa m1:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.8,0)(0.9,0.2)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.9,0)(1.0,0.2)
+\psframe[linewidth=0.5mm,dimen=middle](0.8,0)(1.0,0.2)
+%Superfície horizontal:
+\psframe[linewidth=1pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](-0.1,0)(1.1,-0.1)
+\psline[linewidth=3pt,linecolor=black](-0.15,0)(1.15,0)
+%Textos:
+\rput{0}(0.1,0.25){\scalebox{1.5}{$m_2$}}
+\rput{0}(0.5,0.25){\scalebox{1.5}{$m_2$}}
+\rput{0}(0.9,0.25){\scalebox{1.5}{$m_1$}}
+\rput{0}(1.25,0.1){\scalebox{1.5}{$\mathbf{T}_1$}}
+\end{pspicture}
+
+\end{document} 
