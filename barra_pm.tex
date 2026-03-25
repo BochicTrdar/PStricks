@@ -1,0 +1,41 @@
+% Momento de inércia de uma barra horizontal + um ponto material no extremo
+% Faro, Qua Abr  1 14:16:59 WEST 2020
+% Written by Tordar
+
+\documentclass[12pt,a4paper]{article}
+
+\pagestyle{empty} 
+
+ 
+
+\usepackage{graphicx}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+
+\begin{document}
+
+\begin{pspicture}(-3,-2.5)(3,4.25)
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=6,yMin=0,yMax=6,zMin=0,zMax=6,drawing=false]
+%\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+%\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(6, 0,0)
+%\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,12,0)
+%\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0, 0,6)
+\pstThreeDLine[linewidth=3mm,linecolor=gray,arrows=c-c](0,0,0)(0,10,0)
+\pstThreeDLine[linewidth=0.5mm,arrows=-,linecolor=black,linestyle=dashed](0,0,0.3)(0,0,4)
+\pstThreeDLine[linewidth=0.5mm,arrows=-,linecolor=black,linestyle=dashed](0,0,-3)(0,0,-0.3)
+\pstThreeDLine[linewidth=1mm,linecolor=black,arrows=<->](0,0,3)(0,10,3)
+\pstThreeDLine[linewidth=0.5mm,linecolor=black,linestyle=dashed](0,10,4)(0,10,0)
+\pstPlanePut[plane=yz](0,5,3.5){\scalebox{1.5}{$L$}}
+\pstPlanePut[plane=yz](0,9.5,-1){\scalebox{1.5}{$m$}}
+\psset{linewidth=0.5mm,beginAngle=330,endAngle=30,linestyle=dashed,arrows=->}
+\pstThreeDCircle(0,0,1)(0.5,0,1)(0,0.5,1)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=white,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](7.06,-3.5){0.3}
+\end{pspicture}
+
+\end{document}

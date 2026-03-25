@@ -1,37 +1,33 @@
-\documentclass[12pt]{article}
-
-%Barra metalica
-%Faro, Sun Mar  2 22:20:04 WET 2014
+%Momento de inércia de uma barra horizontal.
+%19/06/2003 at 16:30h.
+%Penha, Faro
 %Written by Tordar
 
-\usepackage{graphicx}
-\usepackage{pst-all}
-\usepackage{pst-slpe}
+%%BoundingBox: 65 400 465 710
 
+\documentclass[12pt,a4paper]{article}
 
+\pagestyle{empty} 
+
+ 
+
+\usepackage{pst-3dplot}
 
 \begin{document}
 
-\pagestyle{empty}
-
-\begin{pspicture}(-4,-4)(4,4)
-\pscircle[linewidth=0.1mm,linecolor=black,
-fillstyle=ccslope,slopebegin=white,slopeend=black,slopecenter=0.65 0.65,slopesteps=25](-4,0){0.5}
-\pscircle[linewidth=0.1mm,linecolor=black,
-fillstyle=ccslope,slopebegin=white,slopeend=black,slopecenter=0.65 0.65,slopesteps=25]( 4,0){0.5}
-\psline[linewidth=1mm,linecolor=blue,arrows=<->](-4,0)(0,0)
-\psline[linewidth=1mm,linecolor=blue,arrows=<->]( 4,0)(0,0)
-\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed](0,-4)(0,4)
-\rput{0}(-4, 1){\scalebox{1.5}{$+e$}}
-\rput{0}( 4, 1){\scalebox{1.5}{$+e$}}
-\rput{0}(-4,-1){\scalebox{1.5}{$P_1$}}
-\rput{0}( 4,-1){\scalebox{1.5}{$P_2$}}
-\rput{0}( 0, 3){\scalebox{5}{$\cdot$}}
-\rput{0}( 0,-3){\scalebox{5}{$\cdot$}}
-\rput{0}(0.5, 3){\scalebox{1.5}{$P_3$}}
-\rput{0}(0.5,-3){\scalebox{1.5}{$P_4$}}
-\rput{0}( 2,-0.7){\scalebox{2}{$a$}}
-\rput{0}(-2,-0.7){\scalebox{2}{$a$}}
+\begin{pspicture}(-3,-2.5)(3,4.25)
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=6,yMin=0,yMax=6,zMin=0,zMax=6,drawing=false]
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(6, 0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,12,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0, 0,6)
+\pstThreeDLine[linewidth=3mm,linecolor=gray,arrows=c-c]( 0,0,0)(0,10,0)
+\pstThreeDLine[linewidth=1mm,linecolor=black,arrows=<->](0,0,3)(0,10,3)
+\pstThreeDLine[linewidth=0.5mm,linecolor=black,linestyle=dashed](0,10,4)(0,10,0)
+\pstPlanePut[plane=yz](0, 5,3.5){\scalebox{1.5}{$l$}}
+\pstPlanePut[plane=xz](6.7, 0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,12.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0, 0,6.5){\scalebox{1.5}{$Z$}}
 \end{pspicture}
 
 \end{document}

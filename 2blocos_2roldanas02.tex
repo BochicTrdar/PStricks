@@ -1,0 +1,115 @@
+% Movimento Dependente: 2 blocos e 2 roldanas - auxiliar
+% Faro, dom 07 dez 2025 10:16:53 WET
+% Written by Tordar 
+% pstricks2pdf.sh 2blocos_2roldanas02
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Roldana
+\newcommand{\roldana}[5]{% x, y, radius, hole-radius, color
+ \pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](#1,#2){#3}
+  \ifnum\pdfstrcmp{#4}{0}=0\relax\else
+    \pscircle[fillcolor=white,fillstyle=solid,linewidth=0.8pt](#1,#2){#4}
+  \fi
+  \pscircle[linewidth=1pt,linecolor=#5!50!black](#1,#2){#3}
+}
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+
+\begin{document}
+
+% Raio de cada roldana:
+\evaldef\ther{0.75}
+% Altura e largura de cada bloco: 
+\evaldef\thew{1.5}
+\evaldef\theh{1.5}
+% Coordenadas do primeiro bloco: 
+\evaldef\xbi{3}
+\evaldef\ybi{3}
+% Posição da primeira roldana: 
+\evaldef\xri{\xbi+\ther}
+\evaldef\yri{7}
+% Posição da segunda roldana: 
+\evaldef\xrii{\xbi+3*\ther}
+\evaldef\yrii{5}
+% Coordenadas do segundo bloco: 
+\evaldef\xbii{\xrii}
+\evaldef\ybii{1}
+% Coordenadas auxiliares:
+\evaldef\yfi{\ybi+\theh/2}
+\evaldef\xfii{\xrii-\ther}
+\evaldef\yfii{\yrii}
+\evaldef\xfiii{\xrii+\ther}
+\evaldef\yfiv{\ybii+\theh/2}
+\evaldef\xfv{\xrii+\ther}
+\evaldef\xa{\xbi-0.75*\thew}
+\evaldef\xb{\xbii+0.75*\thew}
+\evaldef\xaf{\xbi-0.2}
+\evaldef\yaf{\ybi+0.6*\theh}
+\evaldef\xbf{\xaf}
+\evaldef\ybf{\yri}
+\evaldef\xcf{\xri+\ther+0.2}
+\evaldef\ycf{\yri}
+\evaldef\xdf{\xrii-\ther-0.2}
+\evaldef\ydf{\yrii}
+\evaldef\xef{\xrii+\ther+0.2}
+\evaldef\yef{\yrii}
+\evaldef\xff{\xef}
+\evaldef\yff{8.7}
+% Seta dupla 1:
+\evaldef\xarri{\xri-\ther-0.8}
+\evaldef\xxi{\xarri-0.4}
+\evaldef\yxi{0.5*(\yri+9)}
+% Seta dupla 2:
+\evaldef\xarrii{\xrii+\ther+0.8}
+\evaldef\yarrii{\ybii+\theh/2}
+\evaldef\xxii{\xarrii+0.4}
+\evaldef\yxii{0.5*(\yrii+\yarrii)}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Teto: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](1.5,9)(8.5,10) 
+% Blocos: 
+\bloco[linewidth=2pt,linecolor=black]{\xbi}{\ybi}{\thew}{\theh} % 1
+\bloco[linewidth=2pt,linecolor=black]{\xbii}{\ybii}{\thew}{\theh} % 2
+% Roldanas e fios:
+\roldana{\xri}{\yri}{\ther}{0.05}{gray} % 1 
+\psline[linewidth=2pt,linecolor=black](\xri,\yri)(\xri,9)         % Fio teto      - roldana 1
+\psline[linewidth=2pt,linecolor=black](\xbi,\yfi)(\xbi,\yri)      % Fio bloco   1 - roldana 1
+\psline[linewidth=2pt,linecolor=black](\xfii,\yri)(\xfii,\yrii)   % Fio roldana 1 - roldana 2
+\psline[linewidth=2pt,linecolor=black](\xfv,\yrii)(\xfv,9)        % Fio teto      - roldana 2
+\roldana{\xrii}{\yrii}{\ther}{0.05}{gray} % 2
+\psline[linewidth=2pt,linecolor=black](\xbii,\yfiv)(\xbii,\yrii) % Fio bloco 2   - roldana 2
+% Texto: 
+\rput{0}(\xa,\ybi){\scalebox{1.5}{$A$}}
+\rput{0}(\xb,\ybii){\scalebox{1.5}{$B$}}
+\rput{0}(\xaf,\yaf){\scalebox{1.2}{$a$}}
+\rput{0}(\xbf,\ybf){\scalebox{1.2}{$b$}}
+\rput{0}(\xcf,\ycf){\scalebox{1.2}{$c$}}
+\rput{0}(\xdf,\ydf){\scalebox{1.2}{$d$}}
+\rput{0}(\xef,\yef){\scalebox{1.2}{$e$}}
+\rput{0}(\xff,\yff){\scalebox{1.2}{$f$}}
+\rput{0}(\xxi,\yxi){\scalebox{1.5}{$x_1$}}
+\rput{0}(\xxii,\yxii){\scalebox{1.5}{$x_2$}}
+% Setas duplas: 
+\psline[linewidth=2pt,linecolor=black]{<->}(\xarri,\yri)(\xarri,9) 
+\psline[linewidth=2pt,linecolor=black]{<->}(\xarrii,\yarrii)(\xarrii,\yrii) 
+\end{pspicture}
+
+\end{document}

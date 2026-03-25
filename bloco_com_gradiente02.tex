@@ -1,0 +1,22 @@
+% DeepSeek 
+% Faro, sáb 06 dez 2025 20:02:09 
+% pstricks2pdf.sh bloco_com_gradiente02
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pst-grad}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(-3,-2)(3,2)
+  % Box with gradient from white to black, centered
+  \psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.5,
+           gradbegin=black,gradend=white,gradlines=150,gradangle=90](-2.5,-1.5)(2.5,1.5)
+  
+  % Alternative with custom colors
+  % \psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.5,
+  %          gradbegin=yellow,gradend=purple,gradlines=200](-2.5,-1.5)(2.5,1.5)
+\end{pspicture}
+
+\end{document}

@@ -1,0 +1,104 @@
+% Dinâmica: 3 blocos e 3 tensões 
+% Faro, qua 10 dez 2025 19:25:06 
+% Written by Tordar 
+% pstricks2pdf.sh 3blocos_3tensoes
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pstricks-add}
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+
+\begin{document}
+
+% Separação entre blocos: 
+\evaldef\mydelta{4.5}
+% Altura e largura de cada bloco: 
+\evaldef\wb{2}
+\evaldef\hb{2}
+% Coordenadas do primeiro bloco: 
+\evaldef\xbi{1}
+\evaldef\ybi{2+\hb/2}
+% Coordenadas do segundo bloco: 
+\evaldef\xbii{\xbi+\mydelta}
+\evaldef\ybii{\ybi}
+% Coordenadas do terceiro bloco: 
+\evaldef\xbiii{\xbii+\mydelta}
+\evaldef\ybiii{\ybi}
+% Coordenadas das massas:
+\evaldef\ymi{\ybi+0.75*\hb}
+\evaldef\ymii{\ybii+0.75*\hb}
+\evaldef\ymiii{\ybiii+0.75*\hb}
+% Fio: 
+\evaldef\xf{\xbiii+0.5*\mydelta}
+% Tensões: 
+% Coordenadas para o fim:
+\evaldef\xti{\xbi+0.45*\mydelta}
+\evaldef\xmti{\xbii-0.45*\mydelta}
+\evaldef\xtii{\xbii+0.45*\mydelta}
+\evaldef\xmtii{\xbiii-0.45*\mydelta}
+\evaldef\xtiii{\xbiii+0.45*\mydelta}
+% Coordenadas para o texto:
+\evaldef\xum{\xbi+0.7*\wb}
+\evaldef\yum{\ybi+0.2*\hb}
+\evaldef\xdois{\xbii+0.7*\wb}
+\evaldef\ydois{\ybii+0.2*\hb}
+\evaldef\xtres{\xbiii+0.7*\wb}
+\evaldef\ytres{\ybiii+0.2*\hb}
+\evaldef\xmum{\xbii-0.8*\wb}
+\evaldef\ymum{\ybi-0.2*\hb}
+\evaldef\xmdois{\xbiii-0.8*\wb}
+% Aceleração:
+% Coordenadas do texto:
+\evaldef\ya{\ybii+1.5*\hb}
+% Coordenadas da seta: 
+\evaldef\xvas{\xbii-1}
+\evaldef\xvae{\xbii+1}
+\evaldef\yva{\ya-0.3}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Chão: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](0,0)(12,2) 
+% Fio: 
+\psline[linewidth=2pt,linecolor=black](\xbi,\ybi)(\xf,\ybi)
+% Tensões: 
+\psline[linewidth=3pt,linecolor=blue]{->}(\xbi,\ybi)(\xti,\ybi) % T1
+\psline[linewidth=3pt,linecolor=blue]{->}(\xbii,\ybi)(\xmti,\ybi) % -T1
+\psline[linewidth=3pt,linecolor=blue]{->}(\xbii,\ybi)(\xtii,\ybi) % T2
+\psline[linewidth=3pt,linecolor=blue]{->}(\xbiii,\ybi)(\xmtii,\ybi) % -T2
+\psline[linewidth=3pt,linecolor=blue]{->}(\xbiii,\ybi)(\xtiii,\ybi) % T3
+% Blocos: 
+\bloco[linewidth=2pt,linecolor=black]{\xbi}{\ybi}{\wb}{\hb}
+\bloco[linewidth=2pt,linecolor=black]{\xbii}{\ybii}{\wb}{\hb}
+\bloco[linewidth=2pt,linecolor=black]{\xbiii}{\ybiii}{\wb}{\hb}
+% Aceleração: 
+\psline[linewidth=3pt,linecolor=blue]{->}(\xvas,\yva)(\xvae,\yva) 
+% Texto: 
+\rput{0}(\xbi,\ymi){\scalebox{1.5}{$m_1$}}
+\rput{0}(\xbii,\ymii){\scalebox{1.5}{$m_2$}}
+\rput{0}(\xbiii,\ymiii){\scalebox{1.5}{$m_3$}}
+\rput{0}(\xum,\yum){\scalebox{1.5}{$\mathbf{T}_1$}}
+\rput{0}(\xmum,\ymum){\scalebox{1.5}{$-\mathbf{T}_1$}}
+\rput{0}(\xdois,\yum){\scalebox{1.5}{$\mathbf{T}_2$}}
+\rput{0}(\xmdois,\ymum){\scalebox{1.5}{$-\mathbf{T}_2$}}
+\rput{0}(\xtres,\yum){\scalebox{1.5}{$\mathbf{T}_3$}}
+\rput{0}(\xbii,\ya){\scalebox{1.5}{$\mathbf{a}$}}
+\end{pspicture}
+
+\end{document}

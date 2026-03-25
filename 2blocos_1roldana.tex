@@ -1,0 +1,83 @@
+% Dinâmica: 2 blocos e 1 roldana
+% Faro, qui 08 jan 2026 19:56:23   
+% Written by Tordar 
+% pstricks2pdf.sh 2blocos_1roldana
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pstricks-add}
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+% Roldana
+\newcommand{\roldana}[5]{% x, y, radius, hole-radius, color
+ \pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](#1,#2){#3}
+  \ifnum\pdfstrcmp{#4}{0}=0\relax\else
+    \pscircle[fillcolor=white,fillstyle=solid,linewidth=0.8pt](#1,#2){#4}
+  \fi
+  \pscircle[linewidth=1pt,linecolor=#5!50!black](#1,#2){#3}
+}
+
+\begin{document}
+
+% Coordenadas do teto: 
+\evaldef\xi{2}
+\evaldef\xii{8}
+\evaldef\xiii{\xi-1}
+\evaldef\xiv{\xii+1}
+\evaldef\yi{9}
+\evaldef\yii{10}
+% Roldana: 
+\evaldef\ther{1}
+\evaldef\xr{5}
+\evaldef\yr{7}
+\evaldef\xmr{\xr+1.5*\ther}
+% Altura e largura do bloco 1: 
+\evaldef\wbi{1.5}
+\evaldef\hbi{2}
+% Altura e largura do bloco 2: 
+\evaldef\wbii{1.5}
+\evaldef\hbii{2}
+% Coordenadas do bloco 1: 
+\evaldef\xbi{\xr-\ther}
+\evaldef\ybi{\yr-3}
+\evaldef\xmi{\xbi-0.8*\wbi}
+% Coordenadas do bloco 2: 
+\evaldef\xbii{\xr+\ther}
+\evaldef\ybii{\yr-5}
+\evaldef\xmii{\xbii+0.8*\wbii}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Teto: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](\xi,\yi)(\xii,\yii) 
+\psline[linewidth=2pt,linecolor=black](\xiii,\yi)(\xiv,\yi) 
+% Roldana: 
+\roldana{\xr}{\yr}{\ther}{0.05}{gray} 
+\psline[linewidth=2pt,linecolor=black](\xr,\yi)(\xr,\yr) 
+% Blocos: 
+\psline[linewidth=2pt,linecolor=black](\xbi,\yr)(\xbi,\ybi)
+\psline[linewidth=2pt,linecolor=black](\xbii,\yr)(\xbii,\ybii)
+\bloco[linewidth=2pt,linecolor=black]{\xbi}{\ybi}{\wbi}{\hbi}
+\bloco[linewidth=2pt,linecolor=black]{\xbii}{\ybii}{\wbii}{\hbii}
+% Texto: 
+\rput{0}(\xmi,\ybi){\scalebox{1.5}{$m_1$}}
+\rput{0}(\xmii,\ybii){\scalebox{1.5}{$m_2$}}
+\rput{0}(\xmr,\yr){\scalebox{1.5}{$m_R$}}
+\end{pspicture}
+
+\end{document}

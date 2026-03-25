@@ -1,0 +1,81 @@
+% Movimento Dependente: 2 blocos e 2 roldanas 
+% Faro, sáb 06 dez 2025 20:54:15 
+% Written by Tordar 
+% pstricks2pdf.sh 2blocos_2roldanas
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Roldana
+\newcommand{\roldana}[5]{% x, y, radius, hole-radius, color
+ \pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](#1,#2){#3}
+  \ifnum\pdfstrcmp{#4}{0}=0\relax\else
+    \pscircle[fillcolor=white,fillstyle=solid,linewidth=0.8pt](#1,#2){#4}
+  \fi
+  \pscircle[linewidth=1pt,linecolor=#5!50!black](#1,#2){#3}
+}
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+
+\begin{document}
+
+% Raio de cada roldana:
+\evaldef\theri{0.75}
+% Altura e largura de cada bloco: 
+\evaldef\thew{1.5}
+\evaldef\theh{1.5}
+% Coordenadas do primeiro bloco: 
+\evaldef\thexii{3}
+\evaldef\theyii{3}
+% Posição da primeira roldana: 
+\evaldef\theyiii{7}
+\evaldef\thexiii{\thexii+\theri}
+% Posição da segunda roldana: 
+\evaldef\theyv{5}
+\evaldef\thexv{\thexii+3*\theri}
+% Coordenadas do segundo bloco: 
+\evaldef\xsb{\thexv}
+\evaldef\ysb{1}
+% Coordenadas auxiliares:
+\evaldef\theyiv{\theyii+\theh/2}
+\evaldef\xavi{\thexiii+\theri}
+\evaldef\xavii{\thexv+\theri}
+\evaldef\xaviii{\ysb+\theh/2}
+\evaldef\xaix{\thexii-0.75*\thew}
+\evaldef\xax{\xsb+0.75*\thew}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Teto: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](1.5,9)(8.5,10) 
+\psline[linewidth=2pt,linecolor=black](\thexiii,\theyiii)(\thexiii,9) 
+% Blocos: 
+\bloco[linewidth=2pt,linecolor=black]{\thexii}{\theyii}{\thew}{\theh}
+\bloco[linewidth=2pt,linecolor=black]{\xsb}{\ysb}{\thew}{\theh}
+% Roldanas e fios:
+\roldana{\thexiii}{\theyiii}{\theri}{0.05}{gray} % 1 
+\psline[linewidth=2pt,linecolor=black](\thexiii,\theyiii)(\thexiii,9)     % Fio teto      - roldana 1
+\psline[linewidth=2pt,linecolor=black](\thexii,\theyiv)(\thexii,\theyiii) % Fio bloco   1 - roldana 1
+\psline[linewidth=2pt,linecolor=black](\xavi,\theyiii)(\xavi,\theyv)      % Fio roldana 1 - roldana 2
+\psline[linewidth=2pt,linecolor=black](\xavii,\theyv)(\xavii,9)           % Fio teto      - roldana 2
+\roldana{\thexv}{\theyv}{\theri}{0.05}{gray} % 2 
+\psline[linewidth=2pt,linecolor=black](\xsb,\theyv)(\xsb,\xaviii)         % Fio bloco 2   - roldana 2
+\rput{0}(\xaix,\theyii){\scalebox{1.5}{$A$}}
+\rput{0}(\xax,\ysb){\scalebox{1.5}{$B$}}
+\end{pspicture}
+
+\end{document}

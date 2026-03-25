@@ -1,0 +1,133 @@
+% Movimento Dependente: 3 blocos e 4 roldanas 
+% Faro, dom 07 dez 2025 15:37:47 
+% Written by Tordar 
+% pstricks2pdf.sh 3blocos_4roldanas
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Roldana
+\newcommand{\roldana}[5]{% x, y, radius, hole-radius, color
+ \pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](#1,#2){#3}
+  \ifnum\pdfstrcmp{#4}{0}=0\relax\else
+    \pscircle[fillcolor=white,fillstyle=solid,linewidth=0.8pt](#1,#2){#4}
+  \fi
+  \pscircle[linewidth=1pt,linecolor=#5!50!black](#1,#2){#3}
+}
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+
+\begin{document}
+
+% Raio de cada roldana:
+\evaldef\ther{0.75}
+% Altura e largura de cada bloco: 
+\evaldef\thew{1.5}
+\evaldef\theh{1.5}
+% Coordenadas da corda: 
+\evaldef\xi{2}
+\evaldef\yi{4}
+\evaldef\xii{\xi+\ther}
+\evaldef\yii{\yi-\ther}
+\evaldef\xiii{\xii+\ther}
+\evaldef\yiii{\yi}
+\evaldef\xiv{\xiii}
+\evaldef\yiv{7}
+\evaldef\xv{\xiv+\ther}
+\evaldef\yv{\yiv+\ther}
+\evaldef\xvi{\xv+\ther}
+\evaldef\yvi{\yv-\ther}
+\evaldef\xvii{\xvi}
+\evaldef\yvii{3}
+\evaldef\xviii{\xvii+\ther}
+\evaldef\yviii{\yvii-\ther}
+\evaldef\xix{\xviii+\ther}
+\evaldef\yix{\yviii+\ther}
+\evaldef\xx{\xix}
+\evaldef\yx{6}
+\evaldef\xxi{\xx+\ther}
+\evaldef\yxi{\yx+\ther}
+\evaldef\xxii{\xxi+\ther}
+\evaldef\yxii{\yxi-\ther}
+\evaldef\xxiii{\xxii}
+\evaldef\yxiii{4}
+% Coordenadas da primeira roldana: 
+\evaldef\xri{\xii}
+\evaldef\yri{\yi}
+% Coordenadas da segunda roldana: 
+\evaldef\xrii{\xv}
+\evaldef\yrii{\yiv}
+% Coordenadas da terceira roldana: 
+\evaldef\xriii{\xviii}
+\evaldef\yriii{\yvii}
+% Coordenadas da quarta roldana: 
+\evaldef\xriv{\xxi}
+\evaldef\yriv{\yx}
+% Coordenadas do primeiro bloco: 
+\evaldef\xbi{\xri}
+\evaldef\ybi{2}
+% Coordenadas do segundo bloco: 
+\evaldef\xbii{\xriii}
+\evaldef\ybii{1}
+% Coordenadas do terceiro bloco: 
+\evaldef\xbiii{\xriv+\ther}
+\evaldef\ybiii{3.5}
+% Coordenadas para fios roldana - teto:
+\evaldef\xrti{\xrii}
+\evaldef\yrti{\yrii}
+\evaldef\xrtii{\xriv}
+\evaldef\yrtii{\yriv}
+% Coordenadas para fios roldana - bloco:
+\evaldef\xrbi{\xri}
+\evaldef\yrbi{\yri}\evaldef\yrbie{\ybi+\theh/2}
+\evaldef\xrbii{\xriii}
+\evaldef\yrbii{\yriii}\evaldef\yrbiie{\ybii+\theh/2}
+% Coordenadas para identificação dos blocos: 
+\evaldef\xba{\xbi}
+\evaldef\yba{\ybi-0.75*\theh}
+\evaldef\xbb{\xbii}
+\evaldef\ybb{\ybii-0.75*\theh}
+\evaldef\xbc{\xbiii}
+\evaldef\ybc{\ybiii-0.75*\theh}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Teto: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](1.5,9)(8.5,10) 
+% Corda: 
+\psline[linewidth=2pt,linecolor=black,linearc=\ther](\xi,9)(\xi,\yi)(\xii,\yii)(\xiii,\yiii)(\xiv,\yiv)(\xv,\yv)(\xvi,\yvi)(\xvii,\yvii)(\xviii,\yviii)(\xix,\yix)(\xx,\yx)(\xxi,\yxi)(\xxii,\yxii)(\xxiii,\yxiii)
+% Roldanas:
+\roldana{\xri}{\yri}{\ther}{0.05}{gray} % 1 
+\roldana{\xrii}{\yrii}{\ther}{0.05}{gray} % 2
+\roldana{\xriii}{\yriii}{\ther}{0.05}{gray} % 3
+\roldana{\xriv}{\yriv}{\ther}{0.05}{gray} % 3
+% Fios roldana - teto: 
+\psline[linewidth=2pt,linecolor=black](\xrti,\yrti)(\xrti,9)
+\psline[linewidth=2pt,linecolor=black](\xrtii,\yrtii)(\xrtii,9)
+% Blocos: 
+\bloco[linewidth=2pt,linecolor=black]{\xbi}{\ybi}{\thew}{\theh}
+\bloco[linewidth=2pt,linecolor=black]{\xbii}{\ybii}{\thew}{\theh}
+\bloco[linewidth=2pt,linecolor=black]{\xbiii}{\ybiii}{\thew}{\theh}
+% Fios roldana - bloco:
+\psline[linewidth=2pt,linecolor=black](\xrbi,\yrbi)(\xrbi,\yrbie) 
+\psline[linewidth=2pt,linecolor=black](\xrbii,\yrbii)(\xrbii,\yrbiie)
+\rput{0}(\xba,\yba){\scalebox{1.5}{$A$}}
+\rput{0}(\xbb,\ybb){\scalebox{1.5}{$B$}}
+\rput{0}(\xbc,\ybc){\scalebox{1.5}{$C$}}
+\end{pspicture}
+
+\end{document}

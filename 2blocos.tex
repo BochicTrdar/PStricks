@@ -1,0 +1,86 @@
+% Dinâmica: 2 blocos (e 1 força)
+% Faro, seg 15 dez 2025 21:20:53 
+% Written by Tordar 
+% pstricks2pdf.sh 2blocos
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+\usepackage{pstricks-add}
+\usepackage{pst-slpe}
+\usepackage{graphicx}
+\input{apnum}
+
+% Bloco
+\newcommand{\bloco}[5][]{% #1=options, #2=cx, #3=cy, #4=totalWidth, #5=height
+  % Left frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=15]
+    (!#2 #4 2 div sub #3 #5 2 div sub)                     % lower-left of total area
+    (!#2 #3 #5 2 div add)                                  % upper-right of left frame (center x, top)  
+  % Right frame (half of total width, full height)
+  \psframe[linewidth=1pt,linecolor=gray,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=15]
+    (!#2 #3 #5 2 div sub)                                  % lower-left of right frame (center x, bottom)
+    (!#2 #4 2 div add #3 #5 2 div add)                     % upper-right of total area
+  \psframe[#1](!#2 #4 2 div sub #3 #5 2 div sub)(!#2 #4 2 div add #3 #5 2 div add) 
+}
+
+\begin{document}
+
+% Altura e largura do bloco inferior: 
+\evaldef\wbi{5}
+\evaldef\hbi{2}
+% Altura e largura do bloco superior: 
+\evaldef\wbii{3}
+\evaldef\hbii{1.5}
+% Coordenadas do bloco inferior: 
+\evaldef\xbi{4}
+\evaldef\ybi{2+\hbi/2}
+\evaldef\xmi{\xbi+\hbi+1}
+% Coordenadas do bloco superior: 
+\evaldef\xbii{\xbi}
+\evaldef\ybii{\ybi+\hbi/2+\hbii/2}
+\evaldef\xmii{\xbii+\hbii+1}
+% Coordenadas da força:
+\evaldef\xfe{\xbi-\wbi/2}
+\evaldef\xfs{\xfe-2}
+\evaldef\xf{(\xfs+\xfe)/2}
+\evaldef\yf{\ybi+0.5}
+% Círculo do zoom:
+\evaldef\xz{\xbi}
+\evaldef\yz{\ybi+0.5*\hbi}
+%\evaldef\xf{(\xfs+\xfe)/2}
+%\evaldef\yf{\ybi+0.5}
+% Aceleração:
+%\evaldef\xas{\xbii+0.6*\wbii}
+%\evaldef\xae{\xas+1.5}
+%\evaldef\xa{(\xas+\xae)/2}
+%\evaldef\ya{\ybii+0.5}
+
+% Let's go:
+\begin{pspicture}(0,0)(10,10)
+% Chão: 
+\psframe[linewidth=0pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](0,0)(10,2) 
+% Força: 
+\psline[linewidth=3pt,linecolor=blue]{->}(\xfs,\ybi)(\xfe,\ybi) 
+% Blocos: 
+\bloco[linewidth=2pt,linecolor=black]{\xbi}{\ybi}{\wbi}{\hbi}
+\bloco[linewidth=2pt,linecolor=black]{\xbii}{\ybii}{\wbii}{\hbii}
+% Zoom: 
+\pscircle(\xz,\yz){0.2}
+% Clipping:
+\begin{psclip}{\pscircle[linewidth=2pt](10,4){2}}
+\pspolygon[linewidth=2pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](8,6)(12,6)(12,5)(11,4)(10,5.5)(8.5,4.2)(8,5)
+\pspolygon[linewidth=2pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45](8,2)(12,2)(12,4)(11.5,4.5)(9.5,4)(8.5,4.5)(8,4)
+\end{psclip}
+% Par de forças de atrito: 
+\psline[linewidth=3pt,linecolor=blue]{->}(11,5)(13,5)\rput{0}(12,5.5){\scalebox{1.5}{$\mathbf{F}_{at}$}}
+\psline[linewidth=3pt,linecolor=blue]{<-}(9,2.5)(11,2.5)\rput*{0}(10,3){\scalebox{1.5}{$-\mathbf{F}_{at}$}}
+% Arco do clip ao zoom: 
+\pscurve[linewidth=2pt,linecolor=black]{->}(8.3,5)(6,7)(4,4.2)
+% Texto: 
+\rput{0}(\xmi,\ybi){\scalebox{1.5}{$m_2$}}
+\rput{0}(\xmii,\ybii){\scalebox{1.5}{$m_1$}}
+\rput{0}(\xf,\yf){\scalebox{1.5}{$\mathbf{F}$}}
+\end{pspicture}
+
+\end{document}

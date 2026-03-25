@@ -1,0 +1,63 @@
+%01/06/2004 at 17:30  
+%
+%Dinâmica do Ponto Material: 
+%Força Gravítica e Peso
+% 
+%Written by TORDAR 
+
+%%BoundingBox: 85 460 570 750
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+ 
+
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(-0.2,-0.2)(2,1)
+\psset{unit=8cm}
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](-0.2,0.28)(0.85,0.28)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](-0.2,0.55)(1.9,0.55)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](0.85,0.43)(1.9,0.43)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm](0.7,0.05)(1,0.05)
+\psline[linewidth=0.5mm,linecolor=black]{<->}(-0.1,0.28)(-0.1,0.55)
+\psline[linewidth=0.5mm,linecolor=black]{<->}(1.8,0.43)(1.8,0.55)
+\psframe[linewidth=0.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0)(0.7,0.8)
+\psframe[linewidth=0.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0.05,0.05)(0.65,0.75)
+\psframe[linewidth=0.5mm,linecolor=black,fillstyle=solid,fillcolor=white](1,0)(1.7,0.8)
+\psframe[linewidth=0.5mm,linecolor=black,fillstyle=solid,fillcolor=white](1.05,0.05)(1.65,0.75)
+\psline[linewidth=1mm,linecolor=blue]{->}(0.35,0.8)(0.35,1)
+\psline[linewidth=1mm,linecolor=blue]{->}(1.35,0)(1.35,-0.2)
+\rput{0}(0.4,0.9){\scalebox{1.5}{$\va$}}
+\rput{0}(1.4,-0.1){\scalebox{1.5}{$\va$}}
+\pscoil[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm,coilarm=0.4cm,coilwidth=0.5cm]{|-|}(0.85,0.05)(0.85,0.55)
+\scalebox{1 0.4}{
+\pscoil[linewidth=2pt,linecolor=blue,coilarm=0.4cm,coilwidth=0.5cm]{|-|}(0.35,0.15)(0.35,0.65)
+                 }
+\scalebox{1 0.7}{
+\pscoil[linewidth=2pt,linecolor=blue,coilarm=0.4cm,coilwidth=0.5cm]{|-|}(1.35,0.08)(1.35,0.58)
+                 }
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.05,0.265)(0.35,0.3155)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.35,0.265)(0.61,0.315)
+\psframe[linewidth=0mm,linecolor=black,dimen=inner](0.05,0.265)(0.61,0.315)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](1.05,0.41)(1.35,0.46)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](1.35,0.41)(1.61,0.46)
+\psframe[linewidth=0mm,linecolor=black,dimen=inner](1.05,0.41)(1.61,0.46)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=black,slopeend=white,slopesteps=25](0.1,0.316)(0.35,0.416)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=black,slopesteps=25](0.35,0.316)(0.57,0.416)
+\psframe[linewidth=0mm,linecolor=black](0.1,0.316)(0.57,0.416)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=black,slopeend=white,slopesteps=25](1.1,0.46)(1.35,0.56)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=black,slopesteps=25](1.35,0.46)(1.57,0.56)
+\psframe[linewidth=0mm,linecolor=black](1.1,0.46)(1.57,0.56)
+\rput{0}(0.35,0.45){\scalebox{1.5}{$m$}}
+\rput{0}(1.35,0.6){\scalebox{1.5}{$m$}}
+\rput{90}(-0.15,0.42){\scalebox{1}{$\Delta x'$}}
+\rput{-90}(1.85,0.48){\scalebox{1}{$\Delta x''$}}
+\end{pspicture}
+\end{document} 
