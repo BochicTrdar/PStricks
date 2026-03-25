@@ -1,0 +1,52 @@
+%Gambelas, 07/06/2004 at 16:00  
+%
+%Dinâmica do Ponto Material: 
+%Dois blocos ligados por uma roldana.
+% 
+%Written by TORDAR 
+
+%%BoundingBox: 120 505 385 750
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+ 
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(0,0)(1,1)
+\psset{unit=8cm}
+%Superfície que sustenta os blocos:
+\pspolygon[linewidth=1pt,linecolor=lightgray,dimen=inner,fillstyle=hlines*,fillcolor=lightgray,hatchangle=45]
+(0,0.7)(0.7,0.7)(0.7,0)(0.6,0)(0.6,0.6)(0,0.6)
+\psline[linewidth=3pt,linecolor=black](0,0.7)(0.7,0.7)(0.7,0)
+%Fio ligando a roldana ao bloco m1:
+\psline[linewidth=1mm,linecolor=blue]{-}(0.75,0.85)(0.45,0.85)
+%Fio ligando a roldana ao bloco m2:
+\psline[linewidth=1mm,linecolor=blue]{-}(0.85,0.75)(0.85,0.4)
+%Roldana: 
+\pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](0.8,0.8){0.1}
+%Braço da roldana:
+\psline[linewidth=3pt,linecolor=blue](0.7,0.7)(0.8,0.8)
+%Centro da roldana:
+\pscircle*(0.8,0.8){0.01}
+%Bloco m1:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.15,0.7)(0.3,0.95)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.3,0.7)(0.45,0.95)
+\psframe[linewidth=0.5mm,dimen=middle](0.15,0.7)(0.45,0.95)
+%Bloco m2:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.73,0.15)(0.85,0.4)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.85,0.15)(0.97,0.4)
+\psframe[linewidth=0.5mm,dimen=middle](0.73,0.15)(0.97,0.4)
+%Textos:
+\rput{0}(0.3,1.0){\scalebox{1.5}{$m_1$}}
+\rput{0}(1.05,0.25){\scalebox{1.5}{$m_2$}}
+\end{pspicture}
+\end{document} 

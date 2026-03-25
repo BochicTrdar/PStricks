@@ -1,0 +1,54 @@
+%DISCOXY: three-dimensional disc on the XY plane.
+%16/06/2003 at 20:00h.
+%Gambelas, Faro
+%Written by Tordar
+
+%%BoundingBox: 30 430 325 685
+
+\documentclass[12pt,a4paper]{article}
+
+\pagestyle{empty} 
+
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+\usepackage{pifont}
+
+\psset{subgriddiv=0,griddots=5}
+
+\begin{document}
+
+\begin{pspicture}(-3,-2.5)(3,4.25)
+%\psgrid
+\psset{fillcolor=gray,fillstyle=solid}
+\pstThreeDCircle(0,0,-0.2)(4,0,0)(0,4,0)
+%\psset{fillstyle=radslope,slopebegin=gray,slopeend=white}
+%\psset{fillstyle=ccslope,slopebegin=white,slopeend=gray}
+\psset{fillstyle=slope,slopebegin=gray,slopeend=white}
+\pstThreeDCircle(0,0,0)(4,0,0)(0,4,0)
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=8,yMin=0,yMax=5,zMin=0,zMax=5,drawing=false]
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(8,0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,5,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,0,5)
+\psset{beginAngle=180,endAngle=135,linewidth=1mm,linecolor=black,arrows=->}
+\pstThreeDCircle(0,0,0)(1.5,0,0)(0,1.5,0)
+\psset{linecolor=black}
+\pstThreeDLine[linewidth=1.5mm,arrows=<->](0,0,0)(0,-4,0)
+\psset{dotscale=1.5,linecolor=black,linewidth=0.3mm,linestyle=dashed,arrows=-}
+\pstThreeDLine(0,0,0)(2,2,0)
+\pstThreeDLine(2,0,0)(2,2,0)
+\pstThreeDLine(0,2,0)(2,2,0)
+%\pstThreeDDot(2,2,0)
+\pstPlanePut[plane=xy](1.4,2,0){\scalebox{1.5}{\ding{113}}}
+\pstPlanePut[plane=xz](8.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,5.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,5.5){\scalebox{1.5}{$Z$}}
+\pstPlanePut[plane=yz](-0.5,-2.5,0){\scalebox{1.5}{$R$}}
+\rput{0}(4,-1){\scalebox{1.5}{$a$}}
+\rput{0}(-1.6,-0.5){\scalebox{1.5}{$x$}}
+\rput{0}(1.6,-0.4){\scalebox{1.5}{$y$}}
+\rput{0}(0.5,-1.6){\scalebox{1.5}{$dm$}}
+\rput{0}(-0.6,-1.1){\scalebox{1.5}{$\theta$}}
+\end{pspicture}
+
+\end{document}

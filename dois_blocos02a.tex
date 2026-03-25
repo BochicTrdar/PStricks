@@ -1,0 +1,51 @@
+%Faro, Tue Feb 11 23:05:00 WET 2014
+%Dinamica do Ponto Material: 
+%Dois blocos ligados por uma roldana.
+%Written by TORDAR 
+
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+ 
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(0,0)(1,1)
+\psset{unit=8cm}
+%Plano inclinado:
+\pspolygon[linewidth=3pt,linecolor=black](0,0)(0.87,0)(0.87,0.5)
+%Ãngulo do plano inclinado:
+\psarc[linewidth=3pt,arcsepA=3pt,arcsepB=3pt,linestyle=dashed,dash=4mm 1mm]{->}(0,0){0.45}{0}{30}
+\rput{0}(0.5,0.15){\scalebox{1.5}{$\alpha$}}
+%Fio ligando a roldana ao bloco m2:
+\psline[linewidth=1mm,linecolor=blue]{-}(1.05,0.6)(1.05,0.4)
+%Bloco m2:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.9,0.15)(1.05,0.4)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](1.05,0.15)(1.2,0.4)
+\psframe[linewidth=0.5mm,dimen=middle](0.9,0.15)(1.2,0.4)
+\rput{0}(1.27,0.25){\scalebox{1.5}{$m_0$}}
+\rput{30}(0,0){
+%Bloco m1:
+%Fio ligando a roldana ao bloco m1:
+\psline[linewidth=3pt,linecolor=blue](0.65,0.12)(1.1,0.12)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.35,0)(0.5,0.3)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.5,0)(0.65,0.3)
+\psframe[linewidth=0.5mm,dimen=middle](0.35,0)(0.65,0.3)
+\rput{0}(0.5,0.35){\scalebox{1.5}{$m_1$}}
+}
+%Roldana: 
+\pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](0.97,0.6){0.1}
+%Braço da roldana:
+\psline[linewidth=3pt,linecolor=blue](0.87,0.5)(0.97,0.6)
+%Centro da roldana:
+\pscircle*(0.97,0.6){0.01}
+\end{pspicture}
+\end{document} 
