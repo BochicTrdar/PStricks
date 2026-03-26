@@ -1,0 +1,56 @@
+% Faro, Sun Jan 10 21:20:16 WET 2016
+% MHS de um bloco na ausência de atrito 
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(-0.1,-0.1)(2,0.7)
+\psset{unit=8cm}
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0.5,0)(0.5,0.5)
+\psline[linewidth=2pt,linecolor=black]{->}(0,0)(2,0)
+\pspolygon[linewidth=1pt,
+         linecolor=lightgray,
+	 dimen=inner,
+	 fillstyle=hlines*,
+	 fillcolor=lightgray,
+	 hatchangle=45](-0.1,-0.1)(1.9,-0.1)(1.9,0)(0,0)(0,0.5)(-0.1,0.5)
+\psframe[linewidth=1.5pt](0.5,0)(1,0.4)	 
+\pscoil[linewidth=2pt,linecolor=blue,coilarm=0.5cm,coilwidth=0.5cm]{|-|}(0,0.2)(0.5,0.2)
+\rput{0}(0.75,0.2){\scalebox{1.5}{$m$}}
+\rput{0}(1.9,0.1){\scalebox{1.7}{$X$}}
+\rput{0}(0.5,0.55){\scalebox{1.5}{$x=0$}}
+\end{pspicture}
+\vskip50mm
+\begin{pspicture}(-0.1,-0.1)(2,0.7)
+\psset{unit=8cm}
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0.5,0)(0.5,0.5)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0.6,0)(0.6,0.5)
+\psline[linewidth=2pt,linecolor=black]{->}(0,0)(2,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(1.1,0.2)(1.4,0.2)
+\psline[linewidth=3pt,linecolor=black]{->}(0.6,0.1)(0.3,0.1)
+\pspolygon[linewidth=1pt,
+         linecolor=lightgray,
+	 dimen=inner,
+	 fillstyle=hlines*,
+	 fillcolor=lightgray,
+	 hatchangle=45](-0.1,-0.1)(1.9,-0.1)(1.9,0)(0,0)(0,0.5)(-0.1,0.5)
+\psframe[linewidth=1.5pt](0.6,0)(1.1,0.4)	
+\scalebox{1.2}{
+\pscoil[linewidth=2pt,linecolor=blue,coilarm=0.5cm,coilwidth=0.5cm]{|-|}(0,0.2)(0.5,0.2)
+                 }
+\rput{0}(0.85,0.2){\scalebox{1.5}{$m$}}
+\rput{0}(1.9,0.1){\scalebox{1.7}{$X$}}
+\rput{0}(0.6,0.55){\scalebox{1.5}{$x$}}
+\rput{0}(1.45,0.2){\scalebox{1.5}{$\mathbf{a}$}}
+\rput{0}(0.25,0.1){\scalebox{1.5}{$\mathbf{F}_m$}}
+\end{pspicture}
+\end{document} 
