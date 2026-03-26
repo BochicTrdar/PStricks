@@ -1,0 +1,44 @@
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optic}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{flushleft}
+\begin{pspicture}*(-5,-4)(10,5)
+	\rput(0,0){\mirrorCVG[drawing=false,mirrorDepth=2.2,mirrorHeight=7]}
+	\pnode(6.5,0.0){A}
+	\pnode(6.5,1.5){B}
+	\pnode(1.8,0.0){A'}
+	\pnode(1.8,-0.6){B'}
+	\psset{linecolor=red}
+        \mirrorCVGRay[%
+		rayColor=red,%
+		mirrorHeight=7,%
+		mirrorDepth=2.2](A)(0,0){P1}
+	\psOutLine[arrows=->,length=4](P1)(P1'){PEnd}
+	\psBeforeLine[length=5,linestyle=dashed](P1)(P1'){PBegin}
+	\mirrorCVGRay[%
+		rayColor=red,%
+		mirrorHeight=7,%
+		mirrorDepth=2.2](B)(0,1.5){P3}
+	\psOutLine[arrows=->,length=4](P3)(P3'){PEnd}
+	\psBeforeLine[length=5,linestyle=dashed](P3)(P3'){PBegin}
+	\mirrorCVGRay[%
+		rayColor=red,%
+		mirrorHeight=7,%
+		mirrorDepth=2.2](B)(0,-1.32){P4}
+	\psOutLine[length=3](P4)(P4'){PEnd}
+	\psBeforeLine[length=5,linestyle=dashed](P4)(P4'){PBegin}
+        \uput{0.2}[0](1.0,0.7){\Huge $f$}
+        \psset{linecolor=black}	
+	\psline[arrows=->,linewidth=4pt](A)(B)
+	\qdisk(Focus){2pt}
+	\psset{linecolor=red}	
+        \psline[arrows=->,linewidth=4pt](A')(B')
+\end{pspicture}
+\end{flushleft}
+
+\end{document}

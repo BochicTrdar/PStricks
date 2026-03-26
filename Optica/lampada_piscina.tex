@@ -1,0 +1,30 @@
+% Lâmpada no fundo da piscina
+% Mexilhoeira Grande, Sab Dez  1 22:02:57 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}
+\multirput(0,5)(0.5,0){20}{
+\psarc[linewidth=0.5mm,linecolor=blue](0.25,0){0.25}{-180}{0}
+}
+\psline[linewidth=1mm,linecolor=black](0,0)(10,0)
+\psline[linewidth=1mm,linecolor=black,arrows=<->](0,0)(0,5)
+\psline[linewidth=1mm,linecolor=black,arrows=<->](3,5.5)(7,5.5)
+\psarc[linewidth=0.5mm,linecolor=blue,arrows=->](5,0){2.75}{68}{90}
+\psarc[linewidth=0.5mm,linecolor=blue,arrows=->](5,0){3}{90}{112}
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=3mm 1mm](5,0)(5,5)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=3mm 1mm](5,0)(3,5)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=3mm 1mm](5,0)(7,5)
+\rput(-0.5,2.5){\scalebox{1.2}{$D$}}
+\rput(5,6){\scalebox{1.2}{$2R$}}
+\rput(4.5,3.5){\scalebox{1.2}{$\theta_c$}}
+\rput(5.5,3.2){\scalebox{1.2}{$\theta_c$}}
+\end{pspicture}
+
+\end{document}

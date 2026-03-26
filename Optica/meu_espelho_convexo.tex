@@ -1,0 +1,28 @@
+% Espelho convexo
+% Faro, Dom Nov 25 16:31:45 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optexp}
+\pagestyle{empty}
+
+\begin{document}
+
+% Sim, nao parecem, mas sao mesmo paralelos!!!!!
+\begin{pspicture}(-3,-3)(3,3)
+\mirror[mirrorradius=-2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,3.0)
+\drawbeam[beamangle=0,beampos=0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,3.0)
+\drawbeam[beamangle=0,beampos=0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,2.8)
+\drawbeam[beamangle=0,beampos=0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,1.7)
+\drawbeam[beamangle=0,beampos=0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,0.8)
+\drawbeam[beamangle=0,linecolor=blue](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,-0.8)
+\drawbeam[beamangle=0,beampos=-0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,-1.7)
+\drawbeam[beamangle=0,beampos=-0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,-2.8)
+\drawbeam[beamangle=0,beampos=-0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,-3.0)
+\drawbeam[beamangle=0,beampos=-1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,-3.0)
+\end{pspicture}
+
+\end{document}

@@ -1,0 +1,23 @@
+% Prisma e ângulo crítico
+% Mexilhoeira Grande, Sáb Dez  1 23:05:21 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}
+\psline[linewidth=0.5mm,linestyle=dashed,dash=3mm 1mm](1.5,1.5)(4,4)
+\pspolygon[linewidth=1mm,linecolor=black](0,0)(0,4)(4,0)
+\psarc[linewidth=0.5mm,linecolor=blue,arrows=->](2,2){2}{0}{45}
+\psarc[linewidth=0.5mm,linecolor=blue,arrows=->](2,2){2}{45}{90}
+\psline[linewidth=1mm,linecolor=blue,arrows=->](2,5)(2,2)
+\psline[linewidth=1mm,linecolor=blue,arrows=->](2,2)(5,2)
+\rput(3,4.2){\scalebox{1.2}{$\theta_c$}}
+\rput(4.2,3){\scalebox{1.2}{$\theta_c$}}
+\end{pspicture}
+
+\end{document}

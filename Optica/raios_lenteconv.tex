@@ -1,0 +1,37 @@
+% Ah ah ah!!!! No related to pst-optic!!!! 
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{multido}
+%Manule Luque/hv
+\usepackage{pst-node}
+\SpecialCoor
+\definecolor{BleuVerre}{cmyk}{0.2,0,0,0}
+\definecolor{MonGris}{rgb}{0.9,0.9,0.9}
+\pagestyle{empty}
+
+\begin{document}
+
+\newcommand\indice{2}
+\newcommand\Radius{5}
+\newcommand\double{2}
+\newcommand\angleLimite{30}
+
+\begin{center}
+\psset{unit=0.75}
+%\psframebox[fillstyle=solid,fillcolor=darkgray]{%
+\begin{pspicture}*(-1,-3)(15,3)
+\multido{\iAngle=29+-1}{58}{%
+  \psline[linecolor=blue!40](! 0 \Radius\space\iAngle\space sin mul)(!
+  \Radius\space\angleLimite\space cos mul \Radius\space\iAngle\space sin mul)
+  \rput(\Radius;\iAngle){\psline[linecolor=blue!40](!
+          /cosi2 1\space \iAngle\space sin \space\indice\space mul dup mul sub sqrt def
+          /i2 \iAngle\space sin \space\indice\space mul cosi2 atan def
+          /inclinaison \iAngle\space i2 sub def
+          11 11 inclinaison sin mul)}}
+\pscustom[fillstyle=solid,fillcolor=BleuVerre]{%
+  \psarcn(0,0){\Radius}{\angleLimite}{-\angleLimite}
+  \psline(\Radius;-\angleLimite)(\Radius;\angleLimite)}
+\end{pspicture}%}
+\end{center}
+
+\end{document}

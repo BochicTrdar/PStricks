@@ -1,0 +1,114 @@
+% Espelhos
+% Faro, Sab Nov 24 18:34:40 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optexp}
+\pagestyle{empty}
+
+\begin{document}
+
+% Manual, p.42:
+\begin{pspicture}[showgrid](3,3)
+\mirror[mirrorradius=1 0,mirrortype=semitrans](0,0)(1,2)(1.8,1){convex}
+\mirror[mirrorradius=-1 0,mirrortype=extended](1,2)(1.8,1)(2.5,3){concave}
+\drawbeam(0,0){-}(2.5,3)
+\end{pspicture}
+
+\begin{pspicture}[showgrid](-3,-3)(3,3)
+\mirror[mirrorradius=2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=75](-1,0){-}(-3,0)
+\drawbeam[beamangle=60](-1,0){-}(-3,0)
+\drawbeam[beamangle=45](-1,0){-}(-3,0)
+\drawbeam[beamangle=30](-1,0){-}(-3,0)
+\drawbeam[beamangle=15](-1,0){-}(-3,0)
+\drawbeam[beamangle=-15](-1,0){-}(-3,0)
+\drawbeam[beamangle=-30](-1,0){-}(-3,0)
+\drawbeam[beamangle=-45](-1,0){-}(-3,0)
+\drawbeam[beamangle=-60](-1,0){-}(-3,0)
+\drawbeam[beamangle=-75](-1,0){-}(-3,0)
+\end{pspicture}
+
+\begin{pspicture}[showgrid](-3,-3)(3,3)
+\mirror[mirrorradius=2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.4](-3,0){-}
+\drawbeam[beamangle=0,beampos=1.2](-3,0){-}
+\drawbeam[beamangle=0,beampos=1.0](-3,0){-}
+\drawbeam[beamangle=0,beampos=0.8](-3,0){-}
+\drawbeam[beamangle=0,beampos=0.6](-3,0){-}
+\drawbeam[beamangle=0,beampos=0.4](-3,0){-}
+\drawbeam[beamangle=0,beampos=0.2](-3,0){-}
+\drawbeam[beamangle=0](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.4](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.6](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.8](-3,0){-}
+\drawbeam[beamangle=0,beampos=-1.0](-3,0){-}
+\drawbeam[beamangle=0,beampos=-1.2](-3,0){-}
+\drawbeam[beamangle=0,beampos=-1.4](-3,0){-}
+\end{pspicture}
+
+\begin{pspicture}[showgrid](-3,-3)(3,3)
+\mirror[mirrorradius=2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.0](-3,0){-}(0,-3)
+\drawbeam[beamangle=0,beampos=0.8](-3,0){-}(0,-2.3)
+\drawbeam[beamangle=0,beampos=0.6](-3,0){-}(0,-1.5)
+\drawbeam[beamangle=0,beampos=0.4](-3,0){-}(0,-0.9)
+\drawbeam[beamangle=0,beampos=0.2](-3,0){-}(0,-0.4)
+\drawbeam[beamangle=0](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2](-3,0){-}(0,0.4)
+\drawbeam[beamangle=0,beampos=-0.4](-3,0){-}(0,0.9)
+\drawbeam[beamangle=0,beampos=-0.6](-3,0){-}(0,1.5)
+\drawbeam[beamangle=0,beampos=-0.8](-3,0){-}(0,2.3)
+\drawbeam[beamangle=0,beampos=-1.0](-3,0){-}(0,3)
+\end{pspicture}
+
+\begin{pspicture}(-3,-3)(3,3)
+\mirror[mirrorradius=2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,-3)
+\drawbeam[beamangle=0,beampos=0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,-2.3)
+\drawbeam[beamangle=0,beampos=0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,-1.5)
+\drawbeam[beamangle=0,beampos=0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,-0.9)
+\drawbeam[beamangle=0,beampos=0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,-0.4)
+\drawbeam[beamangle=0,linecolor=blue](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,0.4)
+\drawbeam[beamangle=0,beampos=-0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,0.9)
+\drawbeam[beamangle=0,beampos=-0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,1.5)
+\drawbeam[beamangle=0,beampos=-0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,2.3)
+\drawbeam[beamangle=0,beampos=-1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,3)
+\end{pspicture}
+
+% Sim, nao parecem, mas sao mesmo paralelos!!!!!
+\begin{pspicture}[showgrid](-3,-3)(3,3)
+\mirror[mirrorradius=-2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,3.0)
+\drawbeam[beamangle=0,beampos=0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,3.0)
+\drawbeam[beamangle=0,beampos=0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,2.8)
+\drawbeam[beamangle=0,beampos=0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,1.7)
+\drawbeam[beamangle=0,beampos=0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,0.8)
+\drawbeam[beamangle=0,linecolor=blue](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,-0.8)
+\drawbeam[beamangle=0,beampos=-0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,-1.7)
+\drawbeam[beamangle=0,beampos=-0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,-2.8)
+\drawbeam[beamangle=0,beampos=-0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,-3.0)
+\drawbeam[beamangle=0,beampos=-1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,-3.0)
+\end{pspicture}
+
+% Manual, p.45:
+\begin{pspicture}(0,-2)(3,2)
+\parabolicmirror[parmirrorheight=4, parmirrorwidth=2](0,0)(3,0)
+\addtopsstyle{Beam}{beamalign=abs,linewidth=0.2\pslinewidth,beaminsidelast, stopinsidecount=1}
+\multido{\r=-1.55+0.1}{33}{%
+\drawbeam[beampos=\r](0,0){1}}
+\end{pspicture}
+
+\begin{pspicture}(0,-2)(3,2)
+\parabolicmirror[parmirrorheight=4,parmirrorwidth=2](0,0)(3,0)
+\addtopsstyle{Beam}{beamalign=abs,linewidth=0.2mm,beaminsidelast,stopinsidecount=1}
+\multido{\r=-1.55+0.1}{33}{%
+\drawbeam[beampos=\r](0,0){1}
+}
+\end{pspicture}
+
+\end{document}

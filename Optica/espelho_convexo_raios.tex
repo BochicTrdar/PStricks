@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper,landscape]{article}
+
+% Espelho convexo, objecto e imagem
+% Faro, Ter Nov 27 21:21:04 WET 2018
+% Written by Tordar
+
+\input{apnum}
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Espelho:
+\evaldef\theangle{20}\evaldef\theai{180-\theangle}\evaldef\theaii{180+\theangle}
+\evaldef\theri{75}
+\evaldef\therii{\theri-2}
+\evaldef\thexf{-0.5*\theri}
+\evaldef\thexleft{-120}
+\evaldef\thexright{0}
+% Objecto:
+\evaldef\thexo{-1.5*\theri}
+\evaldef\theyo{0.25*\theri}
+% Stuff for ray 1:
+\evaldef\theqi{\ASIN{\theyo/\theri}} % O.K. as long as y0 < R ...
+\evaldef\thexi{-\theri*\COS{\theqi}}
+\evaldef\theki{\theyo/(\thexi-\thexf)}
+\evaldef\thexib{1.5*\thexi}
+\evaldef\theyib{\theki*(\thexib-\thexf)}
+% Stuff for ray 3:
+\evaldef\thekiii{\theyo/\thexo}
+\evaldef\thexiii{-\theri/\SQRT{1+\thekiii*\thekiii}}
+\evaldef\theyiii{\thekiii*\thexiii}
+% Intersection coordinates: 
+\evaldef\thexint{\theki*\thexf/(\theki-\thekiii)}
+\evaldef\theyint{\thekiii*\thexint}
+% Stuff for ray 2:
+\evaldef\theqii{\ASIN{\ABS{\theyint/\theri}}}
+\evaldef\thexii{-\theri*\COS{\theqii}}
+\evaldef\thexiib{\thexint+0.5*\theri}
+
+\begin{pspicture}
+\psset{unit=1mm}
+\rput(50,0){
+\psarc[linewidth=1mm,linecolor=black,fillstyle=hlines](0,0){\theri}{\theai}{\theaii}
+\psarc[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white](0,0){\therii}{\theai}{\theaii}
+%% Mirror axis:
+\psline[linestyle=dashed,dash=3mm 1mm](\thexleft,0)(\thexright,0)
+% Raio 2:
+\psline[linewidth=1mm,linecolor=red]{->}(\thexo,\theyo)(\thexii,\theyint)
+\psline[linewidth=1mm,linecolor=red]{->}(\thexii,\theyint)(\thexib,\theyint)
+\psline[linewidth=1mm,linecolor=red,linestyle=dashed,dash=3mm 1mm](\thexf,0)(\thexii,\theyint)(\thexiib,\theyint)
+% Raio 3:
+\psline[linewidth=1mm,linecolor=blue](\thexo,\theyo)(\thexiii,\theyiii)
+\psline[linewidth=1mm,linecolor=blue,linestyle=dashed,dash=3mm 1mm](\thexiii,\theyiii)(0,0)
+% Raio 1:
+\psline[linewidth=1mm]{->}(\thexo,\theyo)(\thexi,\theyo)
+\psline[linewidth=1mm]{->}(\thexi,\theyo)(\thexib,\theyib)
+\psline[linewidth=1mm,linecolor=black,linestyle=dashed,dash=3mm 1mm](\thexf,0)(\thexi,\theyo)
+% Object: 
+\psline[linewidth=2mm,linecolor=blue]{->}(\thexo,0)(\thexo,\theyo)
+% Image:
+\psline[linewidth=1mm,linecolor=gray]{->}(\thexint,0)(\thexint,\theyint)
+% Focus: 
+\pscircle[fillstyle=solid,fillcolor=blue](\thexf,0){3pt}
+%\rput(0,-0.4){\scalebox{1.5}{$c$}}
+%\rput(\thexf,0.5){\scalebox{1.5}{$f$}}
+% Center:
+\qdisk(0,0){3pt}
+}
+\end{pspicture}
+
+\end{document}

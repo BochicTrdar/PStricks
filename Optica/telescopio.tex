@@ -1,0 +1,27 @@
+% Telescopio de refração
+% Mexilhoeira Grande, Sab Dez  1 17:50:19 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optic}
+\usepackage{pst-optexp}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Adaptado do Manual, page 15:
+\begin{pspicture}
+%\rput(0,0){
+\pnode(0,0){A}
+\pnode(3.51,0){B}
+\lens[lensradius=2.3,lensheight=2,abspos=2](A)(B){} % A altura nao pode ser superior ao raio!!!
+\lens[lensradius=1,abspos=3](A)(B){}
+\addtopsstyle{Beam}{fillstyle=solid,fillcolor=yellow,opacity=0.1}
+\drawwidebeam[beamwidth=1](A){1}{2}(B)
+\rput(5.35,0){\eye}
+%}
+\end{pspicture}
+
+\end{document}

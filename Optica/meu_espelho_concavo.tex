@@ -1,0 +1,27 @@
+% Espelho côncavo
+% Faro, Dom Nov 25 16:16:04 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optexp}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(-3,-3)(3,3)
+\mirror[mirrorradius=2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,-3)
+\drawbeam[beamangle=0,beampos=0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,-2.3)
+\drawbeam[beamangle=0,beampos=0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,-1.5)
+\drawbeam[beamangle=0,beampos=0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,-0.9)
+\drawbeam[beamangle=0,beampos=0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,-0.4)
+\drawbeam[beamangle=0,linecolor=blue](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2,linecolor=blue,ArrowInside=->](-3,0){-}(0,0.4)
+\drawbeam[beamangle=0,beampos=-0.4,linecolor=blue,ArrowInside=->](-3,0){-}(0,0.9)
+\drawbeam[beamangle=0,beampos=-0.6,linecolor=blue,ArrowInside=->](-3,0){-}(0,1.5)
+\drawbeam[beamangle=0,beampos=-0.8,linecolor=blue,ArrowInside=->](-3,0){-}(0,2.3)
+\drawbeam[beamangle=0,beampos=-1.0,linecolor=blue,ArrowInside=->](-3,0){-}(0,3)
+\end{pspicture}
+
+\end{document}

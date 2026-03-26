@@ -1,0 +1,17 @@
+% Vela e imagem
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optic}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(-8.5,-3)(8.5,3)
+\rput(-6,0){%
+  \lens[focus=3.333,OA=-10,AB=2,XO=2,xLeft=-8.5,xRight=8.5,rayColor=red]%
+  \pcline[linestyle=none](A)(B)\ncput{\includegraphics[scale=0.2]{candle_lit_blue}}%
+  \pcline[linestyle=none](A')(B')\ncput{\includegraphics[scale=0.1,angle=180]{candle_lit_blue}}}
+\end{pspicture} 
+
+\end{document}

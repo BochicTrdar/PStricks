@@ -1,0 +1,34 @@
+\documentclass[12pt,a4paper,landscape]{article}
+
+% Uma lente positiva e uma lente negativa
+% Mexilhoeira Grande, Sab Dez  1 11:40:18 WET 2018
+% Written by Tordar
+
+% Inspirado por
+% Cutnell and Jonhson, p. 550
+
+\usepackage{graphicx}
+\usepackage{pst-lens}
+\pagestyle{empty}
+\def\mytext{ \rput[lb](0,0){
+\begin{minipage}{6cm}
+\centering
+\textbf{
+\Huge Lentes\\
+\Huge Lentes\\
+\Huge Lentes\\
+\Huge Lentes\\
+\Huge Lentes\\
+}
+\end{minipage}
+} }
+
+\begin{document}
+
+\begin{pspicture}
+\mytext
+\PstLens[LensMagnification=2.0,LensHandle=false](2.1,3.5){\mytext}
+\PstLens[LensMagnification=0.4,LensHandle=false](4,0.9){\mytext}
+\end{pspicture} 
+
+\end{document}

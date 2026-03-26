@@ -1,0 +1,19 @@
+% Manual, page 15
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optic}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture*}[showgrid=true](-1,-3)(6,3)
+%\rput(4,0){\includegraphics[scale=0.5]{apple}}
+\rput(0,0){\mirrorCVG[rayColor=red,OA=4]}
+\end{pspicture*}
+
+\begin{pspicture*}[showgrid=true](-1,-3)(6,3)
+\rput(0,0){\mirrorCVG[rayColor=red,OA=2.5]}
+\end{pspicture*}
+
+\end{document}

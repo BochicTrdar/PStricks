@@ -1,0 +1,27 @@
+% Espelhos - aproximação paraxial
+% Faro, Ter Nov 27 20:53:19 WET 2018
+% Written by Tordar
+\documentclass[12pt,a4paper,landscape]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-optexp}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}
+\mirror[mirrorradius=2 0,mirrortype=extended,mirrorwidth=3.5](-2,-2)(0,0)(-2,2)
+\drawbeam[beamangle=0,beampos=1.0,ArrowInside=->](-3,0){-}(0,-3)
+\drawbeam[beamangle=0,beampos=0.8,ArrowInside=->](-3,0){-}(0,-2.3)
+\drawbeam[beamangle=0,beampos=0.6,ArrowInside=->](-3,0){-}(0,-1.5)
+\drawbeam[beamangle=0,beampos=0.4,ArrowInside=->](-3,0){-}(0,-0.9)
+\drawbeam[beamangle=0,beampos=0.2,ArrowInside=->](-3,0){-}(0,-0.4)
+\drawbeam[beamangle=0](-3,0){-}
+\drawbeam[beamangle=0,beampos=-0.2,ArrowInside=->](-3,0){-}(0,0.4)
+\drawbeam[beamangle=0,beampos=-0.4,ArrowInside=->](-3,0){-}(0,0.9)
+\drawbeam[beamangle=0,beampos=-0.6,ArrowInside=->](-3,0){-}(0,1.5)
+\drawbeam[beamangle=0,beampos=-0.8,ArrowInside=->](-3,0){-}(0,2.3)
+\drawbeam[beamangle=0,beampos=-1.0,ArrowInside=->](-3,0){-}(0,3)
+\end{pspicture}
+
+\end{document}

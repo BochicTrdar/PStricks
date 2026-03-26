@@ -1,0 +1,58 @@
+\documentclass[12pt,a4paper,landscape]{article}
+
+% Espelho côncavo, aproximação paraxial, objecto longe do foco
+% Gambelas, Ter Nov 27 14:44:24 WET 2018
+% Written by Tordar
+
+\input{apnum}
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Espelho:
+\evaldef\theangle{20}
+\evaldef\theri{75}
+\evaldef\therii{\theri+2}
+\evaldef\thexf{0.5*\theri}
+\evaldef\thexleft{-50}
+\evaldef\thexright{100}
+% Objecto:
+\evaldef\thexo{-\thexf}
+\evaldef\theyo{0.1*\theri}
+% Stuff for ray 1:
+\evaldef\theqi{\ASIN{\theyo/\theri}} % O.K. as long as y0 < R ...
+\evaldef\thexi{\theri*\COS{\theqi}}
+\evaldef\theki{\theyo/(\thexi-\thexf)}
+% Stuff for ray 3:
+\evaldef\thekiii{\theyo/\thexo}
+\evaldef\thexiii{\theri/\SQRT{1+\thekiii*\thekiii}}
+\evaldef\theyiii{\thekiii*\thexiii}
+% Intersection coordinates: 
+\evaldef\thexint{\theki*\thexf/(\theki-\thekiii)}
+\evaldef\theyint{\thekiii*\thexint}
+% Stuff for ray 2:
+\evaldef\theqii{\ASIN{\ABS{\theyint/\theri}}}
+\evaldef\thexii{\theri*\COS{\theqii}}
+
+\begin{pspicture}
+\psset{unit=1mm}
+\rput(0,0){
+\psarc[linewidth=0mm,linecolor=white,fillstyle=hlines](0,0){\therii}{-\theangle}{\theangle}
+\psarc[linewidth=1mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){\theri}{-\theangle}{\theangle}
+\psline[linestyle=dashed,dash=3mm 1mm](\thexleft,0)(\thexright,0) % Mirror axis
+\psline[linewidth=1mm,linecolor=red]{->}(\thexo,\theyo)(\thexf,0)(\thexii,\theyint)(\thexint,\theyint) % Raio 2
+\psline[linewidth=1mm,linecolor=blue](\thexo,\theyo)(\thexiii,\theyiii) % Raio 3
+\psline[linewidth=1mm]{->}(\thexo,\theyo)(\thexi,\theyo)(\thexint,\theyint) % Raio 1
+\psline[linewidth=2mm,linecolor=blue]{->}(\thexo,0)(\thexo,\theyo) % Object
+\psline[linewidth=1mm,linecolor=gray]{->}(\thexint,0)(\thexint,\theyint) % Image
+\pscircle[fillstyle=solid,fillcolor=blue](\thexf,0){3pt}
+%\rput(0,-0.4){\scalebox{1.5}{$c$}}
+%\rput(\thexf,0.5){\scalebox{1.5}{$f$}}
+\qdisk(0,0){3pt}
+}
+\end{pspicture}
+
+\end{document}
