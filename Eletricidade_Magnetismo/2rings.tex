@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+
+%Indutancia mutua de dois aneis
+%Faro, Sat Mar 15 19:28:48 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-6)(6,6)
+\psset{xunit=12mm,yunit=12mm}
+\psline[linewidth=3pt,linecolor=blue]{->}(-5,0)(5,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,-5)(0,5)
+\psline[linewidth=3pt,linecolor=blue]{<->}(0,0)(1.72,1.72)
+\psline[linewidth=3pt,linecolor=blue]{<->}(0,0)(-2.9,2.9)
+\pscircle[linewidth=1mm,linecolor=black](0,0){3}
+\pscircle[linewidth=1mm,linecolor=black](0,0){5}
+\rput{0}(5.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,5.5){\scalebox{1.5}{$Y$}}
+\rput{0}(0.7,1.5){\scalebox{1.5}{$R_1$}}
+\rput{0}(-1.8,2.5){\scalebox{1.5}{$R_2$}}
+\end{pspicture}
+
+\end{document}
