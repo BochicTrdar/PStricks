@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+
+%\usepackage{pstricks}
+%\usepackage{pst-grad}
+\usepackage{graphicx}
+\usepackage{pst-3dplot}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(2,1.75)(3,6.25)
+%\pstThreeDLine[linewidth=3pt,linecolor=blue,arrows=->](-5,0,0)(5,0,0) % X axis
+%\pstThreeDLine[linewidth=3pt,linecolor=blue,arrows=->](0,-5,0)(0,5,0) % Y axis 
+%\pstThreeDLine[linewidth=3pt,linecolor=blue,arrows=->](0,0,-5)(0,0,5) % Z axis
+\pstThreeDLine[linewidth=3pt,linecolor=blue,arrows=<->](-7.5,0,1)(-2.5,0,1)
+\pstThreeDLine[linewidth=3pt,linecolor=blue,arrows=<->](-2.5,0,1)(2.5,0,1)
+\pstThreeDLine[linewidth=3pt,linecolor=blue,arrows=<->](2.5,0,1)(7.5,0,1)
+\pstIIIDCylinder[linecolor=gray!75,increment=0.4,fillstyle=solid,RotY=90](0,0,-7.5){0.2}{5}
+\pstIIIDCylinder[linecolor=blue,increment=0.4,fillstyle=solid,RotY=90](0,0,-2.5){0.2}{5}
+\pstIIIDCylinder[linecolor=yellow,increment=0.4,fillstyle=solid,RotY=90](0,0,2.5){0.2}{5}
+\pstThreeDPut(7.5,0,-1.1){\scalebox{1.5}{$T_1$}}
+\pstThreeDPut(2.5,0,-1.1){\scalebox{1.5}{$T_a$}}
+\pstThreeDPut(-2.5,0,-1.1){\scalebox{1.5}{$T_b$}}
+\pstThreeDPut(-7.5,0,-1.1){\scalebox{1.5}{$T_0$}}
+\pstThreeDPut(5,0,2){\scalebox{1.5}{$l$}}
+\pstThreeDPut(0,0,2){\scalebox{1.5}{$l$}}
+\pstThreeDPut(-5,0,2){\scalebox{1.5}{$l$}}
+\pstPlanePut[plane=yz](5,0,-2){\fbox{\textbf{\large Cobre}}}
+\pstPlanePut[plane=yz](0,0,-2){\fbox{\textbf{\large Alum\ia nio}}}
+\pstPlanePut[plane=yz](-5,0,-2){\fbox{\textbf{\large Lat\~ao}}}
+\end{pspicture}
+\end{center}
+
+\end{document}
