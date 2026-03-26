@@ -1,0 +1,33 @@
+% DeepSeek 
+% Faro, seg 01 dez 2025 20:18:40 
+\documentclass{article}
+\usepackage{pstricks}
+\pagestyle{empty}
+\begin{document}
+
+\begin{pspicture}(-2,-2)(2,2)
+    % Núcleo (próton) - cor sólida
+    \pscircle[fillcolor=red,fillstyle=solid](0,0){0.4}
+    \rput(0,0){\color{white}\small p$^+$}
+    
+    % Órbita
+    \pscircle[linewidth=0.8pt,linecolor=gray!50](0,0){1.5}
+    
+    % Elétron
+    \pscircle[fillcolor=blue,fillstyle=solid](1.5,0){0.2}
+    \rput(1.5,0){\color{white}\tiny e$^-$}
+    
+    % Setas de atração
+    \psline[linewidth=0.5pt,linecolor=red]{<-}(0.35,0)(0.8,0)
+    \psline[linewidth=0.5pt,linecolor=blue]{->}(-0.35,0)(-0.8,0)
+    
+    % Linha pontilhada mostrando distância
+    \psline[linewidth=0.3pt,linestyle=dotted](0,0)(1.5,0)
+    \rput(0.75,0.15){\tiny 1.5}
+    
+    % Legenda
+    \rput(0,-1.8){\footnotesize Átomo de Hidrogênio}
+    \rput(0,1.8){\footnotesize 1 próton, 1 elétron}
+\end{pspicture}
+
+\end{document}
