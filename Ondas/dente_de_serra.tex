@@ -1,0 +1,49 @@
+%Sobreposição de oscilações
+%Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{pstricks-add}
+\usepackage{pst-infixplot}
+\usepackage{pst-plot}
+
+\pagestyle{empty} 
+
+\begin{document}
+
+\begin{pspicture}(3,-7)(18,7)
+\psset{xunit=12mm,yunit=20mm}
+%Plot the first oscilating term:
+\rput{0}(0,3.5){
+\infixtoRPN{sin(x*360/3.1415)*cos(180)}
+\psplot[plotpoints=200,linecolor=red,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1.5)(0,1.5)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+}
+%Plot the first two oscilating terms:
+\infixtoRPN{sin(x*360/3.1415)*cos(180)-sin(x*720/3.1415)/2}
+\psplot[plotpoints=200,linecolor=magenta,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1.5)(0,1.5)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+%Plot the first three oscilating terms:
+\rput{0}(0,-3.5){
+\infixtoRPN{sin(x*360/3.1415)*cos(180)-sin(x*720/3.1415)/2-sin(x*1080/3.1415)/3}
+\psplot[plotpoints=200,linecolor=green,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1.5)(0,1.5)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+}
+\rput{0}(0,-7){
+\infixtoRPN{sin(x*360/3.1415)*cos(180)-sin(x*720/3.1415)/2-sin(x*1080/3.1415)/3-sin(x*1440/3.1415)/4}
+\psplot[plotpoints=200,linecolor=green,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1.5)(0,1.5)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+}
+\end{pspicture}
+
+\end{document}

@@ -1,0 +1,30 @@
+%MHS: Figuras de Lissajous 
+%Faro, Thu Dec  2 00:42:01 WET 2004
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{pstricks-add}
+\usepackage{pst-infixplot}
+\usepackage{pst-plot}
+
+\pagestyle{empty} 
+
+\begin{document}
+
+\begin{pspicture}(-2,-3)(2,3)
+\psset{xunit=50mm,yunit=50mm,plotpoints=200}
+\psline[linecolor=black,linewidth=0.5mm,linestyle=dashed,dash=3mm 2mm](1,1)(1,-1)(-1,-1)(-1,1)(1,1)
+\psline[linecolor=blue,linewidth=1mm]{->}(0,-1.2)(0,1.2)
+\psline[linecolor=blue,linewidth=1mm]{->}(-1.2,0)(1.2,0)
+\parametricPlot[linecolor=red,linewidth=1mm]{0}{360}{sin(t)}{sin(3*t+90)}
+\rput{0}(1.3,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,1.3){\scalebox{1.5}{$Y$}}
+\rput{0}(1.1,0.1){\scalebox{1.5}{$a$}}
+\rput{0}(0.1,1.1){\scalebox{1.5}{$a$}}
+\rput{0}(-1.1,0.1){\scalebox{1.5}{$-a$}}
+\rput{0}(0.1,-1.1){\scalebox{1.5}{$-a$}}
+\end{pspicture}
+
+\end{document}

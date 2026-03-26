@@ -1,0 +1,46 @@
+%Oscilações forcadas
+%Faro, Tue Nov 30 01:16:20 WET 2004
+%Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{pstricks-add}
+\usepackage{pst-infixplot}
+\usepackage{pst-plot}
+
+\pagestyle{empty} 
+
+\begin{document}
+
+\begin{pspicture}(3,-7)(18,7)
+\psset{xunit=12mm,yunit=25mm}
+%Plot the forced oscilating term:
+\rput{0}(0,2.5){
+\infixtoRPN{sin((x+0.1)*720/3.1415)*2.7181^(-x/10)}
+\psplot[plotpoints=200,linecolor=red,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-0.7)(0,1.2)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+\rput{0}(0.8,1.2){\scalebox{1.6}{$x_1(t)$}}
+}
+%Plot the damped oscilating term:
+\infixtoRPN{1.2*sin((x+0.5)*360/3.1415)}
+\psplot[plotpoints=200,linecolor=magenta,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1)(0,1.5)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+\rput{0}(3.5,1.4){\scalebox{1.6}{$x_2(t)$}}
+%Plot the general forced solution:
+\rput{0}(0,-3.5){
+\infixtoRPN{1.2*sin((x+0.5)*360/3.1415)+sin((x+0.1)*720/3.1415)*2.7181^(-x/10)}
+\psplot[plotpoints=200,linecolor=green,linewidth=2pt]{0}{14}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1)(0,2)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(14.5,0)
+\rput{0}(15,0){\scalebox{1.5}{$t$}}
+\rput{0}(9.7,1.8){\scalebox{1.6}{$x_1(t) + x_2(t)$}}
+}
+\end{pspicture}
+
+\end{document}

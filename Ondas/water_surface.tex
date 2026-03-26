@@ -1,0 +1,37 @@
+%Ondas: Water surface
+%Faro, Sun Oct 31 19:29:26 WET 2004
+%Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{pstricks-add}
+\usepackage{pst-infixplot}
+\usepackage{pst-plot}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(1,-1.4)(15,1.4)
+\psset{xunit=12mm,yunit=25mm}
+\infixtoRPN{sin((x+0.2)*180/3.1415)}
+\psplot[plotpoints=200,linecolor=red,linewidth=2pt,linestyle=dashed,dash=4mm 1mm]{0}{12}{\RPN}
+\infixtoRPN{sin((x+1.0471976)*180/3.1415)}
+\psplot[plotpoints=200,linecolor=black,linewidth=2pt]{0}{12}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1)(0,1.2)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(12.5,0)
+\psline[linecolor=black,linewidth=1pt,linewidth=1pt,linestyle=dashed,dash=4mm 1mm]{-}(0.52,0.3)(0.52,1.2)
+\psline[linecolor=black,linewidth=1pt,linewidth=1pt,linestyle=dashed,dash=4mm 1mm]{-}(6.80,0.3)(6.80,1.2)
+\psline[linecolor=blue,linewidth=2pt]{<->}(0.52,0.5)(6.80,0.5)
+\rput{0}(13,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,1.5){\scalebox{1.5}{$Y$}}
+\rput{0}(8.5,1){\scalebox{1.8}{$\mathbf{v}$}}
+\rput{0}(9,0.97){\scalebox{1.8}{\ding{223}}}
+\rput{0}(2.0,-0.5){\scalebox{1.6}{$y(t)$}}
+\rput{0}(7.0,-0.5){\scalebox{1.6}{$y(t+\Delta t)$}}
+\rput{0}(3.66,0.7){\scalebox{1.6}{$\lambda$}}
+\end{pspicture}
+
+\end{document}

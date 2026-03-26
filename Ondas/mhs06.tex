@@ -1,0 +1,32 @@
+%MHS amortecido
+%Faro, Mon Nov  1 22:37:06 WET 2004
+%Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{pstricks-add}
+\usepackage{pst-infixplot}
+\usepackage{pst-math}
+\usepackage{pst-plot}
+
+\begin{document}
+
+\begin{pspicture}(1,-1.4)(15,1.4)
+\psset{xunit=2mm,yunit=25mm}
+\infixtoRPN{EXP(-x/40)}
+\psplot[plotpoints=200,linecolor=black,linewidth=1pt,linestyle=dashed,dash=4mm 1mm]{0}{62}{\RPN}
+\infixtoRPN{EXP(-x/40)*COS(PI)}
+\psplot[plotpoints=200,linecolor=black,linewidth=1pt,linestyle=dashed,dash=4mm 1mm]{0}{62}{\RPN}
+\infixtoRPN{sin((x+1.0471976)*180/3.1415)*2.7181^(-x/40)}
+\psplot[plotpoints=200,linecolor=black,linewidth=2pt]{0}{62}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-1)(0,1.2)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(65,0)
+\rput{0}(70,0){\scalebox{1.5}{$t$}}
+\rput{0}(0,1.5){\scalebox{1.5}{$X$}}
+\rput{0}(34,0.6){\scalebox{1.6}{$x(t)$}}
+\rput{0}(-2.0,1.0){\scalebox{1.4}{$A$}}
+\end{pspicture}
+
+\end{document}

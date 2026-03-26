@@ -1,0 +1,29 @@
+%Oscilações: Ressonância
+%Faro, Tue Nov 30 01:02:58 WET 2004
+%Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{pstricks-add}
+\usepackage{pst-infixplot}
+\usepackage{pst-plot}
+
+\begin{document}
+
+\begin{pspicture}(1,-4)(15,4)
+\psset{xunit=12mm,yunit=25mm}
+\psline[linecolor=black,linewidth=1pt,linewidth=1pt,linestyle=dashed,dash=4mm 1mm]{-}(6,0)(6,2)
+\infixtoRPN{1/sqrt((x*x-36)*(x*x-36)+0.05)}
+\psplot[plotpoints=200,linecolor=black,linewidth=2pt]{0}{12}{\RPN}
+\psline[linecolor=blue,linewidth=2pt]{->}(0,-0.5)(0,2)
+\psline[linecolor=blue,linewidth=2pt]{->}(0,0)(12.5,0)
+\psline[linecolor=black,linewidth=1pt,linewidth=1pt,linestyle=dashed,dash=4mm 1mm]{-}(0,1)(12,1)
+\rput{0}(13,0){\scalebox{1.5}{$\omg_0$}}
+\rput{0}(0,2.2){\scalebox{1.3}{$a_0(\omg_0)$}}
+\rput{0}(6,-0.2){\scalebox{1.5}{$\omg_1$}}
+\rput{0}(10,1.1){\scalebox{1}{\textit{Limite de elasticidade?}}}
+\end{pspicture}
+
+\end{document}

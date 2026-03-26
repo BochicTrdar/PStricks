@@ -1,0 +1,25 @@
+% Plane Wave
+% Faro, Ter 16 Jun 2020 14:11:33 WEST 
+% Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx,pst-3d,pst-gr3d}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-4,-4)(8,8)
+\psset{viewpoint=1 -1 0.75}
+\ThreeDput(0,0,0){\psframe[fillstyle=solid,fillcolor=gray!25](-3,-3)(3,3)}
+\ThreeDput(0,0,1){\psframe[fillstyle=solid,fillcolor=gray!25](-3,-3)(3,3)}
+\ThreeDput(0,0,2){\psframe[fillstyle=solid,fillcolor=gray!25](-3,-3)(3,3)}
+\ThreeDput(0,0,2){\Large \textbf{Frente de Onda}}
+\ThreeDput(0,0,3){\rnode{A}{}}
+\ThreeDput(0,0,5){\rnode{B}{}}
+\pcline[linestyle=solid,linecolor=black,linewidth=1mm]{->}(A)(B)
+\ThreeDput[normal=0 0 1](0,0,5.2){\scalebox{1.5}{$\mathbf{k}$}}
+\end{pspicture}
+
+\end{document}
