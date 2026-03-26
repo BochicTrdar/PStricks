@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+
+%Tres resistencias em serie
+%Faro, 05/12/2008, 19:00
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-circ}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(12,5)
+
+\pnode(0,0){A}
+\pnode(3,0){B}
+\pnode(6,0){C}
+\pnode(9,0){D}
+\pnode(12,0){E}
+\pnode(15,0){F}
+
+\resistor[labeloffset=1,dipolestyle=zigzag](A)(B){\scalebox{1.5}{$R$}}
+\resistor[labeloffset=1,dipolestyle=zigzag](B)(C){\scalebox{1.5}{$R$}}
+\resistor[labeloffset=1,dipolestyle=zigzag](C)(D){\scalebox{1.5}{$R$}}
+%\resistor[labeloffset=1,dipolestyle=zigzag](E)(F){\scalebox{1.5}{$R_0$}}
+
+%\rput{0}(7,0){\scalebox{1.5}{$=$}}
+
+\pscircle[fillstyle=solid,fillcolor=white](0,0){0.15}
+\pscircle[fillstyle=solid,fillcolor=white](9,0){0.15}
+
+\end{pspicture}
+
+\end{document}

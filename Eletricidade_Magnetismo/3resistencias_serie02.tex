@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+%Tres resistencias em serie
+%Faro, 09/12/2010, 14:30
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-circ}
+
+\begin{document}
+
+\pagestyle{empty} 
+
+\begin{pspicture}(12,5)
+
+\pnode(0,0){A}
+\pnode(3,0){B}
+\pnode(5,0){C}
+\pnode(8,0){D}\pnode(10,0){D2}
+\pnode(12,0){E}
+
+\resistor[labeloffset=1.25,dipolestyle=zigzag](A)(B){\scalebox{1.5}{$R_1$}}
+\resistor[labeloffset=1.25,dipolestyle=zigzag](B)(C){\scalebox{1.5}{$R_2$}}
+\resistor[labeloffset=1.25,dipolestyle=zigzag](C)(D){\scalebox{1.5}{$R_3$}}
+
+\rput{0}(9,0){\psscalebox{1.5}{$\ldots$}}
+
+\wire(D2)(E)
+\pscircle[fillstyle=solid,fillcolor=white](0,0){0.15}
+\pscircle[fillstyle=solid,fillcolor=white](12,0){0.15}
+
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](0,-1)(12,-1)
+
+\rput{0}(6,-1.5){\psscalebox{1.5}{$\Delta\varphi$}}
+
+\end{pspicture}
+
+\end{document}

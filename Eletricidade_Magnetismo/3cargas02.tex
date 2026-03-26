@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+
+%Tres cargas
+%Faro, 15/09/2004, 12:00
+%Written by Tordar
+
+%%BoundingBox: 150 320 465 670
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+
+\usepackage{pifont}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-7)(6,7)
+%\psset{xunit=5cm,yunit=5cm}
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash = 4mm 1mm](-6,0)(6,0)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-5,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-1,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](5,0){0.3}
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid,arrows=<->](-5,-1)(-1,-1)
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid,arrows=<->](-1,-1)( 5,-1)
+\rput{0}(-5,1){\scalebox{1.5}{$q_1$}}
+\rput{0}(-1,1){\scalebox{1.5}{$q_2$}}
+\rput{0}( 5,1){\scalebox{1.5}{$q_3$}}
+\rput{0}(-3,-0.5){\scalebox{1.5}{$a$}}
+\rput{0}( 2,-0.5){\scalebox{1.5}{$b$}}
+\end{pspicture}
+
+\end{document}

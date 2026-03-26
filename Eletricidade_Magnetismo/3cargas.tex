@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+%Tres cargas
+%Gambelas, Fri May  3 19:13:43 WEST 2013
+%Written by Tordar
+
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{pst-slpe}
+
+\usepackage{pifont}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-7)(6,7)
+%\psset{xunit=5cm,yunit=5cm}
+%\SpecialCoor
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash= 5mm 1mm](0,5)(5,5)(5,0)
+\psline[linewidth=0.5mm,linecolor=black,arrows=<->](0.2,0.2)(4.9,4.9)
+\psline[linewidth=0.5mm,linecolor=black,arrows=<->](0,-1)(5,-1)
+\psline[linewidth=0.5mm,linecolor=black,arrows=<->](-1,0)(-1,5)
+\psline[linewidth=1mm,linecolor=black,arrows=<->](0,6)(0,0)(6,0)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](0,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](5,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](0,5){0.3}
+\rput{0}(-0.6,-0.6){\scalebox{1.5}{$q$}}
+\rput{0}(-0.6,5){\scalebox{1.5}{$q$}}
+\rput{0}(5,-0.6){\scalebox{1.5}{$q$}}
+\rput{0}(5.6,5.6){\scalebox{1.5}{$P$}}
+\rput{0}(6.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,6.5){\scalebox{1.5}{$Y$}}
+\rput{0}(5,5){\scalebox{1.2}{$\bullet$}}
+\rput{0}(2.5,-1.4){\scalebox{1.5}{$l$}}
+\rput{0}(-1.4,2.5){\scalebox{1.5}{$l$}}
+\rput{0}(2.5,3){\scalebox{1.5}{$d$}}
+\rput{0}(-1,-1){\scalebox{0.8}{$(1)$}}
+\rput{0}(5,-1.5){\scalebox{0.8}{$(2)$}}
+\rput{0}(-1.5,5){\scalebox{0.8}{$(3)$}}
+\end{pspicture}
+
+\end{document}

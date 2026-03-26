@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+
+% Cinco condensadores em serie
+% Faro, 14/12/2008, 22:00
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-circ}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(12,5)
+
+\pnode(0,2){P1}
+\pnode(3,2){P2}
+\pnode(6,2){P3}
+\pnode(9,2){P4}
+\pnode(9,-2){P5}
+\pnode(6,-2){P6}
+\pnode(3,-2){P7}
+\pnode(0,-2){P8}
+
+\capacitor[labeloffset=1,dipolestyle=zigzag](P1)(P2){\scalebox{1.5}{$C_1$}}
+\capacitor[labeloffset=1,dipolestyle=zigzag](P2)(P3){\scalebox{1.5}{$C_1$}}
+\capacitor[labeloffset=1,dipolestyle=zigzag](P3)(P4){\scalebox{1.5}{$C_1$}}
+\capacitor[labeloffset=1,dipolestyle=zigzag](P3)(P6){\scalebox{1.5}{$C_1$}}
+\capacitor[labeloffset=1,dipolestyle=zigzag](P2)(P7){\scalebox{1.5}{$C_1$}}
+
+\wire(P8)(P5)
+
+\rput{0}(10,2){\scalebox{1.5}{$\ldots$}}
+\rput{0}(10,-2){\scalebox{1.5}{$\ldots$}}
+
+\pscircle[fillstyle=solid,fillcolor=white](0,2){0.15}
+\pscircle[fillstyle=solid,fillcolor=white](0,-2){0.15}
+\pscircle[fillstyle=solid,fillcolor=black](P2){0.15}
+\pscircle[fillstyle=solid,fillcolor=black](P3){0.15}
+\pscircle[fillstyle=solid,fillcolor=black](P6){0.15}
+\pscircle[fillstyle=solid,fillcolor=black](P7){0.15}
+
+\end{pspicture}
+
+\end{document}
