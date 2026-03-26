@@ -1,0 +1,28 @@
+\documentclass[12pt,a4paper,landscape]{article}
+
+% Convenção de sinais para a equacao do construtor de lentes
+% Mexilhoeira Grande, Sab Dez  1 13:07:57 WET 2018
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-optexp}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}
+\rput(-1.85,0){
+\scalebox{3}{
+\lens[lensradiusleft=0.6,lensradiusright=1](0,0)(1,0){}
+\rput(1.2,0){\lens[lensradiusleft=-0.6,lensradiusright=-1](0,0)(1,0){}}
+\rput(2.2,0){\lens[lensradiusleft=0.6,lensradiusright=-1](0,0)(1,0){}}
+\rput(3.5,0){\lens[lensradiusleft=-0.6,lensradiusright=1](0,0)(1,0){}}
+}}
+\rput[c](0,-2){\scalebox{1}{$R_1 > 0, R_2 < 0$}}
+\rput[c](3.2,-2){\scalebox{1}{$R_1 < 0, R_2 > 0$}}
+\rput[c](6.5,-2){\scalebox{1}{$R_1 > 0, R_2 > 0$}}
+\rput[c](9.8,-2){\scalebox{1}{$R_1 < 0, R_2 < 0$}}
+\end{pspicture}
+
+\end{document}
