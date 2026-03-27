@@ -1,0 +1,31 @@
+% DeepSeek 
+% Faro, ter 09 dez 2025 20:49:52 
+% pstricks2pdf.sh clipping_demo02
+\documentclass[border=5pt]{standalone}
+\usepackage{pstricks}
+\usepackage{graphicx}
+
+\begin{document}
+\begin{pspicture}(-2,-2)(2,2)
+
+% Draw a frame to show the bounding box
+\psframe[linecolor=gray,linestyle=dashed](-2,-2)(2,2)
+
+% Create a circular clipping path
+\begin{psclip}{\pscircle{1.5}}
+  % The image will be visible only within the circle
+  %\rput(0,0){\includegraphics[width=4cm]{example-image}}
+  \rput(0,0){\includegraphics[width=4cm]{cesna}}
+  
+  % Some text that will also be clipped
+  \rput(0,0){\Huge\color{blue}\textbf{CLIPPED}}
+\end{psclip}
+
+% Draw the clipping circle outline
+\pscircle[linewidth=1.5pt,linecolor=red]{1.5}
+
+% Add a label
+\rput(0,-1.8){\large\textbf{Circular Clipping Example}}
+
+\end{pspicture}
+\end{document}
