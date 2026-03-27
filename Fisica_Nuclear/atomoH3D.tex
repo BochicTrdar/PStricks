@@ -1,0 +1,34 @@
+% DeepSeek 
+% Faro, seg 01 dez 2025 20:23:40 
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pstricks-add}  % Para sombras
+\begin{document}
+\pagestyle{empty}
+
+\begin{pspicture}(-2,-2)(2,2)
+    % Núcleo com efeito 3D (duplo círculo)
+    \pscircle[fillcolor=red!70,fillstyle=solid](0,0){0.4}
+    \pscircle[fillcolor=red!90,fillstyle=solid](0.05,0.05){0.3}
+    \rput(0,0){\color{white}\small \textbf{+}}
+    
+    % Órbita
+    \pscircle[linewidth=0.8pt,linecolor=gray](0,0){1.5}
+    
+    % Elétron com sombra
+    \pscircle[fillcolor=blue,fillstyle=solid,shadow=true,
+              shadowsize=0.05,shadowcolor=blue!50](1.5,0){0.2}
+    \pscircle[fillcolor=blue!80,fillstyle=solid](1.53,0.03){0.15}
+    \rput(1.5,0){\color{white}\tiny \textbf{--}}
+    
+    % Vetor de força elétrica
+    \psline[linewidth=0.8pt,linecolor=red]{->}(0.4,0)(1.1,0)
+    \rput(0.75,0.2){\tiny Força}
+    \rput(0.75,-0.2){\tiny atrativa}
+    
+    % Legenda
+    \rput(0,-1.8){\small\textbf{Átomo de Hidrogênio}}
+    \rput[t](0,1.8){\footnotesize$\text{p}^+$ = próton\quad$\text{e}^-$ = elétron}
+\end{pspicture}
+
+\end{document}

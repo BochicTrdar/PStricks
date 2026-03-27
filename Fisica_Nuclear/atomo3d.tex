@@ -1,0 +1,30 @@
+% DeepSeek 
+% Faro, seg 01 dez 2025 20:17:20 
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pst-3dplot}
+\begin{document}
+\pagestyle{empty}
+\begin{pspicture}(-3,-3)(3,3)
+    % Núcleo com prótons e nêutrons separados
+    \pscircle[fillcolor=red,fillstyle=solid](0,0){0.3}
+    \pscircle[fillcolor=gray,fillstyle=solid](0.2,0.2){0.25}
+    \pscircle[fillcolor=gray,fillstyle=solid](-0.2,-0.1){0.2}
+    \rput(0,0){\tiny \color{white}+}
+    
+    % Órbitas em 3D (elipses para efeito de perspectiva)
+    \psellipse[linewidth=0.5pt,linestyle=dashed](0,0)(2,1.5)
+    \psellipse[linewidth=0.5pt,linestyle=dashed,linestyle=dashed](0,0)(2.8,2.1)
+    
+    % Elétrons distribuídos
+    \foreach \x/\y in {2/0, 1.4/1.4, 0/2, -1.4/1.4, -2/0, -1.4/-1.4, 0/-2, 1.4/-1.4}{
+        \pscircle[fillcolor=blue,fillstyle=solid](\x,\y){0.15}
+        \psline[linewidth=0.3pt,linecolor=blue!30]{->}(\x,\y)(0.4,0.4)
+    }
+    
+    % Setas de movimento dos elétrons
+    \psarc[linewidth=0.5pt,linecolor=blue]{->}(0,0){1.8}{30}{60}
+    \psarc[linewidth=0.5pt,linecolor=blue]{->}(0,0){2.5}{120}{150}
+\end{pspicture}
+
+\end{document}
