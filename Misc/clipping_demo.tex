@@ -1,0 +1,84 @@
+% DeepSeek 
+% Faro, ter 09 dez 2025 20:43:51 
+% pstricks2pdf.sh clipping_demo 
+\documentclass[border=5pt]{standalone}
+\usepackage{pstricks}
+\usepackage{graphicx}
+\usepackage{pst-node}
+
+\begin{document}
+\begin{pspicture}(-3,-3)(3,3)
+
+% ============================================
+% EXAMPLE 1: Basic rectangular clipping
+% ============================================
+\psframe[fillstyle=solid,fillcolor=yellow!20](-2.5,2.5)(2.5,0.5)
+
+% Create a clipping path (rectangle)
+\begin{psclip}{\psframe[linestyle=none](-2,2)(2,1)}
+  % Anything inside this environment will be clipped
+  \rput(0,1.5){
+    \includegraphics[width=6cm,height=2cm]{example-image-a} % Use any image file
+  }
+  % Add some text to show clipping
+  \rput(0,1.5){\Huge\textbf{CLIPPED}}
+\end{psclip}
+
+% Label this example
+\rput(0,2.75){\textbf{Example 1: Rectangular Clipping}}
+% ============================================
+% EXAMPLE 2: Circular clipping
+% ============================================
+\psframe[fillstyle=solid,fillcolor=blue!10](-2.5,-0.5)(2.5,-2.5)
+
+\begin{psclip}{\pscircle[linestyle=none]{1}}
+  \rput(0,-1.5){
+    \includegraphics[width=3cm,height=3cm]{example-image-b}
+  }
+  \rput(0,-1.5){\Large\textbf{Circular Clip}}
+\end{psclip}
+
+% Label this example
+\rput(0,-0.25){\textbf{Example 2: Circular Clipping}}
+
+% ============================================
+% EXAMPLE 3: Custom shape clipping (triangle)
+% ============================================
+\psframe[fillstyle=solid,fillcolor=red!10](-2.5,-3)(2.5,-5.5)
+
+\begin{psclip}{\pspolygon[linestyle=none](-1,-4)(1,-4)(0,-3)}
+  \rput(0,-4){
+    \includegraphics[width=3cm,height=2cm]{example-image-c}
+  }
+  \rput(0,-4){\Large\textbf{Triangle}}
+\end{psclip}
+
+% Label this example
+\rput(0,-2.75){\textbf{Example 3: Triangular Clipping}}
+
+% ============================================
+% EXAMPLE 4: Complex path clipping
+% ============================================
+\psframe[fillstyle=solid,fillcolor=green!10](-2.5,-6)(2.5,-8.5)
+
+\begin{psclip}{
+  \pscustom[linestyle=none]{
+    \moveto(-1,-7)
+    \lineto(1,-7)
+    \curveto(1.5,-7)(1.5,-6.5)(1,-6.5)
+    \lineto(-1,-6.5)
+    \curveto(-1.5,-6.5)(-1.5,-7)(-1,-7)
+    \closepath
+  }
+}
+  \rput(0,-7.25){
+    \includegraphics[width=3cm,height=2cm]{example-image}
+  }
+  \rput(0,-7.25){\Large\textbf{Custom Shape}}
+\end{psclip}
+
+% Label this example
+\rput(0,-5.75){\textbf{Example 4: Custom Path Clipping}}
+
+\end{pspicture}
+\end{document}
