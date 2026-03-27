@@ -1,0 +1,31 @@
+% DeepSeek 
+% Faro, seg 01 dez 2025 20:16:20 
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\begin{document}
+\pagestyle{empty}
+
+\begin{pspicture}(-3,-3)(3,3)
+    % Núcleo (prótons e nêutrons)
+    \pscircle[fillcolor=red,fillstyle=solid](0,0){0.5}
+    \rput(0,0){\color{white}\Large\bfseries +}
+    
+    % Órbita 1
+    \pscircle[linewidth=1pt,linestyle=dashed](0,0){1.5}
+    % Elétrons na órbita 1
+    \pscircle[fillcolor=blue,fillstyle=solid](1.5,0){0.2}
+    \pscircle[fillcolor=blue,fillstyle=solid](-1.5,0){0.2}
+    
+    % Órbita 2
+    \pscircle[linewidth=1pt,linestyle=dashed](0,0){2.5}
+    % Elétrons na órbita 2
+    \foreach \i in {0,45,90,135,180,225,270,315}{
+        \pscircle[fillcolor=blue,fillstyle=solid](2.5;\i){0.15}
+    }
+    
+    % Legenda
+    \rput(0,-2.8){\small Átomo de Oxigênio (8 elétrons)}
+\end{pspicture}
+
+\end{document}
