@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+%Fio condutor
+%Faro, Mon Mar  3 21:19:01 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,-5)(5,5)
+%\pspolygon[linewidth=0mm,fillstyle=slope,slopebegin=white,slopeend=black]
+%(-4,-3)(-4,3)(4,3)(4,-3)
+%\psset{linewidth=1mm,linecolor=black,linestyle=solid,fillstyle=solid,fillcolor=white}
+%\pstThreeDCircle(0,0, 3.5)(4,0,0)(0,4,0)
+%\psset{linewidth=1mm,linecolor=black,linestyle=solid,fillstyle=slope,slopebegin=white,slopeend=gray}
+%\pstThreeDCircle(0,0,-3.5)(4,0,0)(0,4,0)
+
+\pspolygon[linewidth=0mm,fillstyle=solid,fillcolor=lightgray]
+(-4,-3)(-4,3)(4,3)(4,-3)
+\psset{linewidth=1mm,linecolor=black,linestyle=solid,fillstyle=slope,slopebegin=white,slopeend=gray}
+\pstThreeDCircle(0,0, 3.5)(4,0,0)(0,4,0)
+\psset{linewidth=0mm,fillstyle=solid,fillcolor=lightgray}
+\pstThreeDCircle(0,0,-3.5)(4,0,0)(0,4,0)
+\psset{beginAngle=-220,endAngle=-40,linewidth=1mm,linecolor=black,linestyle=dashed,dash=4mm 1mm}
+\pstThreeDCircle(0,0,-3.5)(4,0,0)(0,4,0)
+\psset{beginAngle=-40,endAngle=140,linewidth=1mm,linecolor=black,linestyle=solid}
+\pstThreeDCircle(0,0,-3.5)(4,0,0)(0,4,0)
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=8,yMin=0,yMax=5,zMin=0,zMax=5,drawing=false]
+\pstThreeDLine(-2.83, 2.83,-3.5)(-2.83, 2.83,3.5)
+\pstThreeDLine( 2.83,-2.83,-3.5)( 2.83,-2.83,3.5)
+\psset{linewidth=0.7mm,linecolor=blue,linestyle=dashed,dash=4mm 1mm,arrows=-}
+\pstThreeDLine(0,0,0)(4,0,0)
+\pstThreeDLine(0,0,0)(0,4,0)
+\pstThreeDLine(0,0,-5)(0,0,1)
+\psset{linewidth=0.7mm,linecolor=blue,linestyle=solid,arrows=->}
+\pstThreeDLine(4.3,0,0)(7,0,0)
+\pstThreeDLine(0,4.3,0)(0,7,0)
+\pstThreeDLine(0,0,1.3)(0,0,7)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,linestyle=solid,arrows=->](6,0,2)(8,0,2)
+\pstThreeDLine[linewidth=1mm,linestyle=solid,arrows=<->](0,0,3.5)(0,-4,3.5)
+\pstThreeDLine[linewidth=1mm,linestyle=solid,arrows=<->](2,3.46,-3.5)(2,3.46,3.5)
+\pstPlanePut[plane=xz](7.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,7.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,7.5){\scalebox{1.5}{$Z$}}
+\pstPlanePut[plane=yz](-0.5,-2.5,3.5){\scalebox{1.5}{$a$}}
+\pstPlanePut[plane=xz](7.5,0,3){\scalebox{1.5}{$\mathbf{E}_0$}}
+\psset{fillcolor=white}
+\pstPlanePut[plane=yz](1.7,3.75,0){\scalebox{1.5}{\psframebox*{$l$}}}
+\end{pspicture}
+
+\end{document}
