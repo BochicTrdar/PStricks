@@ -1,0 +1,28 @@
+% Colisão frontal 
+% Faro, ter 16 dez 2025 20:16:11 
+% Written by Tordar
+% pstricks2pdf.sh colisao_frontal
+\documentclass{article}
+
+\usepackage{pst-grad,pst-slpe,pst-blur,pst-node}
+\usepackage{pst-coil,pst-circ,pst-eucl,pst-solides3d,pstricks-add}
+\usepackage{graphicx}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(0,0)(10,10)
+\rput{30}(0,0){
+\psline[linewidth=2pt,linecolor=black,linestyle=dashed,dash=4mm 1mm](0,0)(10,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(2,0)(4,0)
+\psline[linewidth=3pt,linecolor=blue]{<-}(6,0)(8,0)
+\psBall(2,0){gray}{.8}
+\psBall(8,0){gray}{.5}
+\rput{0}(2,-1.2){\scalebox{1.5}{$m_1$}}
+\rput{0}(8,1){\scalebox{1.5}{$m_2$}}
+\rput{0}(4,-0.5){\scalebox{1.5}{$\mathbf{u}_1$}}
+\rput{0}(6,0.5){\scalebox{1.5}{$\mathbf{u}_2$}}
+}
+\end{pspicture}
+
+\end{document}
