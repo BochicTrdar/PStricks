@@ -1,0 +1,53 @@
+% 22/11/2003 at 23:00  
+% Hidrostática: 
+% Força de Arquimedes
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null
+\vskip7cm
+\begin{pspicture}(0,0)(1.5,1.5)
+\psset{unit=10cm}
+\pscircle[linecolor=black,linewidth=1mm,
+         fillstyle=hlines*,
+	 fillcolor=white,
+	 hatchangle=45](0.5,0.6){0.3}
+\psarc[linewidth=2pt,linecolor=blue](0,0.7){0.05}{-90}{0}       % Yes, I could do this with multido...
+\psarc[linewidth=2pt,linecolor=blue](0.1,0.7){0.05}{180}{270}   % I am just to tired to read the doc...
+\psarc[linewidth=2pt,linecolor=blue](0.1,0.7){0.05}{-90}{0}     
+\psarc[linewidth=2pt,linecolor=blue](0.2,0.7){0.05}{180}{270}
+\psarc[linewidth=2pt,linecolor=blue](0.2,0.7){0.05}{-90}{0}     
+\psarc[linewidth=2pt,linecolor=blue](0.3,0.7){0.05}{180}{270}
+\psarc[linewidth=2pt,linecolor=blue](0.3,0.7){0.05}{-90}{0}     % Yes, I could do this with multido...
+\psarc[linewidth=2pt,linecolor=blue](0.4,0.7){0.05}{180}{270}   % I am just to tired to read the doc...
+\psarc[linewidth=2pt,linecolor=blue](0.4,0.7){0.05}{-90}{0}     
+\psarc[linewidth=2pt,linecolor=blue](0.5,0.7){0.05}{180}{270}
+\psarc[linewidth=2pt,linecolor=blue](0.5,0.7){0.05}{-90}{0}     
+\psarc[linewidth=2pt,linecolor=blue](0.6,0.7){0.05}{180}{270}
+\psarc[linewidth=2pt,linecolor=blue](0.6,0.7){0.05}{-90}{0}
+\psarc[linewidth=2pt,linecolor=blue](0.7,0.7){0.05}{180}{270} 
+\psarc[linewidth=2pt,linecolor=blue](0.7,0.7){0.05}{-90}{0}
+\psarc[linewidth=2pt,linecolor=blue](0.8,0.7){0.05}{180}{270} 
+\psarc[linewidth=2pt,linecolor=blue](0.8,0.7){0.05}{-90}{0}
+\psarc[linewidth=2pt,linecolor=blue](0.9,0.7){0.05}{180}{270} 
+\psarc[linewidth=2pt,linecolor=blue](0.9,0.7){0.05}{-90}{0}
+\psarc[linewidth=2pt,linecolor=blue](1.0,0.7){0.05}{180}{270} 
+\psline[linewidth=3pt,
+        linearc=5mm,
+	linecolor=black](0,1)(0,0)(1,0)(1,1) 
+\psline[linewidth=5pt,linecolor=blue]{->}(0.5,0.9)(0.5,1.1)
+\psline[linewidth=5pt,linecolor=black]{->}(0.5,0.3)(0.5,0.1)
+\rput{0}(0.52,1.15){\scalebox{1.7}{$\mathbf{I}$}}
+\rput{0}(0.5,0.05){\scalebox{1.7}{$m\mathbf{g}$}}
+\rput{0}(0.9,0.1){\scalebox{1.7}{$\rho$}}
+\end{pspicture}
+\end{document} 
