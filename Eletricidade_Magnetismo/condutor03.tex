@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+
+%Cilindros coaxiais
+%Faro, Mon Mar  3 21:38:28 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-4,-4)(4,4)
+\pscircle[linewidth=0.5mm,fillstyle=solid,fillcolor=gray](0,0){4}
+\pscircle[linewidth=0.5mm,fillstyle=solid,fillcolor=lightgray](0,0){2.5}
+\SpecialCoor
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](0;0)(4;135)
+\psline[linewidth=1mm,linecolor=blue,arrows=<->](0;0)(2.5;45)
+\rput{0}(1.25;65){\scalebox{1.7}{$r_1$}}
+\rput{0}(2.9;125){\scalebox{1.7}{$r_2$}}
+\rput{0}(1.7;225){\scalebox{1.7}{$\rho_1$}}
+\rput{0}(3.2;225){\scalebox{1.7}{$\rho_2$}}
+\end{pspicture}
+
+\end{document}
