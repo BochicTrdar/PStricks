@@ -1,0 +1,50 @@
+%01/06/2004 at 16:30  
+%
+%Dinâmica do Ponto Material: 
+%Força Gravítica e Peso
+% 
+%Written by TORDAR 
+
+%%BoundingBox: 120 495 370 645
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+ 
+
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(0,-0.05)(1,1)
+\psset{unit=8cm}
+\pscoil[linewidth=2pt,linecolor=blue,coilarm=0.4cm,coilwidth=0.5cm]{|-|}(0.2,0)(0.2,0.5)
+\scalebox{1 0.5}{
+\pscoil[linewidth=2pt,linecolor=blue,coilarm=0.4cm,coilwidth=0.5cm]{|-|}(0.8,0)(0.8,0.5)
+                 }
+\psframe[linewidth=1mm,
+         linecolor=lightgray,
+	 dimen=inner,
+	 fillstyle=hlines*,
+	 fillcolor=lightgray,
+	 hatchangle=45](0,-0.05)(1,0)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0,0.5)(0.2,0.55)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.2,0.5)(0.4,0.55)
+\psframe[linewidth=0mm,linecolor=black,dimen=inner](0,0.5)(0.4,0.55)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.6,0.25)(0.8,0.3)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.8,0.25)(1,0.3)
+\psframe[linewidth=0mm,linecolor=black,dimen=inner](0.6,0.25)(1,0.3)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=black,slopeend=white,slopesteps=25](0.65,0.3)(0.8,0.55)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=black,slopesteps=25](0.8,0.3)(0.95,0.55)
+\psframe[linewidth=0mm,linecolor=black](0.65,0.3)(0.95,0.55)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0.4,0.52)(0.6,0.52)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0.4,0.27)(0.6,0.27)
+\pcline[linewidth=2pt,linecolor=black,offset=0mm]{<->}(0.5,0.52)(0.5,0.27)
+\rput{0}(0.4,0.4){\scalebox{1.5}{$\Delta x$}}
+\rput{0}(1,0.4){\scalebox{1.5}{$m$}}
+\end{pspicture}
+\end{document} 

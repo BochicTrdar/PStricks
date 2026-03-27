@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+% Lei de atracao universal de Newton
+% Gambelas, Tue Oct 15 14:32:35 WEST 2013
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+\usepackage{pifont}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-1,-1)(9,5)
+\pscircle[linewidth=0.1mm,
+linecolor=white,
+fillstyle=ccslope,
+slopebegin=white,
+slopeend=DarkGreen,
+slopecenter=0.65 0.65,
+slopesteps=25](0,0){1.5}
+\pscircle[linewidth=0.1mm,
+linecolor=white,
+fillstyle=ccslope,
+slopebegin=white,
+slopeend=DimGray,
+slopecenter=0.65 0.65,
+slopesteps=25](8,0){0.75}
+\psline[linewidth=0.8mm,linecolor=black,linestyle=solid]{<->}(0,-2)(8,-2)
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid]{->}(0,0)(2,0)
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid]{<-}(6,0)(8,0)
+\rput{0}(4,-1.7){\scalebox{1.4}{$r$}}
+\rput{0}(0,1.7){\scalebox{1.4}{$m_1$}}
+\rput{0}(8,1.0){\scalebox{1.4}{$m_2$}}
+\end{pspicture}
+
+\end{document}

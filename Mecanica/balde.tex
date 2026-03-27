@@ -1,0 +1,124 @@
+% DeepSeek 
+% Faro, seg 08 dez 2025 13:56:24 
+% pstricks2pdf.sh balde
+\documentclass[border=10pt]{standalone}
+\usepackage{pstricks}
+\usepackage{pst-grad}
+
+\begin{document}
+
+\begin{pspicture}(-4,-3)(4,7)
+    
+    % ========== REAL BUCKET SHAPE ==========
+    % Classic bucket shape: tapered, with curved sides
+    
+    % Main bucket body - metallic gradient
+    \pscustom[fillstyle=gradient,gradbegin=gray!15,gradend=gray!35,
+              gradangle=90,gradmidpoint=0.5,linestyle=none]{
+        % Start at bottom left
+        \moveto(-1.8,-2)
+        % Left side curve (tapering inward)
+        \curveto(-2.5,-1)(-3,1)(-3,3)
+        % Upper left curve (flaring outward)
+        \curveto(-3,4.5)(-2.5,5.5)(-1.5,6)
+        % Top rim left
+        \lineto(-1,6.5)
+        % Across top
+        \lineto(1,6.5)
+        % Top rim right
+        \lineto(1.5,6)
+        % Upper right curve
+        \curveto(2.5,5.5)(3,4.5)(3,3)
+        % Right side curve (tapering inward)
+        \curveto(3,1)(2.5,-1)(1.8,-2)
+        % Bottom curve
+        \curveto(1.5,-2.3)(-1.5,-2.3)(-1.8,-2)
+    }
+    
+    % ========== CENTER HIGHLIGHT ==========
+    % Strong vertical highlight down center
+    \pscustom[fillstyle=gradient,gradbegin=white!95,gradend=white!0,
+              gradangle=90,gradmidpoint=0.3,opacity=0.9,linestyle=none]{
+        \moveto(-0.6,-1.5)
+        \curveto(-1,-0.5)(-1.2,1)(-1.2,2.5)
+        \curveto(-1.2,4)(-0.8,5)(0,5.5)
+        \curveto(0.8,5)(1.2,4)(1.2,2.5)
+        \curveto(1.2,1)(1,-0.5)(0.6,-1.5)
+        \curveto(0.3,-1.8)(-0.3,-1.8)(-0.6,-1.5)
+    }
+    
+    % ========== SIDE REFLECTIONS ==========
+    % Left side reflection
+    \pscustom[fillstyle=gradient,gradbegin=white!85,gradend=white!0,
+              gradangle=45,gradmidpoint=0.2,opacity=0.6,linestyle=none]{
+        \moveto(-2.2,-1)
+        \curveto(-2.8,0)(-2.8,2)(-2.3,4)
+        \lineto(-1.8,5)
+        \curveto(-2,4)(-2.2,2.5)(-2,1)
+        \closepath
+    }
+    
+    % Right side reflection
+    \pscustom[fillstyle=gradient,gradbegin=white!85,gradend=white!0,
+              gradangle=135,gradmidpoint=0.2,opacity=0.6,linestyle=none]{
+        \moveto(2.2,-1)
+        \curveto(2.8,0)(2.8,2)(2.3,4)
+        \lineto(1.8,5)
+        \curveto(2,4)(2.2,2.5)(2,1)
+        \closepath
+    }
+    
+    % ========== RIM ==========
+    % Thick rolled rim
+    \pscustom[fillstyle=gradient,gradbegin=gray!50,gradend=gray!30,
+              gradangle=0,gradmidpoint=0.6,linestyle=none]{
+        \moveto(-1.5,6)
+        \lineto(-1,6.8)
+        \lineto(1,6.8)
+        \lineto(1.5,6)
+        \closepath
+    }
+    
+    % Rim top highlight
+    \psline[linewidth=1.5pt,linecolor=white!95](-1,6.8)(1,6.8)
+    
+    % Rim bottom shadow
+    \psline[linewidth=0.8pt,linecolor=gray!60](-1.5,6)(1.5,6)
+    
+    % ========== HANDLE ==========
+    % Handle attachment bolts
+    \pscircle[fillstyle=solid,fillcolor=gray!45,linestyle=none](-1.2,6.2){0.15}
+    \pscircle[fillstyle=solid,fillcolor=gray!45,linestyle=none](1.2,6.2){0.15}
+    
+    % Handle (wire)
+    \pscurve[linewidth=4pt,linecolor=gray!35,fillstyle=none]{c-}%
+            (-1.2,6.2)(-0.5,7.5)(0,8)(0.5,7.5)(1.2,6.2)
+    
+    % Handle highlight
+    \pscurve[linewidth=1.5pt,linecolor=white!85,fillstyle=none]{c-}%
+            (-1.2,6.3)(-0.5,7.6)(0,8.1)(0.5,7.6)(1.2,6.3)
+    
+    % ========== OUTLINE ==========
+    % Main bucket outline
+    \pscustom[linewidth=1.5pt,linecolor=gray!65,fillstyle=none]{
+        \moveto(-1.8,-2)
+        \curveto(-2.5,-1)(-3,1)(-3,3)
+        \curveto(-3,4.5)(-2.5,5.5)(-1.5,6)
+        \lineto(-1,6.5)
+        \lineto(1,6.5)
+        \lineto(1.5,6)
+        \curveto(2.5,5.5)(3,4.5)(3,3)
+        \curveto(3,1)(2.5,-1)(1.8,-2)
+        \curveto(1.5,-2.3)(-1.5,-2.3)(-1.8,-2)
+    }
+    
+    % Rim outline
+    \pspolygon[linewidth=1pt,linecolor=gray!65,fillstyle=none](-1.5,6)(-1,6.8)(1,6.8)(1.5,6)
+    
+    % ========== SHADOW ==========
+    \psellipse[fillstyle=gradient,gradbegin=black!25,gradend=black!0,
+               gradmidpoint=0.5,linestyle=none](0,-3)(3.2,0.9)
+
+\end{pspicture}
+
+\end{document}

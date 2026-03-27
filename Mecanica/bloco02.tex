@@ -1,0 +1,44 @@
+% 05/06/2004 at 20:00 Mexilhoeira Grande
+% Dinâmica do Ponto Material: Bloco sobre um plano inclinado ligado a uma mola
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document}
+\null
+\vskip5cm 
+\begin{pspicture}(-0.1,-0.1)(1.1,1.1)
+\psset{unit=8cm}
+\rput{45}{
+\psframe[linewidth=1pt,linecolor=black,fillstyle=solid,fillcolor=lightgray](1,0.3)(1.05,0.7)
+\pscoil[linewidth=2pt,linecolor=lightgray,linestyle=dashed,dash=4mm 1mm,coilarm=0.5cm,coilwidth=0.5cm]{|-|}(0.7,0.5)(1,0.5)
+\psline[linewidth=5pt,linecolor=blue]{->}(0.5,0.3)(0.5,0)
+\psline[linewidth=5pt,linecolor=blue]{->}(0.5,0.7)(0.5,1)
+\psline[linewidth=5pt,linecolor=blue]{->}(0.7,0.5)(0.9,0.5)
+\psline[linewidth=2pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0.2,0.3)(0.2,0)
+\psline[linewidth=2pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0.5,0)(0.2,0)
+\psarc[linewidth=3pt,arcsepA=3pt,arcsepB=3pt]{->}(0.5,0.3){0.2}{220}{270}
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.3,0.3)(0.5,0.7)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.5,0.3)(0.7,0.7)
+\psframe[linewidth=3pt,dimen=middle](0.3,0.3)(0.7,0.7)
+\psline[linewidth=3pt,linecolor=black](0,0.3)(1,0.3)
+\psline[linewidth=5pt,linecolor=blue]{->}(0.5,0.3)(0.2,0.3)
+\psline[linewidth=5pt,linecolor=blue]{->}(0.5,0.3)(0.2,0)
+\rput{0}(0.5,1.05){\scalebox{1.5}{$\mathbf{N}$}}
+\rput{*0}(0.2,-0.05){\scalebox{1.5}{$m\mathbf{g}$}}
+\rput{0}(0.5,-0.1){\scalebox{1.5}{$\mathbf{F}_{\perp}$}}
+\rput{0}(0.2,0.4){\scalebox{1.5}{$\mathbf{F}_{\parallel}$}}
+\rput{0}(0.8,0.6){\scalebox{1.5}{$\mathbf{F}_{m}$}}
+\rput{0}(0.5,0.5){\scalebox{1.5}{$m$}}
+\rput{0}(0.4,0.07){\scalebox{1.5}{$\theta$}}
+         }
+\end{pspicture}
+\end{document} 
