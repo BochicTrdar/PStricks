@@ -1,0 +1,28 @@
+%http://tex.stackexchange.com/questions/111962/design-of-an-asteroid-belt-in-tikz
+\documentclass[tikz]{standalone}
+
+\usetikzlibrary{backgrounds}
+
+\tikzset{
+    random dot/.style args={#1*#2:#3}{random dot*={#1}*{#2}:{#3} and {#3}},
+    random dot*/.style args={#1*#2:#3 and #4}{
+        insert path={\foreach \throwaway in {1,...,#1} {(canvas polar cs: angle={#2+rnd}, x radius={#3+#3/.5cm*rand}, y radius={{#4+#4/.5cm*rand}}) circle[]}}}
+}
+\tikzset{every picture/.append style={show background rectangle,background rectangle/.style={fill=black}, radius=.4pt+.2pt*rand}}
+\begin{document}
+\tikz{
+  \draw[gray] circle[radius=2cm];
+  \foreach \angle in {0,...,360}
+    \fill[white] [random dot=2*\angle:2cm];}
+
+\tikz{
+  \draw[gray] circle[radius=2cm];
+  \foreach \angle in {0,...,360}
+    \fill[white] [random dot=1*\angle:2cm];}
+
+\tikz{
+  \draw[gray] circle[x radius=2cm, y radius=1.5cm];
+  \foreach \angle in {0,...,360}
+    \fill[white] [random dot*=1*\angle:2cm and 1.5cm];}
+    
+\end{document}
