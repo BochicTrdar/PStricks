@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+
+%Dois dielectricos na vertical
+%Faro, Wed Mar 19 19:30:58 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-7,-7)(7,7)
+\psset{xunit=1cm,yunit=1cm}
+%Fio superior:
+\psline[linewidth=1mm,linecolor=black,linestyle=solid](0,3)(0,4)
+%Fio inferior:
+\psline[linewidth=1mm,linecolor=black,linestyle=solid](0,-4)(0,-3)
+%Dielectrico a esquerda:
+\psframe[linewidth=1mm,linecolor=black,linestyle=solid](-3,-3)(0,3)
+%Dielectrico a direita:
+\psframe[linewidth=1mm,linecolor=black,linestyle=solid](0,-3)(3,3)
+%Seta dupla:
+\psline[linewidth=1mm,linecolor=blue,linestyle=solid,arrows=<->](3.5,-3)(3.5,3)
+\rput{0}(-1.5,3.5){\scalebox{1.5}{$S/2$}}
+\rput{0}(1.5,3.5){\scalebox{1.5}{$S/2$}}
+\rput{0}(4,0){\scalebox{1.5}{$d$}}
+\rput{0}(-1.5,0){\scalebox{1.5}{$\varepsilon_1$}}
+\rput{0}(1.5,0){\scalebox{1.5}{$\varepsilon_2$}}
+\end{pspicture}
+
+\end{document}

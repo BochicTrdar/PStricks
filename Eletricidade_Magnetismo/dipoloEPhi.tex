@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+% Campo e potencial de um dipolo
+% Faro, Sab Dez  8 21:21:38 WET 2018
+% Written by Tordar
+
+\input{apnum}
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\evaldef\thexleft{-5}\evaldef\thexright{5}
+\evaldef\thexi{-2}
+\evaldef\thexii{2}
+\evaldef\thexx{\thexright+0.5}
+\evaldef\theyup{6}\evaldef\theyy{\theyup+0.5}
+\evaldef\ther{0.25}
+\evaldef\thexp{4}\evaldef\theyp{4}
+
+\begin{pspicture}
+\psset{unit=1cm}
+\rput(5,0){
+\qdisk(\thexp,\theyp){0.1}
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=3mm 1mm,arrows=->](\thexleft,0)(\thexright,0)
+\psline[linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=3mm 1mm,arrows=->](0,0)(0,\theyup)
+\psline[linewidth=1mm,linecolor=blue,arrows=->](0,0)(\thexp,\theyp)
+\psline[linewidth=1mm,linecolor=blue,arrows=->](\thexi,0)(\thexp,\theyp)
+\psline[linewidth=1mm,linecolor=blue,arrows=->](\thexii,0)(\thexp,\theyp)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](\thexi,0){\ther}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](\thexii,0){\ther}
+\psline[linewidth=1mm,linecolor=blue,arrows=->](\thexi,0)(\thexii,0)
+\rput{0}(\thexi,-0.5){\scalebox{1.5}{$-q$}}
+\rput{0}(\thexii,-0.5){\scalebox{1.5}{$+q$}}
+\rput{0}(\thexx,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,\theyy){\scalebox{1.5}{$Y$}}
+\rput{0}(0,-0.5){\scalebox{1.5}{$\vd$}}
+\rput{0}(1,2.5){\scalebox{1.5}{$\mathbf{r}_1$}}
+\rput{0}(3.75,2.5){\scalebox{1.5}{$\mathbf{r}_2$}}
+\rput{0}(1.5,1){\scalebox{1.5}{$\mathbf{r}$}}
+\rput{0}(4.3,4.3){\scalebox{1.5}{$P$}}
+}
+\end{pspicture}
+
+\end{document}

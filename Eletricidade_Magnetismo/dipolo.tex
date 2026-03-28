@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(-5,5)(5,5)
+\psset{unit=1cm}
+\psline[linewidth=3pt,linecolor=black]{->}(-5,0)(4.7,0)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-5,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](5,0){0.3}
+\rput{0}(-5,-1){\scalebox{2}{$-q$}}
+\rput{0}( 5,-1){\scalebox{2}{$+q$}}
+\rput{0}(0,0.75){\scalebox{2}{$\vd$}}
+\end{pspicture}
+
+\end{document}
