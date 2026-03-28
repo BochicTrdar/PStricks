@@ -1,0 +1,53 @@
+%Gambelas, Thu Apr  8 09:28:54 WEST 2010
+
+\documentclass[12pt]{article}
+
+\pagestyle{empty} 
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+\newcmykcolor{mycolor}{0.15 0 0.69 0}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\null\vskip8cm
+\begin{pspicture}(-0.2,-0.2)(1.5,1.5)
+\psset{unit=10cm}
+
+%Fluido com a forma de um quadrado:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopeangle=-90,slopebegin=blue,slopeend=green,slopesteps=25](0,0.05)(1,0.8)
+
+%Superficie do fluido:
+\multirput{0}(0,0)(0.1,0){10}{
+\psarc[linewidth=0mm,linecolor=white,fillstyle=solid,fillcolor=white](0.05,0.8){0.05}{180}{0}
+}
+\pspolygon[linewidth=1mm,linecolor=black,fillstyle=hlines](-0.05,1)(0,1)(0,0.05)(1,0.05)(1,1)(1.05,1)(1.05,0)(-0.05,0)
+
+%Impulsao:
+\psline[linewidth=2mm,linecolor=blue]{->}(0.5,1.0)(0.5,1.2)
+%Forca gravitica:
+\psline[linewidth=2mm,linecolor=black]{->}(0.5,0.4)(0.5,0.2)
+
+%Bloco flutuante:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.2,0.4)(0.5,1)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.5,0.4)(0.8,1)
+\psframe[linewidth=0.5mm,dimen=middle](0.2,0.4)(0.8,1)
+
+%Superficie do fluido:
+\multirput{0}(0.2,0)(0.1,0){6}{
+\psarc[linewidth=0.5mm,linecolor=blue](0.05,0.8){0.05}{180}{0}
+}
+%Densidade do fluido:
+\rput{0}(0.9,0.15){\scalebox{2}{$\rho$}}
+%Densidade do bloco:
+\rput{0}(0.3,0.9){\scalebox{2}{$\rho_b$}}
+%Forca de Arquimedes:
+\rput{0}(0.5,1.25){\scalebox{1.7}{$\mathbf{F}_{Arq}$}}
+%Forca gravitica:
+\rput{0}(0.5,0.15){\scalebox{1.7}{$m\mathbf{g}$}}
+\end{pspicture}
+
+\end{document}
