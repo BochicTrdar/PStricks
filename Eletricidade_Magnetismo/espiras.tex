@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+%Duas espiras circulares
+%Faro, Tue Mar  4 21:04:43 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,5)(5,5)
+%\psgrid
+\pstThreeDCoor[linewidth=4pt,xMin=0,xMax=8,yMin=0,yMax=5,zMin=0,zMax=5,drawing=false]
+\psset{linewidth=1.2mm,linecolor=black}
+\pstThreeDPut(0,0,-2){\pstThreeDCircle(0,0,0)(4,0,0)(0,4,0)}
+\psset{linewidth=1mm,beginAngle=-5,endAngle=50,linestyle=solid,arrows=<-}
+\pstThreeDPut(0,0,-2){\pstThreeDCircle(0,0,0)(5,0,0)(0,5,0)}
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0, 0)(8,0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0, 0)(0,8,0)
+\psset{linewidth=1.2mm,linecolor=black}
+\psset{linewidth=1mm,beginAngle=0,endAngle=360,arrows=-}
+\pstThreeDPut(0,0, 2){\pstThreeDCircle(0,0,0)(4,0,0)(0,4,0)}
+\pstThreeDLine[linewidth=1.5mm,,linecolor=blue,arrows=->](0,0,0)(0,0,8)
+\pstThreeDLine[linewidth=0.7mm,,linecolor=blue,linestyle=dashed,dash=4mm 2mm,arrows=-](0,0,-0.5)(0,0,-4)
+\psset{linewidth=1mm,beginAngle=-5,endAngle=50,linestyle=solid,arrows=<-}
+\pstThreeDPut(0,0, 2){\pstThreeDCircle(0,0,0)(5,0,0)(0,5,0)}
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,arrows=<->](4,0, 2)(4,0,0)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,arrows=<->](4,0,-2)(4,0,0)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,arrows=<->](0,0,-2)(4,0,-2)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,arrows=<->](0,0, 2)(4,0, 2)
+\pstPlanePut[plane=xz](8.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,8.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,8.5){\scalebox{1.5}{$Z$}}
+\rput{0}(-1.8, 1.3){\scalebox{1.7}{$a$}}
+\rput{0}(-1.4,-2.8){\scalebox{1.7}{$a$}}
+\rput{0}(-3.8,-0.2){\scalebox{1.5}{$a/2$}}
+\rput{0}(  -2,-2  ){\scalebox{1.5}{$a/2$}}
+\rput{0}(   5,-0.4){\scalebox{1.5}{$I$}}
+\rput{0}(   5,3   ){\scalebox{1.5}{$I$}}
+\end{pspicture}
+
+\end{document}
