@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+
+% Disco furado
+% Faro, Dom Nov 18 01:05:19 WET 2018
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,5)(5,5)
+\pstThreeDCircle[fillstyle=hlines,linecolor=black,linewidth=1mm](0,0,0)(4,0,0)(0,4,0) % circulo exterior
+\pstThreeDCircle[linecolor=black,linewidth=1mm,fillstyle=solid,fillcolor=white](0,0,0)(2,0,0)(0,2,0) % circulo interior
+\pstThreeDSquare[linecolor=black,linewidth=0.5mm,fillstyle=solid,fillcolor=gray](3,0.5,0)(0.5,0,0)(0,0.5,0) % carga
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=8,yMin=0,yMax=5,zMin=0,zMax=5,drawing=false]
+\pstThreeDLine[linewidth=1.5mm,linecolor=black,arrows=<->](0,0,0)(0,-4,0)
+\psset{linecolor=blue,linestyle=solid}
+%\pstThreeDLine[linewidth=1.5mm,linecolor=red,arrows=->](3.25,0.75,0)(0,0,6)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(5,0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,5,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,0,8)
+\pstThreeDLine[linewidth=1.5mm,linecolor=black,arrows=<->](0,0,0)(-2,0,0)
+%\pstThreeDLine[linewidth=1.5mm,arrows=<->](0,0,0)(0,-4,0)
+\pstPlanePut[plane=xz](5.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,5.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,8.5){\scalebox{1.5}{$Z$}}
+\pstPlanePut[plane=yz](0,-4.75,0){\scalebox{1.5}{$R$}}
+\pstPlanePut[plane=yz](-0.5,0.6,0){\scalebox{1.5}{$R_0$}}
+\pstThreeDLine[linewidth=1.5mm,linecolor=red,arrows=->](3.25,0.75,0)(0,0,5.8)
+\rput{0}(0.02,5){\scalebox{5}{$\cdot$}}
+\rput{0}(0.4,5){\scalebox{1.5}{$P$}}
+\rput{0}(-1,2.5){\scalebox{1.5}{$\mathbf{r}$}}
+\end{pspicture}
+
+\end{document}
