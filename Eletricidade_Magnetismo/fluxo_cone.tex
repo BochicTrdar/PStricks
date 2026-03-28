@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+
+% Fluxo do campo para um cone
+% Mexilhoeira Grande, Sex Nov 30 20:19:52 WET 2018
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}
+\rput(2,0){
+\psset{linewidth=0.75mm,linecolor=black,linestyle=dashed,dash=4mm 1mm,arrows=->}
+\pstThreeDLine[arrows=-](0,0,0)(-6,0,0)
+\pstThreeDLine[arrows=-](0,-6,0)(0,0,0)
+\pstThreeDLine[linestyle=solid](0,0,0)(6,0,0)
+\pstThreeDLine[linestyle=solid](0,0,0)(0,6,0)
+\pstThreeDLine[linestyle=solid](0,0,3)(0,0,5)
+\pstThreeDTriangle[linewidth=1mm,linecolor=green,fillstyle=solid,fillcolor=yellow,arrows=-](0,-2,0)(0,0,4)(0,2,0)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,linestyle=solid,arrows=->](-5,0,0)(-3,0,0)
+\pstPlanePut[plane=xz](6.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,6.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,5.5){\scalebox{1.5}{$Z$}}
+\pstThreeDPut[plane=yz](-4,0,1){\scalebox{1.5}{$\mathbf{E}$}}
+%\pstPlanePut[plane=yz](0,-0.2,1.5){\scalebox{1.5}{$A$}}
+}
+\end{pspicture}
+
+\end{document}

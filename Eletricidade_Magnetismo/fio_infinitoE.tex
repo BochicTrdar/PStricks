@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+
+%Fio infinito
+%Faro, Tue Mar  4 21:19:28 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-4,-4)(8,8)
+%\psgrid
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=8,yMin=0,yMax=8,zMin=0,zMax=8,Alpha=75,Beta=30,drawing=false]
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(8,0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,8,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,-8)(0,0,8)
+\pstThreeDLine[linewidth=2mm,linecolor=gray](0,0,-4)(0,0,4)
+\pstThreeDLine[linewidth=2mm,linecolor=gray,linestyle=dashed,dash=2mm 1mm](0,0,-6)(0,0,-4)
+\pstThreeDLine[linewidth=2mm,linecolor=gray,linestyle=dashed,dash=2mm 1mm](0,0, 4)(0,0, 6)
+\pstThreeDLine[linewidth=1.5mm,linecolor=black,arrows=->](0,0,0)(6,3,7)
+\pstThreeDPut(8.5,0,0){\scalebox{1.5}{$X$}}
+\pstThreeDPut(0,8.5,0){\scalebox{1.5}{$Y$}}
+\pstThreeDPut(0,0,8.5){\scalebox{1.5}{$Z$}}
+\pstThreeDPut(0,1,4){\scalebox{2}{$\lambda$}}
+\pstThreeDPut(6,3,7){\scalebox{1.5}{$\circ$}}
+\pstThreeDPut(6,3,8){\scalebox{1.5}{$(x,y,z)$}}
+\pstThreeDPut(3,1.5,4.5){\scalebox{1.5}{$\mathbf{r}$}}
+\end{pspicture}
+
+\end{document}

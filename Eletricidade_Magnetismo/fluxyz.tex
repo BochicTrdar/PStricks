@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+
+%Fluxo do campo para plano (YZ)
+%Faro, Sat Mar  1 19:10:25 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,5)(5,5)
+\psset{linewidth=0.5mm,linecolor=black,linestyle=dashed,dash=4mm 1mm,arrows=->}
+\pstThreeDLine[arrows=-](0,0,0)(-6,0,0)
+\pstThreeDLine[linestyle=solid](0,0,0)(6,0,0)
+\pstThreeDLine[linestyle=solid](0,-6,0)(0,6,0)
+\pstThreeDLine[linestyle=solid](0,0,-4)(0,0,4)
+\pstThreeDLine[linewidth=1.5mm,linecolor=black,linestyle=solid,arrows=-](0,2,2)(0,-2,2)(0,-2,-2)(0,2,-2)(0,2,2)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,linestyle=solid,arrows=->](-5,0,0)(-3,0,0)
+\pstThreeDLine[linewidth=1.5mm,linecolor=blue,linestyle=solid,arrows=->](0,0,0)(3,0,0)
+\pstPlanePut[plane=xz](6.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,6.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,4.5){\scalebox{1.5}{$Z$}}
+\pstPlanePut[plane=yz](0,-1.5,1){\scalebox{1.75}{$A$}}
+\pstThreeDPut[plane=yz](-4,0,1){\scalebox{1.5}{$\mathbf{E}$}}
+\pstThreeDPut[plane=yz](3,0,1){\scalebox{1.5}{$\mathbf{n}$}}
+\end{pspicture}
+
+\end{document}
