@@ -1,0 +1,48 @@
+%Gambelas, 07/06/2004 at 13:30  
+%
+%Dinâmica do Ponto Material: 
+%Blocos ligados através de uma roldana no interior de um elevador
+% 
+%Written by TORDAR 
+
+%%BoundingBox: 130 505 295 760
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+ 
+
+\usepackage{graphicx}
+%\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(-0.2,-0.2)(2,1)
+\psset{unit=8cm}
+%O elevador:
+\psframe[linewidth=0.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0)(0.7,0.8)
+\psframe[linewidth=0.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0.05,0.05)(0.65,0.75)
+%A seta e o texto da aceleração:
+\psline[linewidth=1mm,linecolor=blue]{->}(0.35,0.8)(0.35,1)
+\rput{0}(0.35,1.05){\scalebox{1.5}{$\va_0$}}
+%Roldana e fios:
+\psline[linewidth=1mm,linecolor=blue]{-}(0.25,0.6)(0.25,0.3)
+\psline[linewidth=1mm,linecolor=blue]{-}(0.45,0.6)(0.45,0.4)
+\pscircle[linewidth=0.5mm,linecolor=lightgray,dimen=middle,fillstyle=radslope,slopebegin=gray,slopeend=white,slopesteps=50](0.35,0.6){0.1}
+\psline[linewidth=1mm,linecolor=blue]{-}(0.35,0.6)(0.35,0.75)
+\pscircle*(0.35,0.6){0.01}
+%Blocos:
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.16,0.1)(0.25,0.3)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.25,0.1)(0.34,0.3)
+\psframe[linewidth=0.1mm,linecolor=gray](0.16,0.1)(0.34,0.3)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=gray,slopeend=white,slopesteps=25](0.36,0.2)(0.45,0.4)
+\psframe[linewidth=0mm,linecolor=white,fillstyle=slope,slopebegin=white,slopeend=gray,slopesteps=25](0.45,0.2)(0.54,0.4)
+\psframe[linewidth=0.1mm,linecolor=gray](0.36,0.2)(0.54,0.4)
+\rput(0.15,0.34){\scalebox{1.5}{$m_1$}}
+\rput(0.52,0.15){\scalebox{1.5}{$m_2$}}
+\end{pspicture}
+\end{document} 
