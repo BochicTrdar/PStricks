@@ -1,0 +1,47 @@
+%Penha, Faro
+%31/05/2003, 18:00h.
+%Trabalho, Potência e Energia:
+%Trabalho da força gravítica.
+%Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{flushleft}
+\begin{pspicture}(-1.1,0)(1.1,1.1)
+\psset{unit=8cm}
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0,0.1)(0.9,0.1)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](0,0.8)(0.9,0.8)
+\psframe[linewidth=0pt,linecolor=white,fillstyle=hlines](-0.1,-0.1)(0.95,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(-0.1,0)(1,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(0,1)
+%\psarc[linewidth=3pt,arcsepA=3pt,arcsepB=3pt]{->}(0.15,0.8){0.27}{270}{305}
+\psbezier[linewidth=3pt,linecolor=red]{->}(0.15,0.8)(0.7,0.6)(0.1,0.3)(0.65,0.1) % Percurso VI
+\psline[linewidth=3pt,linecolor=red]{->}(0.15,0.8)(0.65,0.1)           % Percurso III
+\psline[linewidth=3pt,linecolor=red]{->}(0.15,0.8)(0.15,0.1)(0.65,0.1) % Percurso I e II
+\psline[linewidth=5pt,linecolor=blue]{->}(0.7,0.65)(0.7,0.35) % Forca gravitica
+\rput{0}(1.05,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,1.05){\scalebox{1.5}{$Y$}}
+\rput{0}(0.15,0.85){\scalebox{1.2}{$A$}}
+\rput{0}(0.65,0.05){\scalebox{1.2}{$B$}}
+\rput{0}(-0.07,0.1){\scalebox{1.5}{$h_B$}}
+\rput{0}(-0.07,0.8){\scalebox{1.5}{$h_A$}}
+\rput{0}(0.15,0.8){\scalebox{1.5}{$\bullet$}}
+\rput{0}(0.65,0.1){\scalebox{1.5}{$\bullet$}}
+\rput{0}(0.8,0.5){\scalebox{1.5}{$m\mathbf{g}$}}
+\rput{0}(0.1,0.45){\scalebox{1.2}{$I$}}
+\rput{0}(0.4,0.05){\scalebox{1.2}{$II$}}
+\rput{0}(0.6,0.3){\scalebox{1.2}{$III$}}
+\rput{0}(0.47,0.6){\scalebox{1.2}{$IV$}}
+%\rput{0}(0.25,0.5){\scalebox{1.2}{$\theta$}}
+\end{pspicture}
+\end{flushleft}
+\end{document} 
