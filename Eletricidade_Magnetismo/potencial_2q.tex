@@ -1,0 +1,21 @@
+\documentclass{article}
+
+%Duas cargas
+%Faro, Wed Mar  5 22:59:18 WET 2014
+%Written by Tordar
+
+\usepackage{pst-electricfield}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture*}(-4,-4)(4,4)
+ \psframe*[linecolor=green!20](-4,-4)(4,4)
+ \psgrid[subgriddiv=0,gridcolor=lightgray,griddots=10]
+\rput{90}(0,0){\psElectricfield[Q={[2 0 2 15][2 0 -2 15]}]}
+ \rput[0](-2,0){\large{$+$}}
+ \rput[0](2,0){\large{$+$}}
+\end{pspicture*}
+\end{center}
+
+\end{document} 
