@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+
+%Carga imagem numa esfera
+%Faro, Wed Mar  5 22:41:24 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{flushleft}
+\begin{pspicture}(-6,-5)(11,6)
+\SpecialCoor
+\psset{linewidth=1mm,linecolor=blue,linestyle=dashed,dash=4mm 1mm,arrows=->}
+\psline(-5,0)(10,0)
+\psline(0,-5)(0,5)
+\psline[linewidth=0.5mm,linecolor=black,arrows=-](9,0)(9,-5)
+\pscircle[linewidth=1.5mm,linecolor=black,linestyle=solid,arrows=-](0,0){4}
+\psline[linestyle=solid,arrows=<->](4;45)
+\psline[linestyle=solid,arrows=<->](0,-4.5)(9,-4.5)
+\psset{linecolor=black,linewidth=1mm,linestyle=solid,arrows=-}
+\psline(-4,0)(-5,0)(-5,-2)
+\psline(-6,-2)(-4,-2)
+\psline(-5.8,-2.2)(-4.2,-2.2)
+\psline(-5.6,-2.4)(-4.4,-2.4)
+\psline(-5.4,-2.6)(-4.6,-2.6)
+\psline(-5.2,-2.8)(-4.8,-2.8)
+\rput{0}(10.5,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,5.5){\scalebox{1.5}{$Y$}}
+\rput{45}(2;55){\scalebox{1.5}{$R$}}
+\rput{0}(4.5,-4){\scalebox{1.5}{$L$}}
+\rput{0}(9,-0.05){\scalebox{5}{$\cdot$}}
+\rput{0}(9,0.7){\scalebox{1.7}{$Q$}}
+\end{pspicture}
+\end{flushleft}
+
+\end{document}
