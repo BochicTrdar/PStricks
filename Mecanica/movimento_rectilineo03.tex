@@ -1,0 +1,39 @@
+%11/05/2004 at 17:30 
+%
+%Cinemática do Ponto Material: 
+%Movimento Rectilíneo
+% 
+%Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx} 
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(0,0)(1,0.5)
+\psset{unit=10cm}
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0,0.4)(0.9,0.4)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0,0.2)(0.9,0.2)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0,0.1)(0.9,0.1)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0.3,0)(0.3,0.4)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0.6,0)(0.6,0.1)
+\psline[linewidth=1pt,linecolor=black,linestyle=dashed,dash=4mm 1mm]{-}(0.9,0)(0.9,0.4)
+\psline[linewidth=3pt,linecolor=blue]{<->}(0,0.5)(0,0)(1,0)
+\psline[linewidth=3pt,linecolor=black](0,0.2)(0.3,0.4)(0.6,0.1)(0.9,0.1)
+\rput{0}(1.07,0){\scalebox{1.2}{$t$ [s]}}
+\rput{0}(0.07,0.55){\scalebox{1.2}{$v(t)$ [m/s]}}
+\rput{0}(0.3,-0.05){\scalebox{1.2}{10}}
+\rput{0}(0.6,-0.05){\scalebox{1.2}{20}}
+\rput{0}(0.9,-0.05){\scalebox{1.2}{30}}
+\rput{0}(-0.05,0.1){\scalebox{1.2}{5}}
+\rput{0}(-0.05,0.2){\scalebox{1.2}{10}}
+\rput{0}(-0.05,0.4){\scalebox{1.2}{20}}
+\end{pspicture}
+
+\end{document} 

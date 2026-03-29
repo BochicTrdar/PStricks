@@ -1,0 +1,33 @@
+% 30/10/2002 
+% Cinemática do Ponto Material: Movimento Rectilíneo.
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{center} 
+\begin{pspicture}(-1.1,0)(1.1,1.1)
+\psset{unit=8cm}
+\psline[linewidth=3pt,linecolor=blue]{->}(-1,0)(1,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(0,1)
+\psline[linewidth=2pt,linecolor=black,linestyle=dashed,dash=5mm 1mm](-0.8,0.1)(0.9,0.9)
+\psline[linewidth=5pt,linecolor=red]{->}(0,0)(-0.3750,0.3)
+\psline[linewidth=5pt,linecolor=red]{->}(0,0)( 0.0500,0.5)
+\psline[linewidth=5pt,linecolor=red]{->}(0,0)( 0.4750,0.7)
+\rput{0}(1.05,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,1.05){\scalebox{1.5}{$Y$}}
+\rput{0}(-0.35,0.15){\scalebox{1.5}{$\mathbf{r}(t_1)$}}
+\rput{0}(0.15,0.4){\scalebox{1.5}{$\mathbf{r}(t_2)$}}
+\rput{0}(0.45,0.5){\scalebox{1.5}{$\mathbf{r}(t_3)$}}
+\rput{0}(0.7,0.85){\scalebox{1.5}{$S$}}
+\end{pspicture}
+\end{center}
+\end{document} 
