@@ -1,0 +1,34 @@
+%18/04/2004 at 00:30
+%Cinemática do Ponto Material:
+%Cinemática de Projécteis
+% 
+%Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{pspicture}(1,0)(1,1)
+\psset{unit=8cm}
+\psframe[fillstyle=solid,fillcolor=lightgray](-0.1,0)(2,-0.25)
+\psarc[linewidth=3pt,linecolor=blue,arcsepA=3pt,arcsepB=3pt,arrows=->](0,0){0.25}{0}{45}
+\psarc[linewidth=3pt,linecolor=blue,arcsepA=3pt,arcsepB=3pt,arrows=->](0,0){0.50}{0}{75}
+\psset{linewidth=0.5mm,linestyle=dashed,dash=4mm 1mm}
+\parabola(0,0)(0.5,1)
+\parabola(0,0)(0.95,0.5)
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid,arrows=<->}
+\psline(0,-0.1)(0.854,-0.1)
+\psline(0.854,0)(0.854,0.495)
+\rput{0}(0.88,0.55){\scalebox{1.3}{$P$}}
+\rput{0}(0.78,0.25){\scalebox{1.4}{$y_P$}}
+\rput{0}(0.42,-0.17){\psframebox*{\scalebox{1.4}{$x_P$}}}
+\rput{0}(0.3,0.1){\scalebox{1.4}{$\theta_1$}}
+\rput{0}(0.4,0.4){\scalebox{1.4}{$\theta_2$}}
+\end{pspicture}
+\end{document} 
