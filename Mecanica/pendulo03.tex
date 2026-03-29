@@ -1,0 +1,43 @@
+%Faro, Tue Feb 11 23:19:56 WET 2014
+%Cinematica e Dinâmica do Ponto Material: 
+%Movimento de um pendulo
+%Written by TORDAR
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx}
+\usepackage{pst-all} 
+\usepackage{pst-slpe}
+
+%Let's go: 
+
+\begin{document}
+
+\null\vskip4cm
+\begin{center}
+\begin{pspicture}(-0.1,-0.1)(1.1,1.1)
+\psset{unit=8cm}
+\psframe[linewidth=1pt,
+         linecolor=lightgray,
+	 dimen=inner,
+	 fillstyle=hlines*,
+	 fillcolor=lightgray,hatchangle=45](0.05,0.9)(0.95,1)
+\psarc[linewidth=3pt,arcsepA=3pt,arcsepB=3pt]{->}(0.5,0.9){0.6}{270}{297}
+\psline[linewidth=2pt,linecolor=black,linestyle=dashed,dash=5mm 1mm]{-}(0.5,0.9)(0.5,0)
+\psline[linewidth=3pt,linecolor=black](0.5,0.9)(0.9,0.1)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](0.9,0.1){0.05}
+\psline[linewidth=3pt,linecolor=black](0,0.9)(1,0.9)
+\rput{0}(1,0.07){\scalebox{1.5}{$m$}}
+\rput{0}(0.65,0.25){\scalebox{1.5}{$\theta$}}
+\end{pspicture}
+\end{center}
+
+\end{document} 

@@ -1,0 +1,47 @@
+% Pêndulo cónico
+% 03/07/2003 at 22:00h, Penha, Faro
+% Written by Tordar
+
+\documentclass[12pt,a4paper]{article}
+
+\pagestyle{empty} 
+
+\usepackage{graphicx}
+\usepackage{pst-3dplot}
+\usepackage{pifont}
+
+\psset{subgriddiv=0,griddots=5}
+
+\begin{document}
+
+\begin{pspicture}(-10,-10)(10,10)
+%\psgrid
+\pstThreeDCoor[linewidth=4pt,linecolor=blue,xMin=0,xMax=6,yMin=0,yMax=6,zMin=0,zMax=6,drawing=false]
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](-6,0,0)(6,0,0)
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,-6,0)(0,6,0)
+\pstThreeDLine[linewidth=1mm,linecolor=black,arrows=<->](-0.15,0.15,0)(-2.75,2.75,0)
+\psset{linewidth=0.5mm,linecolor=black,linestyle=dashed}
+\pstThreeDCircle(0,0,0)(4,0,0)(0,4,0)
+\psset{linewidth=1mm,linecolor=blue,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,0)(0,0,10)
+\pstPlanePut[plane=xz](6.7,0,0){\scalebox{1.5}{$X$}}
+\pstPlanePut[plane=yz](0,6.1,0){\scalebox{1.5}{$Y$}}
+\pstPlanePut[plane=yz](0,0,10.5){\scalebox{1.5}{$Z$}}
+\rput(4,0){\scalebox{1.0}{\ding{108}}}
+\rput(4.5,0){\scalebox{1.5}{$m$}}
+\rput(2.2,4){\scalebox{1.5}{$\mathbf{r}$}}
+\rput(2, 0.3){\scalebox{1.5}{$R$}}
+\rput(1.6, 1.2){\scalebox{1.5}{$x$}}
+\rput(1.6,-1.2){\scalebox{1.5}{$y$}}
+\rput(-0.5,7){\scalebox{1.5}{$z$}}
+\rput(1,3.7){\scalebox{1.5}{$\alpha$}}
+\psarc[linewidth=1mm,linecolor=black,arcsepA=3pt,arcsepB=3pt]{->}(0,7){3}{270}{299}
+\psset{linecolor=red,linestyle=solid}
+\pstThreeDLine[linewidth=1.5mm,arrows=->](0,0,8)(-2.83,2.83,0)
+\psset{linewidth=0.5mm,linecolor=black,linestyle=dashed}
+\pstThreeDLine(-2.83,2.83,0)(-2.83,0,0)
+\pstThreeDLine(-2.83,2.83,0)( 0,2.83,0)
+\end{pspicture}
+
+\end{document}
