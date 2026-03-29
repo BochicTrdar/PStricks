@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+
+%Lei de Gauss para uma cavidade cilíndrica
+%Gambelas, Wed Mar  5 15:19:21 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\usepackage{pifont}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-6,-4)(6,4)
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){2}
+\SpecialCoor
+\psline[linewidth=1mm,linecolor=blue,arrows=->](2; 45)
+\psline[linewidth=1mm,linecolor=blue,arrows=->](4;-45)
+\rput{0}(1; 70){\scalebox{1.5}{$R$}}
+\rput{0}(3;-60){\scalebox{1.5}{\psframebox*{$2R$}}}
+\rput{0}(5.5;45){\scalebox{1.5}{$\Phi(2R) = \Phi_0$}}
+\end{pspicture}
+
+\end{document}

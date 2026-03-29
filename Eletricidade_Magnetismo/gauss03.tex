@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+%Lei de Gauss para duas esferas sólida concêntricas
+%Faro, 10/01/2004, 12:30
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,-5)(5,5)
+
+\rput{0}(-5,5){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){3}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){2}
+\pscircle[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash=4mm 2mm](0,0){1}
+\rput{0}(-1,0){\scalebox{1.5}{\psframebox*{$S$}}}
+                }
+		
+\rput{0}(5,5){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){3}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){2}
+\pscircle[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash=4mm 2mm](0,0){2.5}
+\rput{0}(-2.4,0){\scalebox{1.5}{\psframebox*{$S$}}}
+                }
+
+\rput{0}(-5,-5){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){3}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){2}
+\pscircle[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash=4mm 2mm](0,0){3.5}
+\rput{0}(-3.4,0){\scalebox{1.5}{\psframebox*{$S$}}}
+                }
+		
+\rput{0}(5,-5){
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){4}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=solid,fillcolor=white](0,0){3}
+\pscircle[linewidth=1.5mm,linecolor=black,fillstyle=vlines](0,0){2}
+\pscircle[linewidth=0.5mm,linecolor=blue,linestyle=dashed,dash=4mm 2mm](0,0){4.5}
+\rput{0}(-4.5,0){\scalebox{1.5}{\psframebox*{$S$}}}
+                }
+		
+\end{pspicture}
+
+\end{document}
