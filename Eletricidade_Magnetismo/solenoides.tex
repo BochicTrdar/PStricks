@@ -1,0 +1,35 @@
+\documentclass{article}
+
+% Figura para o protocolo de induçaõ magnética
+% Faro, Qua Nov  3 21:59:08 WET 2021
+% Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+
+\begin{document}
+
+\pagestyle{empty}
+\psset{unit=0.5cm}
+%\begin{pspicture*}[showgrid=true](-8,-8)(8,8)
+\begin{pspicture*}[showgrid=false](-8,-8)(8,8)
+\pscoil[linewidth=0.5mm,linecolor=black,coilarm=5mm,coilwidth=20mm,coilheight=0.1](-5,0)(5,0)
+\pscoil[linewidth=0.5mm,linecolor=lightgray,coilarm=5mm,coilwidth=5mm,coilheight=0.3](-3,0)(3,0)
+\psframe[linewidth=0.5mm](-8,1)(-5,5)
+\psline[linewidth=0.5mm,linecolor=lightgray,linestyle=dashed,dash=2mm 1mm](-3,0)(-3,-4)(3,-4)(3,0)
+\psline[linewidth=0.5mm](-6,2)(-6,0)(-5,0)
+\psline[linewidth=0.5mm](-7,2)(-7,-3)(5,-3)(5,0)
+\psline[linewidth=0.5mm,arrows=<->](-4,3)(4,3)
+\pscircle[linewidth=0.5mm,fillstyle=solid,fillcolor=white](-5,-3){0.75}
+\pscircle[linewidth=0.5mm,fillstyle=solid,fillcolor=white,linecolor=lightgray](0,-4){0.75}
+\qdisk(-7,2){0.2}
+\qdisk(-6,2){0.2}
+\rput{0}(-6.5,4){\scalebox{0.75}{Gerador}}
+\rput{0}(-5,-3){\scalebox{1}{A}}
+\rput{0}(0,-4){\scalebox{1}{V}}
+\rput{0}(-5,-4.2){\scalebox{1}{$I_e$}}
+\rput{0}(0,-5.2){\scalebox{1}{$V_i$}}
+\rput{0}(0,3.5){\scalebox{1}{$L_e$, $N_e$}}
+\end{pspicture*}
+
+\end{document}

@@ -1,0 +1,24 @@
+\documentclass{article}
+
+%Campo B de um solenoide
+%Faro, Wed May  1 14:11:13 WEST 2013
+%Written by Tordar
+
+\usepackage{pst-magneticfield}
+
+\begin{document}
+
+\pagestyle{empty}
+\psset{unit=0.5cm}
+\begin{pspicture*}[showgrid=true](-7,-8)(7,8)
+\psmagneticfield[linecolor={[HTML]{006633}},N=3,R=2,nS=1](-7,-8)(7,8)
+\psframe*[linecolor={[HTML]{99FF66}}](-7,-8)(7,-7)
+%\rput(0,-7.5){[\Cadre{\textcolor{white}{L=4}},N=3,R=2,nS=1]}
+\end{pspicture*}
+\begin{pspicture*}[showgrid=true](-7,-8)(7,8)
+\psmagneticfield[linecolor={[HTML]{006633}},L=8,N=3,R=2,nS=1,PasB=0.0025,pointsB=5500](-7,-8)(7,8)
+\psframe*[linecolor={[HTML]{99FF66}}](-7,-8)(7,-7)
+%\rput(0,-7.5){[\Cadre{\textcolor{white}{L=8}},N=3,R=2,nS=1]}
+\end{pspicture*}
+
+\end{document}
