@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[dvipsnames]{pstricks}
+\usepackage{pstricks-add}
+\pagestyle{empty}
+\makeatletter
+  \DeclareRobustCommand{\BibTeX}{B\kern-.05em%
+    \hbox{$\m@th$% %% force math size calculations
+          \csname S@\f@size\endcsname
+          \fontsize\sf@size\z@
+          \math@fontsfalse\selectfont
+          I\kern-.025emB}%
+    \kern-.08em%
+    \-\TeX}
+\makeatother
+\begin{document}
+
+\begin{pspicture}(12,12)
+\pnode(0,0){A}
+\pnode(12,0){B}
+\pnode(12;60){C}
+%\psline{->}(A)(B)(C) % VALID
+\pspolygon[fillstyle=solid,fillcolor=MidnightBlue!20](A)(B)(C) 
+\multido{\iA=1+1,\iB=20+4}{20}{%
+  \pnode(A){X}
+  \pnode(B){Y}
+  \pnode(C){Z}
+  \psRelNode(X)(Z){0.1}{A} 
+  \psRelNode(Z)(Y){0.1}{C}
+  \psRelNode(Y)(X){0.1}{B}
+  \pspolygon[fillstyle=solid,fillcolor=MidnightBlue!\iB!red!\iB,opacity=0.4](A)(B)(C)
+} % \multido...
+\end{pspicture}
+
+\end{document}
