@@ -1,0 +1,52 @@
+% 25/10/2002 
+% Cinemática do Ponto Material: Velocidade e Posição.
+% Written by TORDAR 
+
+\documentclass[12pt]{article}  
+
+\pagestyle{empty}
+
+\usepackage{graphicx} 
+\usepackage{pst-all} 
+
+%Let's go: 
+
+\begin{document} 
+\null\vskip4cm
+\begin{center} 
+\begin{pspicture}(0,0)(1.1,1.1)
+\psset{unit=8cm}
+\savedata{\trajectory}[{
+  {0.0000000e+00,   5.0000000e-01},
+  {5.2631579e-02,   4.8291591e-01},
+  {1.0526316e-01,   4.5162039e-01},
+  {1.5789474e-01,   4.1142451e-01},
+  {2.1052632e-01,   3.6763932e-01},
+  {2.6315789e-01,   3.2557589e-01},
+  {3.1578947e-01,   2.9054527e-01},
+  {3.6842105e-01,   2.6785853e-01},
+  {4.2105263e-01,   2.6282673e-01},
+  {4.7368421e-01,   2.8076094e-01},
+  {5.2631579e-01,   3.2663810e-01},
+  {5.7894737e-01,   3.9775061e-01},
+  {6.3157895e-01,   4.8370632e-01},
+  {6.8421053e-01,   5.7377898e-01},
+  {7.3684211e-01,   6.5724231e-01},
+  {7.8947368e-01,   7.2337006e-01},
+  {8.4210526e-01,   7.6143597e-01},
+  {8.9473684e-01,   7.6071377e-01},
+  {9.4736842e-01,   7.1047720e-01},
+  {1.0000000e+00,   6.0000000e-01}}]
+\dataplot[plotstyle=curve,linewidth=2pt,linecolor=black,linestyle=dashed,dash=5mm 1mm]{\trajectory}
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(1,0)
+\psline[linewidth=3pt,linecolor=blue]{->}(0,0)(0,1)
+\psline[linewidth=3pt,linecolor=red]{->}(0,0)(0.42105263,0.26282673)
+\psline[linewidth=3pt,linecolor=magenta]{->}(0.42105263,0.26282673)(0.8,0.26282673)
+\rput{0}(1.05,0){\scalebox{1.5}{$X$}}
+\rput{0}(0,1.05){\scalebox{1.5}{$Y$}}
+\rput{0}(0.3,0.1){\scalebox{1.5}{$\mathbf{r}(t)$}}
+\rput{0}(0.87,0.26282673){\scalebox{1.5}{$\mathbf{v}(t)$}}
+\rput{0}(0.85,0.82){\scalebox{1.5}{$S$}}
+\end{pspicture}
+\end{center}
+\end{document} 

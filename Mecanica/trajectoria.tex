@@ -1,0 +1,25 @@
+% Trajectória cartesiana de um ponto material 
+% 07/09/2005 at 02:30
+% Written by Tordar
+
+\documentclass[12pt]{article}
+
+\usepackage{pst-all,pst-infixplot}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(0,0)(12,5)
+\psset{plotpoints=1000,linewidth=0.8mm,xunit=10mm,yunit=25mm}
+\psaxes{->}(0,0)(12,3)
+\psPlot[linecolor=green]{0}{12}{sqrt(x/3)}
+\psline[linewidth=0.5mm,linestyle=dashed]( 3,0)( 3,1)(0,1)
+\psline[linewidth=0.5mm,linestyle=dashed](12,0)(12,2)(0,2)
+\psline[linecolor=blue,linewidth=1mm,arrows=->](0,0)( 3,1)
+\psline[linecolor=blue,linewidth=1mm,arrows=->](0,0)(12,2)
+\rput{0}(12.5,0){\scalebox{1.5}{$X$}}
+\rput{0}( 0,3.2){\scalebox{1.5}{$Y$}}
+\end{pspicture}
+
+\end{document}
