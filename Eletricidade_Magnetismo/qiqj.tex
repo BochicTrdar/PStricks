@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+
+%Cargas i e j
+%Faro, Wed Mar  5 23:10:33 WET 2014
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{pst-all}
+\usepackage{pst-slpe}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{pspicture}(-5,5)(5,5)
+\psset{unit=1cm}
+\psline[linewidth=3pt,linecolor=black]{<->}(3.5,0.25)(-3.5,4.75)
+\psline[linewidth=3pt,linecolor=black]{<->}(3.5,0.15)(-3.5,2.0)
+\psline[linewidth=3pt,linecolor=black]{<->}(3.5,0.00)(-3.5,-1.9)
+\psline[linewidth=3pt,linecolor=black]{<->}(3.5,-0.1)(-1.8,-3.8)
+\psline[linewidth=3pt,linecolor=black]{<->}(4,-0.35)(4,-3.65)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](4,0){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-4,5){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-4,2){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-4,-2){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](-2,-4){0.3}
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=lightgray,
+slopeend=black,
+slopecenter=0.65 0.65,
+slopesteps=25](4,-4){0.3}
+\rput{0}(5,0){\scalebox{2}{$q_i$}}
+\rput{0}(-5,5){\scalebox{2}{$q_1$}}
+\rput{0}(-5,2){\scalebox{2}{$q_2$}}
+\rput{0}(-4,0.5){\scalebox{3}{$\vdots$}}
+\rput{0}(-5,-2){\scalebox{2}{$q_{i-1}$}}
+\rput{0}(-2,-5){\scalebox{2}{$q_{i+1}$}}
+\rput{0}(1,-4){\scalebox{3}{$\ldots$}}
+\rput{0}(4,-5){\scalebox{2}{$q_{N}$}}
+\rput{0}(0,3.25){\scalebox{2}{$r_{1}$}}
+\rput{0}(0,1.50){\scalebox{2}{$r_{2}$}}
+\rput{0}(-0.5,-0.5){\scalebox{2}{$r_{i-1}$}}
+\rput{0}(0.75,-3.0){\scalebox{2}{$r_{i+1}$}}
+\rput{0}(5,-2.5){\scalebox{2}{$r_{N}$}}
+\end{pspicture}
+
+\end{document}
