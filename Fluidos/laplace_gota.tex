@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+%Laplace Gota
+%Faro, 13/03/2011, 16:30
+%Written by Tordar
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-slpe}
+\usepackage{pifont}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{pspicture}(-5,-5)(5,5)
+\pscircle[linewidth=0.1mm,
+linecolor=gray,
+fillstyle=ccslope,
+slopebegin=white,
+slopeend=blue,
+slopecenter=0.65 0.65,
+slopesteps=25](0,0){2} % Uma gota azul 
+\psline[linewidth=2mm,linecolor=lightgray]{->}(-3.25,0)(-2,0)
+\psline[linewidth=2mm,linecolor=lightgray]{->}(3.25,0)(2,0)
+\psline[linewidth=2mm,linecolor=lightgray]{->}(0,-3.25)(0,-2)
+\psline[linewidth=2mm,linecolor=lightgray]{->}(0,3.25)(0,2) 
+\psline[linewidth=2mm,linecolor=lightgray]{->}(2.2981,2.2981)(1.4142,1.4142)
+\psline[linewidth=2mm,linecolor=lightgray]{->}(-2.2981,-2.2981)(-1.4142,-1.4142)
+\psline[linewidth=2mm,linecolor=lightgray]{->}(-2.2981,2.2981)(-1.4142,1.4142)
+\psline[linewidth=2mm,linecolor=lightgray]{->}(2.2981,-2.2981)(1.4142,-1.4142)
+\psline[linewidth=1mm,linecolor=black]{->}(0,0)(2,0)
+\rput{0}(1,0.5){\scalebox{1.75}{$R$}}
+\end{pspicture}
+
+\end{document}
